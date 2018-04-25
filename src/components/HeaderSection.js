@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from "styled-components";
 
+import { HideOnMobile } from '../styles/style.js';
+
 import logo from './logo.svg';
 
 const Header = styled.header`
@@ -10,10 +12,6 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: #00548C;
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-  }
 `;
 
 const Logo = styled.img`
@@ -22,12 +20,15 @@ const Logo = styled.img`
 `;
 
 const MainNav = styled.div`
-  display: block;
+  display: flex;
   padding: 16px 0;
   margin-left: 50px;
 
-  @media (max-width: 767px) {
-    padding-bottom: 5px;
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
@@ -38,9 +39,9 @@ const MainNavLink = styled(Link)`
   color: #0073b9;
   text-decoration: none;
 
-  @media (max-width: 767px) {
-    padding: 0 8px;
-    font-size: 14px;
+  @media (max-width: 768px) {
+    padding: 5px 10px;
+    font-size: 16px;
     margin: 0;
   }
 `;
@@ -69,7 +70,9 @@ class HeaderSection extends Component {
           <Link to="/" style={{ textDecoration: `none`, color: `#0d56a0` }}>
             <Logo src={logo} alt={imgAltTitle} />
           </Link>
-          <BigButton to="/get-started">Get Started</BigButton>
+          <HideOnMobile>
+            <BigButton to="/get-started">Get Started</BigButton>
+          </HideOnMobile>
         </Header>
         <MainNav>
           <MainNavLink to="/">Home</MainNavLink>

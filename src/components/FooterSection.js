@@ -13,9 +13,9 @@ const Footer = styled.footer`
   align-items: center;
   background-color: #000;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column;
-    padding: 50px 25px 100px 25px;
+    padding: 40px 20px;
   }
 `;
 
@@ -31,8 +31,10 @@ const FooterNav = styled.div`
   display: flex;
   font-size: 14px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin-top: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
@@ -44,8 +46,8 @@ const MainNavLink = styled(Link)`
   color: #424242;
   text-decoration: none;
 
-  @media (max-width: 767px) {
-    padding: 0 8px;
+  @media (max-width: 768px) {
+    padding: 8px;
     font-size: 14px;
     margin: 0;
   }

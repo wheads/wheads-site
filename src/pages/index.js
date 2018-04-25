@@ -8,14 +8,19 @@ import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/sty
 const BannerContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const HeroBanner = styled.div`
   padding: 50px;
   background-color: #dff9fb;
 
-  @media (max-width: 767px) {
-    padding: 50px;
+  @media (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
   }
 `;
 
@@ -31,7 +36,7 @@ const HeroBannerTitle = styled.h2`
   font-size: 52px;
   color: #000;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     font-size: 40px;
   }
 `;
@@ -41,7 +46,7 @@ const HeroBannerSub = styled.h1`
   color: #fff;
   margin-bottom: 20px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     font-size: 20px;
   }
 `;
@@ -59,6 +64,10 @@ const BigButton = styled(Link)`
   border-radius: 3px;
   margin-top: 15px;
   max-width: 230px;
+
+  @media (max-width: 768px) {
+    margin: 15px auto;
+  }
 `;
 
 export default ({ data }) => (
