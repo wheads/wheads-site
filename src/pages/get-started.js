@@ -70,7 +70,7 @@ export default ({ data }) => (
 
     <BannerContainer>
       <HeroBanner>
-          <HeroBannerTitle>Savings</HeroBannerTitle>
+          <HeroBannerTitle>Get Started</HeroBannerTitle>
           <HeroBannerParag>I’m a paragraph. Use this space to tell people more about what you do and the services you offer.</HeroBannerParag>
           <BigButton to="#">Read More</BigButton>
       </HeroBanner>
@@ -87,7 +87,7 @@ export const query = graphql`
         title
       }
     }
-    imageBannerBg: file(relativePath: { eq: "banner-bg.jpeg" }) {
+    imageBannerBg: file(relativePath: { eq: "get-started-bg.jpeg" }) {
       childImageSharp {
         sizes(maxWidth: 1920, maxHeight: 1280) {
           ...GatsbyImageSharpSizes

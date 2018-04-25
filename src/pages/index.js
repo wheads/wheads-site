@@ -73,12 +73,6 @@ export default ({ data }) => (
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
-    
-
-    <div style={{display: `grid`, gridTemplateColumns: `3fr 1fr`, gridGap: `40px`, padding: `50px`, backgroundColor: `#eeeff2`}}>
-      <Img sizes={data.imagePic1.childImageSharp.sizes} />
-      <Img sizes={data.imagePic3.childImageSharp.sizes} />
-    </div>
   </div>
   
 );
@@ -88,20 +82,6 @@ export const query = graphql`
     imageBannerBg: file(relativePath: { eq: "banner-bg.jpeg" }) {
       childImageSharp {
         sizes(maxWidth: 1920, maxHeight: 1280) {
-          ...GatsbyImageSharpSizes
-        }
-      }
-    }
-    imagePic1: file(relativePath: { eq: "pic1.png" }) {
-      childImageSharp {
-        sizes(maxWidth: 845, maxHeight: 252) {
-          ...GatsbyImageSharpSizes
-        }
-      }
-    }
-    imagePic3: file(relativePath: { eq: "pic3.png" }) {
-      childImageSharp {
-        sizes(maxWidth: 330, maxHeight: 270) {
           ...GatsbyImageSharpSizes
         }
       }

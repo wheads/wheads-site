@@ -87,9 +87,9 @@ export const query = graphql`
         title
       }
     }
-    imageBannerBg: file(relativePath: { eq: "banner-bg.jpeg" }) {
+    imageBannerBg: file(relativePath: { eq: "events-bg.jpeg" }) {
       childImageSharp {
-        sizes(maxWidth: 1920, maxHeight: 1280) {
+        sizes(maxWidth: 1920, maxHeight: 1233) {
           ...GatsbyImageSharpSizes
         }
       }

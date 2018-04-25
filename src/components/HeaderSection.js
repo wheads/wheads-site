@@ -35,7 +35,7 @@ const MainNavLink = styled(Link)`
   padding-right: 50px;
   font-weight: 400;
   font-size: 20px;
-  color: #424242;
+  color: #0073b9;
   text-decoration: none;
 
   @media (max-width: 767px) {
