@@ -5,15 +5,22 @@ import Img from "gatsby-image";
 
 import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
 
-const HeroBanner = styled.div`  
-  position: absolute;
-  top: 180px;
-  left: 60px;
-  width: 900px;
+const BannerContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
+const HeroBanner = styled.div`
+  padding: 50px;
+  background-color: #dff9fb;
 
   @media (max-width: 767px) {
     padding: 50px;
   }
+`;
+
+const HeroBannerParag = styled.p`
+  font-size: 18px;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -21,7 +28,7 @@ const HeroBannerTitle = styled.h2`
   margin-bottom: 16px;
   padding-bottom: 0;
   border-bottom: none;
-  font-size: 62px;
+  font-size: 52px;
   color: #000;
 
   @media (max-width: 767px) {
@@ -56,14 +63,19 @@ const BigButton = styled(Link)`
 
 export default ({ data }) => (
   <div>
-    <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
-
-    <HeroBanner>
-      <div>
-        <HeroBannerTitle>Financial Literacy<br/> Made Easy</HeroBannerTitle>
-        <BigButton to="#">Get Started</BigButton>
-      </div>
-    </HeroBanner>
+    <BannerContainer>
+      <HeroBanner>
+        <div>
+          <HeroBannerTitle>About Our Campaign</HeroBannerTitle>
+          <HeroBannerParag>Join our campaign for financial literacy!</HeroBannerParag>
+          <HeroBannerParag>We believe that everyone has the right to become wealthy if they have the proper financial foundation.</HeroBannerParag>
+          <HeroBannerParag>You don't have to be an expert to be financially independent, you just have to know the basics then everything will just be common sense.</HeroBannerParag>
+          <BigButton to="#">Start Here</BigButton>
+        </div>
+      </HeroBanner>
+      <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
+    </BannerContainer>
+    
 
     <div style={{display: `grid`, gridTemplateColumns: `3fr 1fr`, gridGap: `40px`, padding: `50px`, backgroundColor: `#eeeff2`}}>
       <Img sizes={data.imagePic1.childImageSharp.sizes} />
@@ -75,9 +87,9 @@ export default ({ data }) => (
 
 export const query = graphql`
   query HomePageQuery {
-    imageBannerBg: file(relativePath: { eq: "banner-bg.jpg" }) {
+    imageBannerBg: file(relativePath: { eq: "banner-bg.jpeg" }) {
       childImageSharp {
-        sizes(maxWidth: 1920, maxHeight: 600) {
+        sizes(maxWidth: 1920, maxHeight: 1280) {
           ...GatsbyImageSharpSizes
         }
       }

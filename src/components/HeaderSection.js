@@ -5,12 +5,11 @@ import styled from "styled-components";
 import logo from './logo.svg';
 
 const Header = styled.header`
-  padding: 16px 0;
+  padding: 16px 50px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between;
+  background-color: #00548C;
 
   @media (max-width: 767px) {
     flex-direction: column;
@@ -18,14 +17,14 @@ const Header = styled.header`
 `;
 
 const Logo = styled.img`
-  width: 200px;
+  width: 300px;
   margin-bottom: 0;
 `;
 
 const MainNav = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
+  padding: 16px 0;
+  margin-left: 50px;
 
   @media (max-width: 767px) {
     padding-bottom: 5px;
@@ -33,10 +32,9 @@ const MainNav = styled.div`
 `;
 
 const MainNavLink = styled(Link)`
-  padding: 0 20px;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 18px;
+  padding-right: 50px;
+  font-weight: 400;
+  font-size: 20px;
   color: #424242;
   text-decoration: none;
 
@@ -47,22 +45,41 @@ const MainNavLink = styled(Link)`
   }
 `;
 
+const BigButton = styled(Link)`
+  display: block;
+  background-color: orange;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 15px 20px;
+  border-radius: 3px;
+  max-width: 230px;
+`;
+
 class HeaderSection extends Component {
   render() {
     const { imgAltTitle } = this.props;
     
     return (
-      <Header>
-        <Link to="/" style={{ textDecoration: `none`, color: `#0d56a0` }}>
-          <Logo src={logo} alt={imgAltTitle} />
-        </Link>
+      <div>
+        <Header>
+          <Link to="/" style={{ textDecoration: `none`, color: `#0d56a0` }}>
+            <Logo src={logo} alt={imgAltTitle} />
+          </Link>
+          <BigButton to="#">Get Started</BigButton>
+        </Header>
         <MainNav>
           <MainNavLink to="/">Home</MainNavLink>
           <MainNavLink to="#">Get Started</MainNavLink>
-          <MainNavLink to="#">Webinars</MainNavLink>
+          <MainNavLink to="#">Classes</MainNavLink>
+          <MainNavLink to="#">Events</MainNavLink>
           <MainNavLink to="#">Tools</MainNavLink>          
+          <MainNavLink to="#">Contact</MainNavLink>
         </MainNav>
-      </Header>
+      </div>
     );
   }
 }
