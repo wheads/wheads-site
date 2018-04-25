@@ -61,7 +61,7 @@ const BigButton = styled(Link)`
 
 class HeaderSection extends Component {
   render() {
-    const { imgAltTitle } = this.props;
+    const { imgAltTitle, menuLink1, menuLink2, menuLink3, menuLink4, menuLink5 } = this.props;
     
     return (
       <div>
@@ -69,15 +69,15 @@ class HeaderSection extends Component {
           <Link to="/" style={{ textDecoration: `none`, color: `#0d56a0` }}>
             <Logo src={logo} alt={imgAltTitle} />
           </Link>
-          <BigButton to="#">Get Started</BigButton>
+          <BigButton to="/get-started">Get Started</BigButton>
         </Header>
         <MainNav>
           <MainNavLink to="/">Home</MainNavLink>
-          <MainNavLink to="#">Get Started</MainNavLink>
-          <MainNavLink to="#">Classes</MainNavLink>
-          <MainNavLink to="#">Events</MainNavLink>
-          <MainNavLink to="#">Tools</MainNavLink>          
-          <MainNavLink to="#">Contact</MainNavLink>
+          <MainNavLink to={menuLink1}>Get Started</MainNavLink>
+          <MainNavLink to={menuLink2}>Classes</MainNavLink>
+          <MainNavLink to={menuLink3}>Events</MainNavLink>
+          <MainNavLink to={menuLink4}>Tools</MainNavLink>          
+          <MainNavLink to={menuLink5}>Contact</MainNavLink>
         </MainNav>
       </div>
     );

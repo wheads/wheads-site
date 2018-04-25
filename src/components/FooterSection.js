@@ -68,7 +68,7 @@ const SocialIcon = styled.img`
 
 class FooterSection extends Component {
   render() {
-    const { footerSiteTitle } = this.props;
+    const { footerSiteTitle, menuLink1, menuLink2, menuLink3, menuLink4, menuLink5 } = this.props;
     
     return (
       <Footer>
@@ -80,9 +80,11 @@ class FooterSection extends Component {
         </FooterLeft>      
         <FooterNav>
           <FooterNavLink to="/">Home</FooterNavLink>
-          <FooterNavLink to="#">Get Started</FooterNavLink>
-          <FooterNavLink to="#">Webinars</FooterNavLink>
-          <FooterNavLink to="#">Tools</FooterNavLink>            
+          <FooterNavLink to={menuLink1}>Get Started</FooterNavLink>
+          <FooterNavLink to={menuLink1}>Classes</FooterNavLink>
+          <FooterNavLink to={menuLink1}>Events</FooterNavLink>
+          <FooterNavLink to={menuLink1}>Tools</FooterNavLink>            
+          <FooterNavLink to={menuLink1}>Contact</FooterNavLink>
         </FooterNav>
       </Footer>
     );

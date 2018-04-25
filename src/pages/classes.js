@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
@@ -63,45 +64,32 @@ const BigButton = styled(Link)`
 
 export default ({ data }) => (
   <div>
+    <Helmet>
+      <title>Classes - {data.site.siteMetadata.title}</title>
+    </Helmet>
+
     <BannerContainer>
       <HeroBanner>
-          <HeroBannerTitle>About Our Campaign</HeroBannerTitle>
-          <HeroBannerParag>Join our campaign for financial literacy!</HeroBannerParag>
-          <HeroBannerParag>We believe that everyone has the right to become wealthy if they have the proper financial foundation.</HeroBannerParag>
-          <HeroBannerParag>You don't have to be an expert to be financially independent, you just have to know the basics then everything will just be common sense.</HeroBannerParag>
-          <BigButton to="#">Start Here</BigButton>
+          <HeroBannerTitle>Classes</HeroBannerTitle>
+          <HeroBannerParag>I’m a paragraph. Use this space to tell people more about what you do and the services you offer.</HeroBannerParag>
+          <BigButton to="#">Read More</BigButton>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
-    
-
-    <div style={{display: `grid`, gridTemplateColumns: `3fr 1fr`, gridGap: `40px`, padding: `50px`, backgroundColor: `#eeeff2`}}>
-      <Img sizes={data.imagePic1.childImageSharp.sizes} />
-      <Img sizes={data.imagePic3.childImageSharp.sizes} />
-    </div>
   </div>
   
 );
 
 export const query = graphql`
-  query HomePageQuery {
+  query ClassesPageQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     imageBannerBg: file(relativePath: { eq: "banner-bg.jpeg" }) {
       childImageSharp {
         sizes(maxWidth: 1920, maxHeight: 1280) {
-          ...GatsbyImageSharpSizes
-        }
-      }
-    }
-    imagePic1: file(relativePath: { eq: "pic1.png" }) {
-      childImageSharp {
-        sizes(maxWidth: 845, maxHeight: 252) {
-          ...GatsbyImageSharpSizes
-        }
-      }
-    }
-    imagePic3: file(relativePath: { eq: "pic3.png" }) {
-      childImageSharp {
-        sizes(maxWidth: 330, maxHeight: 270) {
           ...GatsbyImageSharpSizes
         }
       }
