@@ -81,6 +81,7 @@ export default ({ data }) => (
       <HeroBanner>
           <HeroBannerTitle>Get Started</HeroBannerTitle>
           <HeroBannerParag>I’m a paragraph. Use this space to tell people more about what you do and the services you offer.</HeroBannerParag>
+          <HeroBannerParag>Another paragrah here.</HeroBannerParag>
           <BigButton to="#">Read More</BigButton>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
