@@ -11,7 +11,8 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #00548C;
+  //background-color: #00548C;
+  background-color: #AC3B61;
 `;
 
 const Logo = styled.img`
@@ -48,7 +49,8 @@ const MainNavLink = styled(Link)`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: orange;
+  //background-color: orange;
+  background-color: #123C69;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
