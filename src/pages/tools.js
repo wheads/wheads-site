@@ -71,6 +71,20 @@ const BigButton = styled(Link)`
   }
 `;
 
+const NormalLinks = styled(Link)`
+  display: block;
+  color: #0a0a0a;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 5px 5px;
+  border-radius: 3px;
+  margin-top: 5px;
+  max-width: 230px;
+`;
+
 export default ({ data }) => (
   <div>
     <Helmet>
@@ -80,8 +94,12 @@ export default ({ data }) => (
     <BannerContainer>
       <HeroBanner>
           <HeroBannerTitle>Tools</HeroBannerTitle>
-          <HeroBannerParag>I’m a paragraph. Use this space to tell people more about what you do and the services you offer.</HeroBannerParag>
-          <BigButton to="#">Read More</BigButton>
+          <HeroBannerParag>Taking control of your money may seem overwhelming at first, but you are not alone. We have developed a variety of tools to keep you on track and focused!</HeroBannerParag>
+          <h3>Investing:</h3>
+          <ul>
+            <li><NormalLinks to="/tools/investment-calc">Investment Calculator</NormalLinks></li>
+            <li><NormalLinks to="/tools/investment-quiz">Investment Quiz</NormalLinks></li>
+          </ul>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
