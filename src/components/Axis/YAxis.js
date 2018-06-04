@@ -86,7 +86,7 @@ class YAxis extends Component {
             .selectAll('line').style('stroke','#cacaca').style('stroke-width','2px')
             .style('stroke-dasharray', '2,3')
         select(this.axisElement).call(axisYLabel)
-            .selectAll('text').style("font", "14px tahoma")
+            .selectAll('text').style("font", "calc(0.1vw + 1vh + .5vmin) Tahoma")
    }
 render() {
     

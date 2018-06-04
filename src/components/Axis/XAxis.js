@@ -23,6 +23,8 @@ class XAxis extends Component {
 
     determineLabel(d, i)
     {
+        var w = window.innerWidth;
+        var mod = (w < 400) ? 5 : 3;
         if(i == 0)
         {
             return d;
@@ -31,7 +33,7 @@ class XAxis extends Component {
         {
             if(this.dataCount > 8)
             {
-                if (i % 3 == 0)
+                if (i % mod == 0)
                     return d;
                 else
                     return '';
@@ -80,7 +82,7 @@ class XAxis extends Component {
             .selectAll('line').style('stroke','#cacaca').style('stroke-width','2px')
             .style('stroke-dasharray', '2,3')
         select(this.axisElement).call(axisXLabel)
-            .selectAll('text').style("font", "14px tahoma")
+            .selectAll('text').style("font", "calc(0.1vw + 1vh + .5vmin) tahoma")
    }
 render() {
     

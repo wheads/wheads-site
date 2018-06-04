@@ -31,13 +31,37 @@ class BarChart extends Component {
 
         function showInfo(d, i)   
         {
-        var currentYear = new Date().getFullYear() + i;
-        var value = Math.round(d,0);
+            var currentYear = new Date().getFullYear() + i;
+            var value = Math.round(d,0);
+            var pageX = event.pageX;
+            var startX = (event.pageX-75);
+            var startY = (event.pageY - 1395);
+            var minusX = startX - 70;
+            var minusY = startY - 35;
 
-        tooltip.html(currentYear + ':   ' + value.toLocaleString())
-            .style('font', '1rem tahoma')
-            .style('left', (event.pageX - 80) + 'px')
-            .style('top', (event.pageY - 90) + 'px')
+            if (pageX < 250)
+            {
+                pageX += 140;
+                minusX += 90;
+            }
+
+            tooltip.html(currentYear + ':   ' + value.toLocaleString())
+                .style('font', '1rem tahoma')
+                .style('left', (pageX - 150) + 'px')
+                .style('top', (event.pageY - 100) + 'px')
+                        
+            var points = startX + ' ' + startY + ', ' + minusX + ' ' + minusY + ', ' + (minusX+30) + ' ' + minusY
+            
+            //select(node)
+            //    .selectAll('polygon').remove()
+            //    .exit();
+
+            //select(node)
+            //    .append('polygon')
+            //    .attr('points', points)
+            //    .style('fill','#0a0a0a')
+            //    .style('stroke', '#333')
+            //    .style('stroke-width','1')
         }
         
         var animateDuration = 1000;
@@ -64,26 +88,34 @@ class BarChart extends Component {
             .delay(function(d, i){
                 return i * animateDelay
             })
-   
+
         select(node)
             .selectAll('rect')
             .data(this.props.data.schedule.map(d => d.money))
             .exit()
             .remove()
    
-        var tooltip = select('body')
-            .append('div')
-            .attr('id','tooltip')
-            .style('position','absolute')
-            .style('background','#0a0a0a')
-            .style('color','#f4f4f4')
-            .style('border','1px #333 solid')
-            .style('border-radius', '5px')
-            .style('text-align','center')
-            .style('font-weight','bold')
-            .style('padding','20px 20px 20px 20px')
-            .style('opacity','0')
-
+        var tooltip = null;
+        if(document.getElementById('tooltip') == null)
+        {
+            tooltip = select('body')
+                .append('div')
+                .attr('id','tooltip')
+                .style('position','absolute')
+                .style('background','#0a0a0a')
+                .style('color','#f4f4f4')
+                .style('border','1px #333 solid')
+                .style('border-radius', '5px')
+                .style('text-align','center')
+                .style('font-weight','bold')
+                .style('padding','20px 20px 20px 20px')
+                .style('opacity','0')
+        }
+        else
+        {
+            tooltip = select('#tooltip');
+        }
+        
         select(node)
             .selectAll('rect')
             .data(this.props.data.schedule.map(d => d.money))
@@ -127,6 +159,10 @@ class BarChart extends Component {
                 
                 select(this).style('fill', '#9bcb52')
                 this.visible = 0;
+                
+                //select(node)
+                //    .selectAll('polygon').remove()
+                //    .exit();
             })
 
    }
@@ -138,7 +174,7 @@ render() {
       .domain([0, dataMax])
       .range([this.props.height - this.margins.bottom, 0])
 
-      return <svg id="test" width={this.props.width} height={this.props.height} >  
+      return <svg id="bar" width={this.props.width} height={this.props.height} >  
         
         <XAxis width={this.props.width} height={this.props.height} tickSize={5} xLabels={this.props.data.schedule.map(d => d.year)} margins={this.margins} />
         <YAxis yScale={hScale} width={this.props.width} height={this.props.height} tickSize={5} 
