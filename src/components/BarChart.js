@@ -34,15 +34,17 @@ class BarChart extends Component {
             var currentYear = new Date().getFullYear() + i;
             var value = Math.round(d,0);
             var pageX = event.pageX;
-            var startX = (event.pageX-75);
-            var startY = (event.pageY - 1395);
-            var minusX = startX - 70;
+
+            var container = document.getElementById('bar');
+            var startX = (event.pageX- (container.offsetLeft+60));
+            var startY = (event.pageY - (container.offsetTop+5));
+            var minusX = startX - 80;
             var minusY = startY - 35;
 
             if (pageX < 250)
             {
-                pageX += 140;
-                minusX += 90;
+                pageX += 150;
+                minusX += 120;
             }
 
             tooltip.html(currentYear + ':   ' + value.toLocaleString())
@@ -52,16 +54,16 @@ class BarChart extends Component {
                         
             var points = startX + ' ' + startY + ', ' + minusX + ' ' + minusY + ', ' + (minusX+30) + ' ' + minusY
             
-            //select(node)
-            //    .selectAll('polygon').remove()
-            //    .exit();
+            select(node)
+                .selectAll('polygon').remove()
+                .exit();
 
-            //select(node)
-            //    .append('polygon')
-            //    .attr('points', points)
-            //    .style('fill','#0a0a0a')
-            //    .style('stroke', '#333')
-            //    .style('stroke-width','1')
+            select(node)
+                .append('polygon')
+                .attr('points', points)
+                .style('fill','#0a0a0a')
+                .style('stroke', '#333')
+                .style('stroke-width','1')
         }
         
         var animateDuration = 1000;
@@ -159,10 +161,11 @@ class BarChart extends Component {
                 
                 select(this).style('fill', '#9bcb52')
                 this.visible = 0;
+
                 
-                //select(node)
-                //    .selectAll('polygon').remove()
-                //    .exit();
+                select(node)
+                    .selectAll('polygon').remove()
+                    .exit();
             })
 
    }
@@ -174,14 +177,14 @@ render() {
       .domain([0, dataMax])
       .range([this.props.height - this.margins.bottom, 0])
 
-      return <svg id="bar" width={this.props.width} height={this.props.height} >  
+      return <div id="bar"><svg width={this.props.width} height={this.props.height} >  
         
         <XAxis width={this.props.width} height={this.props.height} tickSize={5} xLabels={this.props.data.schedule.map(d => d.year)} margins={this.margins} />
         <YAxis yScale={hScale} width={this.props.width} height={this.props.height} tickSize={5} 
         xLabels={this.props.data.schedule.map(d => d.money)} margins={this.margins} />
         <g ref={node => this.node = node} transform={`translate(${this.margins.left}, 0)`} />
         }
-      </svg>
+      </svg></div>
    }
 }
 export default BarChart
