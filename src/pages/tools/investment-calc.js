@@ -57,7 +57,6 @@ const Sup = styled.sup`
 `;
 
 const EstimateDiv = styled.div`
-{
   margin: 5px 2px 5px 25px;
   border-right: 2px solid #d7d9e0;
 
@@ -68,7 +67,6 @@ const EstimateDiv = styled.div`
     border-right: none;    
     margin: 2px 25px;
   }
-}
 `;
 
 const WhatIfContainer = styled.div`
