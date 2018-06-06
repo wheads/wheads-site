@@ -152,7 +152,7 @@ class App extends React.Component {
       barsize: 0
     });
     this.updateDimensions();
-    document.getElementById("divResult").style.opacity = "1"
+    this.divResult.style.opacity = "1"
   }
 
   calculateGrowth(value)
@@ -182,7 +182,7 @@ class App extends React.Component {
     return(
     <ToolContainer >
       <InvestmentCalc onClick={e => this.onClick(e)} />
-      <div id="divResult" style={{opacity: '0.1', display: 'block', background: 'white', float: 'left', width: '100%' }}>
+      <div ref={ (divResult) => this.divResult = divResult} style={{opacity: '0.1', display: 'block', background: 'white', float: 'left', width: '100%' }}>
         <div style={{backgroundImage: `url(${bgImage})`, backgroundRepeat: 'repeat', display: 'block', width: '100%', textAlign: 'center'}}>
           
         <WhatIfContainer >
