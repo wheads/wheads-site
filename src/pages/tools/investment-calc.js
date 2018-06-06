@@ -106,9 +106,11 @@ class App extends React.Component {
   }
 
   updateDimensions() {
-    var bar = document.getElementById("resultContainer")
-    if(bar !== null)
+    var bar = this.resultContainer;
+    if(bar !== undefined)
+    {
       this.setState({width: bar.offsetWidth, height: bar.offsetWidth * 0.75});
+    }
   }
 
   /**
@@ -220,7 +222,7 @@ class App extends React.Component {
           </WhatIfContainer>
           <div id="summary" style={{margin: '20px 2%', background: 'white', boxShadow: '0px 20px 50px 2px #888888'}}>
             <div style={{fontSize: '2.25rem', borderTop: '#000000 solid', marginBottom: '15', paddingTop: '20px', fontFamily: 'Arial,sans-serif', fontWeight: 'bold', lineHeight: '2.25rem'}}>Results</div>
-            <ResultContainer>
+            <ResultContainer >
               <EstimateDiv>
                 <div style={{paddingRight: '5px', fontWeight: '800', fontSize: '1.25rem', textAlign: 'left', padding: '2px 5px 0px 5px'}}>
                   <p style={{marginBottom: '10px',  display: 'inline', paddingRight: '5px'}}><img style={{width: '20px'}} src={retireImage} /></p>
@@ -239,12 +241,12 @@ class App extends React.Component {
                   </p>
                 </div>
               </div>
-            </ResultContainer>
+            </ResultContainer >
             <div style={{textAlign: 'center', margin: '2px 20px 0px 20px', padding: '20px 80px 20px 80px'}}>Is that enough for your retirement?  Find out with our free assessment.</div>
           </div>
         </div>
         <div style={{background: 'white'}}>
-          <div id="resultContainer" style={{margin: '30px 15px'}}>
+          <div ref={ (resultContainer) => this.resultContainer = resultContainer} style={{margin: '30px 15px'}}>
             <BarChart data={this.state.data} width={this.state.width} height={this.state.height} 
               barsize={this.state.barsize} />
           </div>

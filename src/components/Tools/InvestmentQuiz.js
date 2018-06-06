@@ -327,7 +327,6 @@ class InvestmentQuiz extends Component {
         <HeroBanner>
           <HeroBannerTitle>Basic Investing Quiz</HeroBannerTitle>
           
-          {/*<div dangerouslySetInnerHTML={ iframeMe() } />*/}
           <div id="divQuestions">
             <HeroBannerSub style={{borderBottom: '1px solid', paddingBottom: '20px'}}>How will do you know investing?  Take the short quiz below to find out.<br/>Explanations will be provided after completing the quiz.</HeroBannerSub>                        
             {this.state.questions.map(questions =>

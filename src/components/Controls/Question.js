@@ -68,13 +68,7 @@ class Question extends Component {
 
   onOptionChange(e)
   {    
-    //e.preventDefault();
-    //this.props.question.checked = 'true';
     this.props.question.answer = e.currentTarget.value;
-    //if(e.currentTarget.value == this.props.question.expected)
-    //{
-
-    //}
 
     this.props.onChange(this.props.question);
   }
