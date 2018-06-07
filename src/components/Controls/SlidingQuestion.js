@@ -73,8 +73,10 @@ const AnswersIcon = styled.img`
   opacity: 0;
 `;
 
-const Button = styled(Link)`
-  display: inline;
+const ButtonLeft = styled(Link)`
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
   background-color: orange;
   color: #fff;
   text-transform: uppercase;
@@ -90,7 +92,32 @@ const Button = styled(Link)`
   font-size: calc(0.5vw + 1vh + .5vmin);
 
   @media (max-width: 768px) {
-    margin: 15px auto;
+    margin: 10px auto;
+    bottom: 5px;
+  }
+`;
+
+const ButtonRight = styled(Link)`
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: orange;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: calc(0.5vw + 1vh + .5vmin) calc(1.5vw + 2.5vh + .5vmin);
+  border-radius: 25px;
+  margin: 15px;
+  max-width: 350px;
+  min-width: calc(8.5vw + 11.5vh + .5vmin);
+  font-size: calc(0.5vw + 1vh + .5vmin);
+
+  @media (max-width: 768px) {
+    margin: 10px auto;
+    bottom: 5px;\
   }
 `;
 
@@ -141,7 +168,6 @@ class SlidingQuestion extends Component {
     var x = this.props.Location;
     var index = this.props.index;
 
-    console.log('number : ' + this.props.question.number)
     if(this.props.question.number == 10)
     {
       index = 10;
@@ -150,7 +176,6 @@ class SlidingQuestion extends Component {
       return;
     }
 
-    console.log('why?')
     if(movement == "back")
     {
       x += parseInt(this.props.Width);
@@ -201,9 +226,9 @@ class SlidingQuestion extends Component {
                 </DetailedAnswer>
               </div>
               <div style={{display: 'inline'}}>
-              <Button id="back" style={{position: 'absolute', bottom: '15px', left: '15px', display: this.props.Back !== 'true' ? 'none' : 'block' }} onClick={(e) => this.onClick(e, "back")}>Back</Button>
-              <Button id={"next" + question.number} style={{position: 'absolute', bottom: '15px', right: '15px', backgroundColor: '#cccccc', pointerEvents: 'none', display: this.props.Next !== 'true' ? 'none' : 'block'}} onClick={(e) => this.onClick(e, "forward")}>
-                {(question.number==10)?"Show Answers":"Next"}</Button>
+              <ButtonLeft id="back" style={{display: this.props.Back !== 'true' ? 'none' : 'block' }} onClick={(e) => this.onClick(e, "back")}>Back</ButtonLeft>
+              <ButtonRight id={"next" + question.number} style={{ backgroundColor: '#cccccc', pointerEvents: 'none', display: this.props.Next !== 'true' ? 'none' : 'block'}} onClick={(e) => this.onClick(e, "forward")}>
+                {(question.number==10)?"Show Answers":"Next"}</ButtonRight>
               </div>
             </div>
         </Container>

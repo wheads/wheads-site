@@ -14,7 +14,7 @@ const HeroBanner = styled.div`
   background-color: #dff9fb;
 
   @media (max-width: 768px) {
-    padding: 20px;
+    padding: 15px;
     text-align: center;
   }
 `;
@@ -29,22 +29,24 @@ const HeroBannerTitle = styled.h2`
   margin-bottom: 16px;
   padding-bottom: 0;
   border-bottom: none;
-  font-size: 52px;
+  font-size: calc(3.5vw + 1.5vh + .5vmin);
   color: #000;
 
   @media (max-width: 768px) {
-    font-size: 40px;
+    font-size: calc(2.5vw + 2.5vh + .5vmin);
   }
 `;
 
 const HeroBannerSub = styled.h1`
-  font-size: 1.65rem;
+  font-size: calc(1.5vw + 1.5vh + .5vmin);
   color: #707070;
   margin-bottom: 20px;
   font-weight: 400;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: calc(1.5vw + 1.5vh + .5vmin);
+    margin-left: 5px;
+    margin-right: 5px;
   }
 `;
 
@@ -369,9 +371,9 @@ class InvestmentQuiz2 extends Component {
           index: xIndex
       });
     
-      var containerDiv = select('#divContainer');
-      containerDiv
-          .transition()
+      //var containerDiv = select('#divContainer');
+      //containerDiv
+      select('#divContainer').transition()
           .style("left", function() { return xLocation +  "px"; })
           .duration(500)
           .delay(0);
