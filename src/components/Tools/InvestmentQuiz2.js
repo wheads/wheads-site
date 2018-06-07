@@ -8,6 +8,7 @@ import crossImg from './cross.png';
 import Question from '../Controls/Question';
 import SlidingQuestion from '../Controls/SlidingQuestion';
 import { select } from 'd3-selection'
+import { transition } from 'd3-transition'
 
 const HeroBanner = styled.div`
   padding: 50px;
@@ -373,10 +374,12 @@ class InvestmentQuiz2 extends Component {
     
       //var containerDiv = select('#divContainer');
       //containerDiv
-      select('#divContainer').transition()
+      transition(
+      select('#divContainer')
+          .transition()
           .style("left", function() { return xLocation +  "px"; })
           .duration(500)
-          .delay(0);
+          .delay(0));
     }
   }
 
