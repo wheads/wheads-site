@@ -12,6 +12,20 @@ const Container = styled.div`
   position: relative;
 `;
 
+const ContainerSub = styled.div`
+  margin: 0px;
+  padding: 0px 30px;
+  margin-bottom: calc(4.5vw + 4.5vh + .5vmin);
+  height: 100%;
+  
+  @media (max-width: 768px) {
+    margin: 0px;
+    padding: 0px 10px;
+    margin-bottom: calc(2.5vw + 2.5vh + 2vmin);
+    height: 100%;
+  }
+`;
+
 const TextDisplay1 = styled.div`
   margin: 0px;
   display: block;
@@ -92,7 +106,8 @@ const ButtonLeft = styled(Link)`
   font-size: calc(0.5vw + 1vh + .5vmin);
 
   @media (max-width: 768px) {
-    margin: 10px auto;
+    margin: 5px 5px;
+    left: 5px;
     bottom: 5px;
   }
 `;
@@ -116,8 +131,9 @@ const ButtonRight = styled(Link)`
   font-size: calc(0.5vw + 1vh + .5vmin);
 
   @media (max-width: 768px) {
-    margin: 10px auto;
-    bottom: 5px;\
+    margin: 5px 5px;
+    right: 5px;
+    bottom: 5px;
   }
 `;
 
@@ -168,11 +184,12 @@ class SlidingQuestion extends Component {
     var x = this.props.Location;
     var index = this.props.index;
 
-    if(this.props.question.number == 10)
+    if(this.props.question.number == 10 && movement !== "back")
     {
       index = 10;
       x = 0;
       this.props.onSlidingClick(x, index);
+      select("#next10").style('display','none')
       return;
     }
 
@@ -196,9 +213,9 @@ class SlidingQuestion extends Component {
     return (
         <Container style={{display:'table-cell'}}>            
 
-            <div style={{width: this.props.Width, padding: '0px 30px', marginBottom: 'calc(4.5vw + 4.5vh + .5vmin)'}}>
+            <ContainerSub style={{width: this.props.Width}}>
               <div style={this.props.style}>
-                <QuestionDiv>{question.number}.&nbsp;{question.text}.
+                <QuestionDiv>{question.number}.&nbsp;{question.text}
                 </QuestionDiv>
                 <AnswerChoice>
                 {question.options.map((options, index) =>
@@ -230,7 +247,7 @@ class SlidingQuestion extends Component {
               <ButtonRight id={"next" + question.number} style={{ backgroundColor: '#cccccc', pointerEvents: 'none', display: this.props.Next !== 'true' ? 'none' : 'block'}} onClick={(e) => this.onClick(e, "forward")}>
                 {(question.number==10)?"Show Answers":"Next"}</ButtonRight>
               </div>
-            </div>
+            </ContainerSub>
         </Container>
     );
   }
