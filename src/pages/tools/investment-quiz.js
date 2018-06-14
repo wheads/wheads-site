@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
 import BarChart from '../../components/BarChart';
-import InvestmentQuiz from '../../components/Tools/InvestmentQuiz';
+import InvestmentQuiz from '../../components/Tools/InvestmentQuiz2';
 
 const ToolContainer = styled.div`
   display: block;

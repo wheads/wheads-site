@@ -48,21 +48,35 @@ const TextDisplay2 = styled.div`
 
 const QuestionDiv = styled.div`
   margin: 1em 0.01em 0.5em 0.01em;
-  font-size: calc(0.5vw + 1vh + .5vmin);
+  font-size: calc(0.75vw + 0.75vh + .5vmin);
   color: #3a3e4b;
   text-align: left;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: calc(1vw + 1vh + .5vmin);
+  }
 `;
 
 const Radio = styled.input`
   height: calc(0.5vw + 0.5vh + .5vmin);
   width: calc(0.5vw + 0.5vh + .5vmin);
+
+  @media (max-width: 768px) {
+    height: calc(0.75vw + 0.75vh + .5vmin);
+    width: calc(0.75vw + 0.75vh + .5vmin);
+  }
 `;
 
 const AnswerChoice = styled.div`
   margin: 0px;
-  font-size: calc(0.5vw + 1vh + .5vmin);
+  font-size: calc(0.75vw + 0.75vh + .5vmin);
   color: #3a3e4b;
   text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: calc(1vw + 1vh + .5vmin);
+  }
 `;
 
 const DetailedAnswer = styled.div`
@@ -73,7 +87,11 @@ const DetailedAnswer = styled.div`
   xcolor: #004086;
   display: block;
   text-align: left;
-  opacity: 0;
+  display: none;
+
+  @media (max-width: 768px) {
+    font-size: calc(1vw + 1vh + .5vmin);
+  }
 `;
 
 const DetailedAnswerSub = styled.div`
@@ -85,56 +103,6 @@ const AnswersIcon = styled.img`
   width: calc(0.5vw + 0.5vh + .5vmin);
   height: calc(0.5vw + 0.5vh + .5vmin);
   opacity: 0;
-`;
-
-const ButtonLeft = styled(Link)`
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  background-color: orange;
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 1px;
-  padding: calc(0.5vw + 1vh + .5vmin) calc(1.5vw + 2.5vh + .5vmin);
-  border-radius: 25px;
-  margin: 15px;
-  max-width: 350px;
-  min-width: calc(8.5vw + 11.5vh + .5vmin);
-  font-size: calc(0.5vw + 1vh + .5vmin);
-
-  @media (max-width: 768px) {
-    margin: 5px 5px;
-    left: 5px;
-    bottom: 5px;
-  }
-`;
-
-const ButtonRight = styled(Link)`
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background-color: orange;
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 1px;
-  padding: calc(0.5vw + 1vh + .5vmin) calc(1.5vw + 2.5vh + .5vmin);
-  border-radius: 25px;
-  margin: 15px;
-  max-width: 350px;
-  min-width: calc(8.5vw + 11.5vh + .5vmin);
-  font-size: calc(0.5vw + 1vh + .5vmin);
-
-  @media (max-width: 768px) {
-    margin: 5px 5px;
-    right: 5px;
-    bottom: 5px;
-  }
 `;
 
 class SlidingQuestion extends Component {   
@@ -178,42 +146,14 @@ class SlidingQuestion extends Component {
     
   }
 
-  onClick(e, movement)
-  {    
-    e.preventDefault();
-    var x = this.props.Location;
-    var index = this.props.index;
-
-    if(this.props.question.number == 10 && movement !== "back")
-    {
-      index = 10;
-      x = 0;
-      this.props.onSlidingClick(x, index);
-      select("#next10").style('display','none')
-      return;
-    }
-
-    if(movement == "back")
-    {
-      x += parseInt(this.props.Width);
-      index--;
-    }
-    else
-    {
-      x -= parseInt(this.props.Width);
-      index++;
-    }
-    this.props.onSlidingClick(x, index)
-  }
-
 
   render() {
-    const {question, Width} = this.props
+    const {question, Width, Height} = this.props
 
     return (
         <Container style={{display:'table-cell'}}>            
 
-            <ContainerSub style={{width: this.props.Width}}>
+            <ContainerSub style={{width: this.props.Width, height: this.props.Height}}>
               <div style={this.props.style}>
                 <QuestionDiv>{question.number}.&nbsp;{question.text}
                 </QuestionDiv>
@@ -241,11 +181,6 @@ class SlidingQuestion extends Component {
                     <DetailedAnswerSub style={{display:'inline'}}>{question.detailAnswer3}</DetailedAnswerSub>
                     <strong><a style={{paddingLeft: '10px'}} href={question.link}>{question.linkText}</a></strong>
                 </DetailedAnswer>
-              </div>
-              <div style={{display: 'inline'}}>
-              <ButtonLeft id="back" style={{display: this.props.Back !== 'true' ? 'none' : 'block' }} onClick={(e) => this.onClick(e, "back")}>Back</ButtonLeft>
-              <ButtonRight id={"next" + question.number} style={{ backgroundColor: '#cccccc', pointerEvents: 'none', display: this.props.Next !== 'true' ? 'none' : 'block'}} onClick={(e) => this.onClick(e, "forward")}>
-                {(question.number==10)?"Show Answers":"Next"}</ButtonRight>
               </div>
             </ContainerSub>
         </Container>
