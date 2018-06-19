@@ -123,6 +123,14 @@ class SlidingQuestion extends Component {
     
   }
 
+  onKeyDown(e)
+  {
+    var event = e;
+
+    if(e.keyCode == 9)
+      e.preventDefault();
+  }
+
   onOptionChange(e)
   {    
     //e.preventDefault();
@@ -166,6 +174,7 @@ class SlidingQuestion extends Component {
                       id={"rd" + question.number + options.value}
                       name={question.name+question.number}
                       value={options.value}
+                      onKeyDown={(e) => this.onKeyDown(e)}
                       checked={this.state["option" + index]}
                       onChange={(e) => this.onOptionChange(e)} 
                     />

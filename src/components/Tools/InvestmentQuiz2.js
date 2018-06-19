@@ -87,8 +87,8 @@ const Button = styled(Link)`
   letter-spacing: 1px;
   padding: 15px 20px;
   border-radius: 3px;
-  min-width: 120px;
-  max-width: 230px;
+  min-width: 200px;
+  max-width: 280px;
   font-size: calc(0.75vw + 0.75vh + .5vmin);
 
   @media (max-width: 768px) {    
@@ -366,9 +366,13 @@ class InvestmentQuiz2 extends Component {
 
   updateDimensions() {
     var container = this.divContainer;
+    var mainContainer = this.divMainContainer;
+    if(mainContainer !== undefined)
+    {
+      this.divMainContainer.style.height = (window.innerHeight / 2) + "px";
+    }
     if(container !== undefined)
     {
-      
       var containerDiv = select('#divContainer');
       
       var multiplier = this.state.index;
@@ -417,29 +421,11 @@ class InvestmentQuiz2 extends Component {
     return;
   }
 
-  onSlidingClick(xLocation, xIndex)
-  { 
-    if(xIndex == 10)
-    {
-      this.ShowAnswers();
-      return;
-      // show answers
-    }
-    else
-    {
-      this.setState({
-          containerX: xLocation,
-          index: xIndex
-      });
-    }
-  }
-
   ReviewQuiz()
   {
     select("#divReviewQuiz").style('display','none');
     this.showButton("#btnNext");
     this.setState({index: 0, status: 'done'});
-    console.log(select("#divContainer").selectAll("input").attr("disabled","true"));
   }
 
   StartQuiz()
@@ -519,6 +505,24 @@ class InvestmentQuiz2 extends Component {
       });
     }
 
+  }
+
+  onKeyDown(e)
+  {
+    
+    if(e.keyCode == 39 && this.state.questions[this.state.index].answer !== "")
+    {
+      this.MoveQuestions(e, "next");
+    }
+    else if(e.keyCode == 37 && this.state.index !== 0)
+    {
+      this.MoveQuestions(e, "back");
+    }
+    else if((e.keyCode == 40 || e.keyCode == 38) && this.state.questions[this.state.index].answer == "")
+    {
+      this.disableButton("#btnNext");
+    }
+    
   }
 
   ShowAnswers(e)
@@ -627,9 +631,6 @@ class InvestmentQuiz2 extends Component {
       });
     }
 
-    //console.log(this.btnResults);
-    //this.btnResults.style.display = 'none';
-    //this.divResults.style.display = 'block';
   }
 
   render() {
@@ -646,13 +647,13 @@ class InvestmentQuiz2 extends Component {
     return (
         <HeroBanner>
           <HeroBannerTitle>Basic Investing Quiz</HeroBannerTitle>          
-          <div id="Container" style={{width: '100%', height: (window.innerHeight/2), margin: '0px', display: 'block', backgroundColor: 'white', boxShadow: 'darkslategrey 10px 10px 50px'}}>
+          <div id="Container" ref={ (divMainContainer) => this.divMainContainer = divMainContainer} style={{width: '100%', margin: '0px', display: 'block', backgroundColor: 'white', boxShadow: 'darkslategrey 10px 10px 50px'}}>
             <div style={{position: 'relative', width: '100%', height: '100%'}}>
             <div style={{display: 'block', width: '100%', height: '80%', backgroundColor: 'white', overflowY: 'auto', overflowX: 'hidden'}}>
-              <div id="divContainer" ref={ (divContainer) => this.divContainer = divContainer} style={{position: 'relative', display: 'block'}}>
+              <div id="divContainer" ref={ (divContainer) => this.divContainer = divContainer} style={{position: 'relative', display: 'block'}} onKeyDown={(e) => this.onKeyDown(e)}>
                 {this.state.questions.map((question, index) =>
                   <SlidingQuestion ref={ (divSliding) => this.divSliding = divSliding} question={question} style={{display: 'block'}} index={index} onOptionChange={(e) => this.onOptionChange(e)}
-                    Width={this.state.width} Next={(index<(this.state.questions.length-1))?"true":"false"} Back={(index>0)?"true":"false"} Location={this.state.containerX} onSlidingClick={this.onSlidingClick.bind(this)} />
+                    Width={this.state.width} Next={(index<(this.state.questions.length-1))?"true":"false"} Back={(index>0)?"true":"false"} Location={this.state.containerX} />
                   )}
                 
                 <div id="divStartInfo" style={{display: 'table-cell', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
