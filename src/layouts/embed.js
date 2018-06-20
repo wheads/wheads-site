@@ -1,7 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
-import HeaderNoMenuSection from "../components/HeaderNoMenuSection.js";
-import FooterSection from "../components/FooterSection.js";
+import styled from "styled-components";
+
+const EmbedFooter = styled.div`
+  text-align: center;
+  padding-top: 30px;
+`;
 
 export default ({ data, children }) => (
   <div>
@@ -10,18 +14,11 @@ export default ({ data, children }) => (
       <meta name="description" content={data.site.siteMetadata.description} />
     </Helmet>
 
-    <HeaderNoMenuSection />
-
     {children()}
     
-    <FooterSection 
-      footerSiteTitle={data.site.siteMetadata.title} 
-      menuLink1="/get-started"
-      menuLink2="/classes"
-      menuLink3="/events"
-      menuLink4="/tools"
-      menuLink5="/contact"
-    />
+    <EmbedFooter>
+      <p><a href="https://www.everypeso.com">Powered by EveryPeso.com</a></p>
+    </EmbedFooter>
   </div>
 );
 
