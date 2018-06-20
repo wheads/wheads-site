@@ -15,3 +15,5 @@ exports.onCreatePage = async ({ page, boundActionCreators }) => {
     resolve();
   });
 };
+
+createRedirect({ fromPath: "https://ep-live.netlify.com/*", toPath: "https://www.everypeso.com/:splat", isPermanent: true });
