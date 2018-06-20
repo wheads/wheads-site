@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Wealthyheads`,
+    title: `EveryPeso.com`,
     description: `Learn to budget, beat debt, &amp; build a legacy`
   },
   plugins: [    
