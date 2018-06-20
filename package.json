@@ -1,6 +1,6 @@
 {
   "name": "wheads-gatsby",
-  "description": "Gatsby site for Wealthy Heads",
+  "description": "Gatsby site for EveryPeso.com",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
