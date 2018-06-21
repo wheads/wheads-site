@@ -365,6 +365,7 @@ class InvestmentQuiz2 extends Component {
   }  
 
   updateDimensions() {
+    console.log('resize');
     var container = this.divContainer;
     var mainContainer = this.divMainContainer;
     if(mainContainer !== undefined)
