@@ -109,6 +109,7 @@ const TableNeeds = styled.table`
   text-align: center;
   font-size: 1em;
   cursor: pointer;
+  pointer-events: auto;
 
   @media (max-width: 768px) {
   font-size: 1.5em;
@@ -153,6 +154,7 @@ const BucketsContainer = styled.div`
   text-align: center;
   margin: 5px;
   cursor: pointer;
+  pointer-events: auto;
 
   @media (max-width: 768px) {
     border-radius: 10px;
