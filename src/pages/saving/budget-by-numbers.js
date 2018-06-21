@@ -294,6 +294,8 @@ class App extends React.Component {
 
   ShowInfo(e, category, index)
   {
+    e.preventDefault();
+
     select("#tooltip").html(this.state[category][index].text);
     var tooltip = document.getElementById('tooltip');
     var x = e.pageX;
@@ -313,8 +315,10 @@ class App extends React.Component {
     this.info = "show";
   }
 
-  ShowNeedsBreakdown()
+  ShowNeedsBreakdown(e)
   {
+    e.preventDefault();
+
     this.setState({
       tableDesc: 'Needs',
       data:  [  
@@ -327,8 +331,10 @@ class App extends React.Component {
     });
   }
 
-  ShowWantsBreakdown()
+  ShowWantsBreakdown(e)
   {
+    e.preventDefault();
+
     this.setState({
       tableDesc: 'Wants',
       data:  [
@@ -340,8 +346,10 @@ class App extends React.Component {
     });
   }
 
-  ShowSavingsBreakdown()
+  ShowSavingsBreakdown(e)
   {
+    e.preventDefault();
+
     this.setState({
       tableDesc: 'Savings',
       data:  [
