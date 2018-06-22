@@ -52,7 +52,7 @@ const StepTitleContainer = styled.div`
   } 
 
   @media (max-width: 400px) {
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 15% 85%;
     margin-bottom: 5px;
   } 
 `;
