@@ -393,9 +393,9 @@ class App extends React.Component {
     this.hideInfo();
     window.addEventListener("resize", this.hideInfo.bind(this));
     
-    select("#imgNeeds").on('click', (e) => this.ShowNeedsBreakdown(e));
-    select("#imgWants").on('click', (e) => this.ShowWantsBreakdown(e));
-    select("#imgSavings").on('click', (e) => this.ShowSavingsBreakdown(e));
+    select("#imgNeeds").on('click touchstart', (e) => this.ShowNeedsBreakdown(e));
+    select("#imgWants").on('click touchstart', (e) => this.ShowWantsBreakdown(e));
+    select("#imgSavings").on('click touchstart', (e) => this.ShowSavingsBreakdown(e));
   }
 
   /**
