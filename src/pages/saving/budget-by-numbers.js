@@ -4,10 +4,14 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
-import bucket1 from './bucket1.png';
-import bucket2 from './bucket2.png';
-import bucket3 from './bucket3.png';
+import bucket1 from './Bucket Needs.png';
+import bucket2 from './Bucket Wants.png';
+import bucket3 from './Bucket Savings.png';
 
+//DARK GREEN - 146414
+//LIGHT GREEN - 9AE48B
+//BLUE - 00B9FF
+//BEIGE - FFFBCE
 
 const Tooltip = styled.div`
   position: absolute;
@@ -62,7 +66,7 @@ const Line1 = styled.div`
 
 const Header1 = styled.h1`
   font-size: 4em;
-  color: green;
+  color: #146414;
   margin-bottom: 5px;
 
   @media (max-width: 768px) {
@@ -74,7 +78,7 @@ const Header2 = styled.h2`
   font-size: 3em;
   font-weight: normal;
   font-family: sans-serif;
-  color: cadetblue;
+  color: #00B9FFAA;
   letter-spacing: 8px;
   margin-bottom: 5px;
 
@@ -108,7 +112,6 @@ const LeftHeader = styled.h2`
 const TableNeeds = styled.table`
   text-align: center;
   font-size: 1em;
-  cursor: pointer;
   pointer-events: auto;
 
   @media (max-width: 768px) {
@@ -117,11 +120,13 @@ const TableNeeds = styled.table`
 `;
 
 const TrAlt = styled.tr`
-  background-color: floralwhite;
+  background-color: #FFFBCE0F;
+  cursor: pointer;
 `;
 
 const TrMain = styled.tr`
-  background-color: gainsboro;
+  background-color: #00B9FF0F;
+  cursor: pointer;
 `;
 
 const TdDesc = styled.td`
@@ -149,8 +154,8 @@ const Line2 = styled.div`
 
 const BucketsContainer = styled.div`
   border-radius: 25px;
-  background-color: #f5f5f5;
-  border: 2px solid #73AD21;
+  //background-color: #f5f5f5;
+  border: 2px solid #146414;
   text-align: center;
   margin: 5px;
   cursor: pointer;
@@ -163,15 +168,17 @@ const BucketsContainer = styled.div`
 
 const Buckets = styled.img`
   width: 250px;
-  margin: 0px;
+  margin: 10px 0px 10px 0px;
   vertical-align: middle;
 
   @media (max-width: 768px) {
     width: 170px;
+    margin: 8px 0px 8px 0px;
   }
 
   @media (max-width: 400px) {
     width: 100px;
+    margin: 5px 0px 5px 0px;
   }
 `
 
@@ -283,21 +290,9 @@ class App extends React.Component {
     };
   } 
 
-
-  hideInfo(e)
-  {
-    if(this.info !== "show")
-    {
-      select("#tooltip").style('opacity','0');
-    }
-
-    this.info = "";
-  }
-
   ShowInfo(e, category, index)
   {
     e.preventDefault();
-
     select("#tooltip").html(this.state[category][index].text);
     var tooltip = document.getElementById('tooltip');
     var x = e.pageX;
@@ -317,9 +312,32 @@ class App extends React.Component {
     this.info = "show";
   }
 
+  ShowInfoMouseOver(e, category, index)
+  {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+      this.ShowInfo(e, category, index);
+  }
+
+  ShowHoverNeedsBreakdown(e)
+  {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+      this.ShowNeedsBreakdown(e);
+  }
+
+  ShowHoverWantsBreakdown(e)
+  {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+      this.ShowWantsBreakdown(e);
+  }
+
+  ShowHoverSavingsBreakdown(e)
+  {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+      this.ShowSavingsBreakdown(e);
+  }
+
   ShowNeedsBreakdown(e)
   {
-    e.preventDefault();
 
     this.setState({
       tableDesc: 'Needs',
@@ -335,7 +353,6 @@ class App extends React.Component {
 
   ShowWantsBreakdown(e)
   {
-    e.preventDefault();
 
     this.setState({
       tableDesc: 'Wants',
@@ -350,8 +367,8 @@ class App extends React.Component {
 
   ShowSavingsBreakdown(e)
   {
-    e.preventDefault();
-
+    //e.preventDefault();
+    alert('kapoy');
     this.setState({
       tableDesc: 'Savings',
       data:  [
@@ -374,8 +391,11 @@ class App extends React.Component {
    */
   componentDidMount() {
     this.hideInfo();
-    console.log('resize');
     window.addEventListener("resize", this.hideInfo.bind(this));
+    
+    select("#imgNeeds").on('click touchstart', (e) => this.ShowNeedsBreakdown(e));
+    select("#imgWants").on('click touchstart', (e) => this.ShowWantsBreakdown(e));
+    select("#imgSavings").on('click touchstart', (e) => this.ShowSavingsBreakdown(e));
   }
 
   /**
@@ -383,9 +403,19 @@ class App extends React.Component {
    */
   componentWillUnmount() {
     this.hideInfo()
-    console.log('resize');
     window.removeEventListener("resize", this.hideInfo.bind(this));
   }  
+
+  hideInfo(e)
+  {
+
+    if(this.info !== "show")
+    {
+      select("#tooltip").style('opacity','0');
+    }
+
+    this.info = "";
+  }
 
   render(){
     
@@ -406,15 +436,15 @@ class App extends React.Component {
                   {
                     if((index % 2) == 0)
                     {
-                      return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)}>
-                        <TdDesc >{data.desc}</TdDesc>
+                      return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>
+                        <TdDesc>{data.desc}</TdDesc>
                         <TdPercent>{data.percent}</TdPercent>
                       </TrMain>)
                     }
                     else
                     {
-                      return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)}>
-                        <TdDesc onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)}>{data.desc}</TdDesc>
+                      return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>
+                        <TdDesc>{data.desc}</TdDesc>
                         <TdPercent>{data.percent}</TdPercent>
                       </TrAlt>)
                     }
@@ -427,42 +457,35 @@ class App extends React.Component {
           <BucketsContainer>
             <ClickHint>* Click on each bucket to have a closer look.</ClickHint>
             <div style={{display: 'grid', gridTemplateColumns: 'auto auto auto'}}>
-              <div style={{position: 'relative'}} 
-                onClick={(e) => this.ShowNeedsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets src={bucket1} />
-                <BucketText>NEEDS</BucketText>
-                <BucketTextPercent>50%</BucketTextPercent>
+                <Buckets id="imgNeeds" src={bucket1} />
               </div>
-              <div style={{position: 'relative'}}
-                onClick={(e) => this.ShowWantsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets src={bucket2} />
-                <BucketText>WANTS</BucketText>
-                <BucketTextPercent>30%</BucketTextPercent>
+                <Buckets id="imgWants" src={bucket2} />
               </div>
-              <div style={{position: 'relative'}} 
-                onClick={(e) => this.ShowSavingsBreakdown(e)} >
+              <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets src={bucket3}/>
-                <BucketText>SAVINGS & INVESTMENTS</BucketText>
-                <BucketTextPercent>20%</BucketTextPercent>
+                <Buckets id="imgSavings" src={bucket3} 
+                onTouchEnd={(e) => this.ShowSavingsBreakdown(e)}/>
               </div>
             </div>
           </BucketsContainer>
           <TipSection>
             <TipContainer>
-              <TipHeader style={{backgroundColor:'#add8e6'}}>--TIP--</TipHeader>
-              <TipContent style={{backgroundColor:'#add8e68c'}}>Figure out your budget based on take-home pay, not gross pay</TipContent>
+              <TipHeader style={{backgroundColor:'#00B9FF'}}>--TIP--</TipHeader>
+              <TipContent style={{backgroundColor:'#00B9FF8c'}}>Figure out your budget based on take-home pay, not gross pay</TipContent>
             </TipContainer>
             <TipContainer>
-              <TipHeader style={{backgroundColor:'#ffa500'}}>--TIP--</TipHeader>
-              <TipContent style={{backgroundColor:'#ffa5008c'}}>If your "Needs" exceeds 50%, steal from your "Wants" bucket.</TipContent>
+              <TipHeader style={{backgroundColor:'#FFFBCE'}}>--TIP--</TipHeader>
+              <TipContent style={{backgroundColor:'#FFFBCE8c'}}>If your "Needs" exceeds 50%, steal from your "Wants" bucket.</TipContent>
             </TipContainer>
           </TipSection>
       </Line2>      
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >abc
       </Tooltip>
+      <div style={{cursor:'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}>abcdefasdfasdfasdf</div>
     </ToolContainer>);
   }
 }
