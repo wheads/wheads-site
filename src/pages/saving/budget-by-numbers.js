@@ -290,17 +290,6 @@ class App extends React.Component {
     };
   } 
 
-
-  hideInfo(e)
-  {
-    if(this.info !== "show")
-    {
-      select("#tooltip").style('opacity','0');
-    }
-
-    this.info = "";
-  }
-
   ShowInfo(e, category, index)
   {
     e.preventDefault();
@@ -349,9 +338,6 @@ class App extends React.Component {
 
   ShowNeedsBreakdown(e)
   {
-    alert('ngeks');
-    e.preventDefault();
-    alert('ngeks 2');
 
     this.setState({
       tableDesc: 'Needs',
@@ -367,7 +353,6 @@ class App extends React.Component {
 
   ShowWantsBreakdown(e)
   {
-    e.preventDefault();
 
     this.setState({
       tableDesc: 'Wants',
@@ -382,7 +367,7 @@ class App extends React.Component {
 
   ShowSavingsBreakdown(e)
   {
-    e.preventDefault();
+    //e.preventDefault();
 
     this.setState({
       tableDesc: 'Savings',
@@ -406,8 +391,11 @@ class App extends React.Component {
    */
   componentDidMount() {
     this.hideInfo();
-    console.log('resize');
     window.addEventListener("resize", this.hideInfo.bind(this));
+    
+    select("#imgNeeds").on('click', (e) => this.ShowNeedsBreakdown(e));
+    select("#imgWants").on('click', (e) => this.ShowWantsBreakdown(e));
+    select("#imgSavings").on('click', (e) => this.ShowSavingsBreakdown(e));
   }
 
   /**
@@ -415,9 +403,19 @@ class App extends React.Component {
    */
   componentWillUnmount() {
     this.hideInfo()
-    console.log('resize');
     window.removeEventListener("resize", this.hideInfo.bind(this));
   }  
+
+  hideInfo(e)
+  {
+
+    if(this.info !== "show")
+    {
+      select("#tooltip").style('opacity','0');
+    }
+
+    this.info = "";
+  }
 
   render(){
     
@@ -459,29 +457,17 @@ class App extends React.Component {
           <BucketsContainer>
             <ClickHint>* Click on each bucket to have a closer look.</ClickHint>
             <div style={{display: 'grid', gridTemplateColumns: 'auto auto auto'}}>
-              <div style={{position: 'relative', cursor: 'pointer'}} 
-                onClick={(e) => this.ShowNeedsBreakdown(e)}
-                onMouseOver={(e) => this.ShowHoverNeedsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets src={bucket1} />
-                {/*<BucketText>NEEDS</BucketText>
-                <BucketTextPercent>50%</BucketTextPercent>*/}
+                <Buckets id="imgNeeds" src={bucket1} />
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets src={bucket2} 
-                onClick={(e) => this.ShowWantsBreakdown(e)}
-                onMouseOver={(e) => this.ShowHoverWantsBreakdown(e)}/>
-                {/*<BucketText>WANTS</BucketText>
-                <BucketTextPercent>30%</BucketTextPercent>*/}
+                <Buckets id="imgWants" src={bucket2} />
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets src={bucket3} 
-                onClick={(e) => this.ShowSavingsBreakdown(e)}
-                onMouseOver={(e) => this.ShowHoverSavingsBreakdown(e)}/>
-                {/*<BucketText>SAVINGS & INVESTMENTS</BucketText>
-                <BucketTextPercent>20%</BucketTextPercent>*/}
+                <Buckets id="imgSavings" src={bucket3} />}
               </div>
             </div>
           </BucketsContainer>
