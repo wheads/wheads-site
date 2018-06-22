@@ -467,7 +467,8 @@ class App extends React.Component {
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgSavings" src={bucket3} />}
+                <Buckets id="imgSavings" src={bucket3} 
+                ontouchend={(e) => this.ShowSavingsBreakdown(e)}/>}
               </div>
             </div>
           </BucketsContainer>
