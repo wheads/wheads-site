@@ -349,7 +349,9 @@ class App extends React.Component {
 
   ShowNeedsBreakdown(e)
   {
+    alert('ngeks');
     e.preventDefault();
+    alert('ngeks 2');
 
     this.setState({
       tableDesc: 'Needs',
