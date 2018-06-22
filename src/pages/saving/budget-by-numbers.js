@@ -368,7 +368,7 @@ class App extends React.Component {
   ShowSavingsBreakdown(e)
   {
     //e.preventDefault();
-
+    alert('kapoy');
     this.setState({
       tableDesc: 'Savings',
       data:  [
@@ -485,7 +485,7 @@ class App extends React.Component {
       </Line2>      
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >abc
       </Tooltip>
-      <div onClick={(e) => this.ShowSavingsBreakdown(e)}>abcdefasdfasdfasdf</div>
+      <div style={{cursor:'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}>abcdefasdfasdfasdf</div>
     </ToolContainer>);
   }
 }
