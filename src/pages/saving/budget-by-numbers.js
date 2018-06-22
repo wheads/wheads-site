@@ -468,7 +468,7 @@ class App extends React.Component {
               <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgSavings" src={bucket3} 
-                ontouchend={(e) => this.ShowSavingsBreakdown(e)}/>}
+                onTouchEnd={(e) => this.ShowSavingsBreakdown(e)}/>}
               </div>
             </div>
           </BucketsContainer>
@@ -485,7 +485,7 @@ class App extends React.Component {
       </Line2>      
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >abc
       </Tooltip>
-      <div onClick={(e) => function(e){alert('ehem')}}>abcdefasdfasdfasdf</div>
+      <div onClick={(e) => this.ShowSavingsBreakdown(e)}>abcdefasdfasdfasdf</div>
     </ToolContainer>);
   }
 }
