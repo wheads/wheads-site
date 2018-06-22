@@ -485,6 +485,7 @@ class App extends React.Component {
       </Line2>      
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >abc
       </Tooltip>
+      <div onClick={(e) => function(e){alert('ehem')}}>abcdefasdfasdfasdf</div>
     </ToolContainer>);
   }
 }
