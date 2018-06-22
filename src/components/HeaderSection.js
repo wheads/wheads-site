@@ -12,7 +12,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   //background-color: #00548C;
-  background-color: #AC3B61;
+  background-color: #9AE48B;
 `;
 
 const Logo = styled.img`
@@ -21,23 +21,25 @@ const Logo = styled.img`
 `;
 
 const MainNav = styled.div`
+  background-color: #146414;
+  color: #FFFBCE;
   display: flex;
   padding: 16px 0;
-  margin-left: 50px;
-
+  padding-left: 50px;
+  //margin-left: 50px;
   @media (max-width: 768px) {
     padding: 10px 20px;
     margin: 0;
     flex-wrap: wrap;
     justify-content: center;
-  }
+  }  
 `;
 
 const MainNavLink = styled(Link)`
   padding-right: 50px;
-  font-weight: 400;
+  font-weight: 250;
   font-size: 20px;
-  color: #0073b9;
+  color: #FFFBCE;
   text-decoration: none;
 
   @media (max-width: 768px) {
@@ -50,8 +52,8 @@ const MainNavLink = styled(Link)`
 const BigButton = styled(Link)`
   display: block;
   //background-color: orange;
-  background-color: #123C69;
-  color: #fff;
+  background-color: #fffbce;
+  color: #146414;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -69,11 +71,11 @@ class HeaderSection extends Component {
     return (
       <div>
         <Header>
-          <Link to="/" style={{ textDecoration: `none`, color: `#0d56a0` }}>
+          <Link to="/" style={{ textDecoration: `none`}}>
             <Logo src={logo} alt={imgAltTitle} />
           </Link>
           <HideOnMobile>
-            <BigButton to="/get-started">Get Started</BigButton>
+            <BigButton to="/get-started">Sign Up</BigButton>
           </HideOnMobile>
         </Header>
         <MainNav>

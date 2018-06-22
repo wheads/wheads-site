@@ -16,7 +16,7 @@ const BannerContainer = styled.div`
 
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #dff9fb;
+  background-color: #FFFBCE;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -26,6 +26,7 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
+  color: #146414;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -34,7 +35,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 52px;
-  color: #000;
+  color: #00b9ff;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -53,8 +54,8 @@ const HeroBannerSub = styled.h1`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: orange;
-  color: #fff;
+  background-color: #00b9ff;
+  color: #FFFBCE;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -74,11 +75,11 @@ export default ({ data }) => (
   <div>
     <BannerContainer>
       <HeroBanner>
-          <HeroBannerTitle>About Our Campaign</HeroBannerTitle>
-          <HeroBannerParag>Join our campaign for financial literacy!</HeroBannerParag>
-          <HeroBannerParag>We believe that everyone has the right to become wealthy if they have the proper financial foundation.</HeroBannerParag>
-          <HeroBannerParag>You don't have to be an expert to be financially independent, you just have to know the basics then everything will just be common sense.</HeroBannerParag>
-          <BigButton to="#">Start Here</BigButton>
+          <HeroBannerTitle>Every peso counts</HeroBannerTitle>
+          <HeroBannerParag>Saving money is easy!</HeroBannerParag>
+          <HeroBannerParag>All you need is a proper plan.</HeroBannerParag>
+          <HeroBannerParag>Big or small, your income won't matter much, it's just a matter of discipline through budgeting.</HeroBannerParag>
+          <BigButton to="#">Learn More</BigButton>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
@@ -88,7 +89,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query HomePageQuery {
-    imageBannerBg: file(relativePath: { eq: "banner-bg.jpeg" }) {
+    imageBannerBg: file(relativePath: { eq: "indeximage.png" }) {
       childImageSharp {
         sizes(maxWidth: 1920, maxHeight: 1280) {
           ...GatsbyImageSharpSizes
