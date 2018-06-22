@@ -465,19 +465,19 @@ class App extends React.Component {
                 {/*<BucketText>NEEDS</BucketText>
                 <BucketTextPercent>50%</BucketTextPercent>*/}
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}}
-                onClick={(e) => this.ShowWantsBreakdown(e)}
-                onMouseOver={(e) => this.ShowHoverWantsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets src={bucket2} />
+                <Buckets src={bucket2} 
+                onClick={(e) => this.ShowWantsBreakdown(e)}
+                onMouseOver={(e) => this.ShowHoverWantsBreakdown(e)}/>
                 {/*<BucketText>WANTS</BucketText>
                 <BucketTextPercent>30%</BucketTextPercent>*/}
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}} 
-                onClick={(e) => this.ShowSavingsBreakdown(e)}
-                onMouseOver={(e) => this.ShowHoverSavingsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets src={bucket3}/>
+                <Buckets src={bucket3} 
+                onClick={(e) => this.ShowSavingsBreakdown(e)}
+                onMouseOver={(e) => this.ShowHoverSavingsBreakdown(e)}/>
                 {/*<BucketText>SAVINGS & INVESTMENTS</BucketText>
                 <BucketTextPercent>20%</BucketTextPercent>*/}
               </div>
