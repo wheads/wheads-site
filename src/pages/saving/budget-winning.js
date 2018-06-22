@@ -181,8 +181,8 @@ const TitleSub = styled.span`
   font-weight: bold;
 
   @media (max-width: 1200px) {
-    font-size: 4em;
-    letter-spacing: 10px;
+    font-size: 3.25em;
+    letter-spacing: 8px;
   }
 
   @media (max-width: 400px) {
@@ -206,7 +206,6 @@ const TitleSub2 = styled.span`
     font-size: 2em;
     letter-spacing: 4px;
     padding-left: 10px;
-    //top: -28px;
   }
 `;
 
