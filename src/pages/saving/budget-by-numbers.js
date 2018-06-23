@@ -367,7 +367,6 @@ class App extends React.Component {
 
   ShowSavingsBreakdown(e)
   {
-    alert('x');
     //e.preventDefault();
     this.setState({
       tableDesc: 'Savings',
@@ -377,7 +376,6 @@ class App extends React.Component {
         {desc: 'Long-term Care', percent: '5-10%'},
     ]
     });
-    alert('y');
   }
 
   /**
@@ -395,7 +393,7 @@ class App extends React.Component {
     window.addEventListener("resize", this.hideInfo.bind(this));
     
     //select("#imgWants").on('mousemove', (e) => this.ShowHoverWantsBreakdown(e));
-    select("#imgWants").on('mousemove', (e) => this.ShowWantsBreakdown(e));
+    //select("#imgWants").on('mousemove', (e) => this.ShowWantsBreakdown(e));
 
     //select("#imgNeeds").on('click', (e) => this.ShowNeedsBreakdown(e));
     //select("#imgNeeds").on('touchstart', (e) => this.ShowNeedsBreakdown(e));
@@ -474,11 +472,11 @@ class App extends React.Component {
           <BucketsContainer>
             <ClickHint>* Click on each bucket to have a closer look.</ClickHint>
             <div style={{display: 'grid', gridTemplateColumns: 'auto auto auto'}}>
-              <div style={{position: 'relative', cursor: 'pointer'}} >
+              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgNeeds" src={bucket1} />
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}}>
+              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}}/>
               </div>
@@ -503,8 +501,6 @@ class App extends React.Component {
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >
       </Tooltip>
-      <img src={bucket3} style={{width: '200px', cursor: 'pointer'}} onClick={(e) => this.samok()}/>
-      <img src={bucket3} style={{width: '200px', cursor: 'pointer'}} onClick={(e) => this.Samok2()}/>
     </ToolContainer>);
   }
 }
