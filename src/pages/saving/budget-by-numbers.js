@@ -478,9 +478,9 @@ class App extends React.Component {
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgWants" src={bucket2} />
+                <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}}/>
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}}>
+              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok()}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgSavings" src={bucket3} 
                 onTouchEnd={(e) => this.ShowSavingsBreakdown(e)}/>
