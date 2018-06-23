@@ -420,6 +420,16 @@ class App extends React.Component {
     this.info = "";
   }
 
+  samok(e)
+  {
+    alert('samok!');
+  }
+
+  Samok2(e)
+  {
+    alert('Samok 2');
+  }
+
   render(){
     
     return(
@@ -489,8 +499,10 @@ class App extends React.Component {
           </TipSection>
       </Line2>
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
-      <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >abc
+      <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >
       </Tooltip>
+      <img src={bucket3} style={{width: '200px', cursor: 'pointer'}} onClick={(e) => this.samok()}/>
+      <img src={bucket3} style={{width: '200px', cursor: 'pointer'}} onClick={(e) => this.Samok2()}/>
     </ToolContainer>);
   }
 }
