@@ -136,13 +136,11 @@ const TdDesc = styled.td`
   width: 80%;
   border-right: white 2px solid;
   padding-left: 5px;
-  cursor: pointer;
 `;
 
 const TdPercent = styled.td`
   padding: 0px 5px;
   font-weight: bold;
-  cursor: pointer;
 `;
 
 const Line2 = styled.div`
@@ -174,7 +172,7 @@ const Buckets = styled.img`
   vertical-align: middle;
 
   @media (max-width: 768px) {
-    width: 160px;
+    width: 170px;
     margin: 8px 0px 8px 0px;
   }
 
@@ -395,7 +393,7 @@ class App extends React.Component {
     window.addEventListener("resize", this.hideInfo.bind(this));
     
     //select("#imgWants").on('mousemove', (e) => this.ShowHoverWantsBreakdown(e));
-    //select("#imgWants").on('mousemove', (e) => this.ShowWantsBreakdown(e));
+    select("#imgWants").on('mousemove', (e) => this.ShowWantsBreakdown(e));
 
     //select("#imgNeeds").on('click', (e) => this.ShowNeedsBreakdown(e));
     //select("#imgNeeds").on('touchstart', (e) => this.ShowNeedsBreakdown(e));
@@ -452,7 +450,7 @@ class App extends React.Component {
                     if((index % 2) == 0)
                     {
                       {/*return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
-                      return(<TrMain onClick={(e) => this.samok(e)}>
+                      return(<TrMain>
                         <TdDesc>{data.desc}</TdDesc>
                         <TdPercent>{data.percent}</TdPercent>
                       </TrMain>)
@@ -460,9 +458,9 @@ class App extends React.Component {
                     else
                     {
                       {/*return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
-                      return(<TrAlt onClick={(e) => this.samok(e)}>
-                        <TdDesc onClick={(e) => this.samok(e)}>{data.desc}</TdDesc>
-                        <TdPercent onClick={(e) => this.samok(e)}>{data.percent}</TdPercent>
+                      return(<TrAlt >
+                        <TdDesc>{data.desc}</TdDesc>
+                        <TdPercent>{data.percent}</TdPercent>
                       </TrAlt>)
                     }
                   }
@@ -474,17 +472,18 @@ class App extends React.Component {
           <BucketsContainer>
             <ClickHint>* Click on each bucket to have a closer look.</ClickHint>
             <div style={{display: 'grid', gridTemplateColumns: 'auto auto auto'}}>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgNeeds" src={bucket1} />
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}}/>
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok()}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgSavings" src={bucket3} />
+                <Buckets id="imgSavings" src={bucket3} 
+                onTouchEnd={(e) => this.ShowSavingsBreakdown(e)}/>
               </div>
             </div>
           </BucketsContainer>
@@ -502,6 +501,8 @@ class App extends React.Component {
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >
       </Tooltip>
+      <img src={bucket3} style={{width: '200px', cursor: 'pointer'}} onClick={(e) => this.samok()}/>
+      <img src={bucket3} style={{width: '200px', cursor: 'pointer'}} onClick={(e) => this.Samok2()}/>
     </ToolContainer>);
   }
 }
