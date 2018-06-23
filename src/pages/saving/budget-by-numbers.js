@@ -474,15 +474,15 @@ class App extends React.Component {
           <BucketsContainer>
             <ClickHint>* Click on each bucket to have a closer look.</ClickHint>
             <div style={{display: 'grid', gridTemplateColumns: 'auto auto auto'}}>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgNeeds" src={bucket1} />
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}}/>
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgSavings" src={bucket3} />
               </div>
