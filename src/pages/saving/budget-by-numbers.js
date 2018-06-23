@@ -392,7 +392,8 @@ class App extends React.Component {
     this.hideInfo();
     window.addEventListener("resize", this.hideInfo.bind(this));
     
-    select("#imgWants").on('mousemove', (e) => this.ShowHoverWantsBreakdown(e));
+    //select("#imgWants").on('mousemove', (e) => this.ShowHoverWantsBreakdown(e));
+    select("#imgWants").on('mousemove', (e) => this.ShowWantsBreakdown(e));
 
     //select("#imgNeeds").on('click', (e) => this.ShowNeedsBreakdown(e));
     //select("#imgNeeds").on('touchstart', (e) => this.ShowNeedsBreakdown(e));
