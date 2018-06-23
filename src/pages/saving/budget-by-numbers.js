@@ -367,6 +367,7 @@ class App extends React.Component {
 
   ShowSavingsBreakdown(e)
   {
+    alert('x');
     //e.preventDefault();
     this.setState({
       tableDesc: 'Savings',
@@ -376,6 +377,7 @@ class App extends React.Component {
         {desc: 'Long-term Care', percent: '5-10%'},
     ]
     });
+    alert('y');
   }
 
   /**
@@ -480,7 +482,7 @@ class App extends React.Component {
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}}/>
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.samok()}>
+              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}>
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgSavings" src={bucket3} 
                 onTouchEnd={(e) => this.ShowSavingsBreakdown(e)}/>
