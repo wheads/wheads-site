@@ -394,10 +394,10 @@ class App extends React.Component {
     
     select("#imgWants").on('mousemove', (e) => this.ShowHoverWantsBreakdown(e));
 
-    select("#imgNeeds").on('click', (e) => this.ShowNeedsBreakdown(e));
-    select("#imgNeeds").on('touchstart', (e) => this.ShowNeedsBreakdown(e));
-    select("#imgWants").on('click touchstart', (e) => this.ShowWantsBreakdown(e));
-    select("#imgSavings").on('click touchstart', (e) => this.ShowSavingsBreakdown(e));
+    //select("#imgNeeds").on('click', (e) => this.ShowNeedsBreakdown(e));
+    //select("#imgNeeds").on('touchstart', (e) => this.ShowNeedsBreakdown(e));
+    //select("#imgWants").on('click touchstart', (e) => this.ShowWantsBreakdown(e));
+    //select("#imgSavings").on('click touchstart', (e) => this.ShowSavingsBreakdown(e));
   }
 
   /**
@@ -422,7 +422,7 @@ class App extends React.Component {
   render(){
     
     return(
-    <ToolContainer onClick={(e) => this.hideInfo(e)}>
+    <ToolContainer > {/*onClick={(e) => this.hideInfo(e)}>*/}
       <Line1>
         <div style={{backgroundColor: 'white', marginLeft: '15px'}}>
           <Header1>&nbsp;Your Budget</Header1>
@@ -438,14 +438,16 @@ class App extends React.Component {
                   {
                     if((index % 2) == 0)
                     {
-                      return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>
+                      {/*return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
+                      return(<TrMain>
                         <TdDesc>{data.desc}</TdDesc>
                         <TdPercent>{data.percent}</TdPercent>
                       </TrMain>)
                     }
                     else
                     {
-                      return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>
+                      {/*return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
+                      return(<TrAlt >
                         <TdDesc>{data.desc}</TdDesc>
                         <TdPercent>{data.percent}</TdPercent>
                       </TrAlt>)
@@ -488,7 +490,6 @@ class App extends React.Component {
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >abc
       </Tooltip>
-      <div style={{cursor:'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}>abcdefasdfasdfasdf</div>
     </ToolContainer>);
   }
 }
