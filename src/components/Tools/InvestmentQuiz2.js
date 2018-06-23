@@ -10,9 +10,14 @@ import SlidingQuestion from '../Controls/SlidingQuestion';
 import { select } from 'd3-selection'
 import { transition } from 'd3-transition'
 
+//DARK GREEN - 146414
+//LIGHT GREEN - 9AE48B
+//BLUE - 00B9FF
+//BEIGE - FFFBCE
+
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #dff9fb;
+  background-color: #FFFFFF;
 
   @media (max-width: 768px) {
     padding: 15px;
@@ -40,7 +45,7 @@ const HeroBannerTitle = styled.h2`
 
 const HeroBannerSub = styled.h1`
   font-size: calc(1.25vw + 1.25vh + .5vmin);
-  color: #707070;
+  color: #0C0C0C;
   margin-bottom: calc(1.25vw + 1.25vh + .5vmin);
   font-weight: 400;
 
@@ -53,7 +58,7 @@ const HeroBannerSub = styled.h1`
 `;
 const BigButton = styled(Link)`
   display: block;
-  background-color: orange;
+  background-color: #146414;
   box-shadow: 0 8px 6px -6px black;
   color: #fff;
   text-transform: uppercase;
@@ -77,7 +82,7 @@ const BigButton = styled(Link)`
 
 const Button = styled(Link)`
   display: block;
-  background-color: orange;
+  background-color: #146414;
   box-shadow: 0 8px 6px -6px black;
   color: #fff;
   text-transform: uppercase;
@@ -394,7 +399,7 @@ class InvestmentQuiz2 extends Component {
   }
   
   enableButton(id){
-    select(id).style('pointer-events', 'auto').style('background-color','orange')
+    select(id).style('pointer-events', 'auto').style('background-color','#146414')
   }
 
   disableButton(id){
@@ -415,8 +420,6 @@ class InvestmentQuiz2 extends Component {
     {
       this.enableButton("#btnNext");
 
-      if(this.state.index == 9 && this.state.status !== "done")
-        this.showButton("#btnShow");
     }
 
     return;
@@ -457,7 +460,7 @@ class InvestmentQuiz2 extends Component {
     select("#divContainer").style('left','0');
     select("#divReviewQuiz").style('display','table-cell');
     this.hideButton("#btnBack");
-    this.hideButton("#btnShow")
+    this.hideButton("#btnNext");
 
     var score = 0;
     for(var i = 0; i < this.state.questions.length; i++)
@@ -529,7 +532,7 @@ class InvestmentQuiz2 extends Component {
   ShowAnswers(e)
   {
     e.preventDefault();
-    this.ShowAnswersDiv();
+    //this.ShowAnswersDiv();
   }
 
   MoveQuestions(e, direction)
@@ -543,6 +546,13 @@ class InvestmentQuiz2 extends Component {
     else if (this.state.index !== 0)
       index--;
     
+    console.log(index);
+    if(index == 10)
+    {
+      this.ShowAnswersDiv(e)
+      return;
+    }
+
     loc = 0 - (this.divSliding.props.Width * index);
     
     this.setState({
@@ -565,7 +575,17 @@ class InvestmentQuiz2 extends Component {
       this.showButton("#btnBack");
       this.hideButton("#btnShow");
      } 
-    (index == 9) ? this.hideButton("#btnNext") : this.showButton("#btnNext");
+    
+    (index == 0) ? this.hideButton("#btnNext") : this.showButton("#btnNext");
+
+    if(index == 9) 
+    {
+      select("#btnNext").style("background-color","#146414").html("Finish");
+    }
+    else
+    {
+      select("#btnNext").style("background-color","#146414").html("Next");
+    }
   }
 
   onClick(e)
@@ -636,8 +656,6 @@ class InvestmentQuiz2 extends Component {
 
   render() {
     
-    const iframe = '<iframe src="https://www.youtube.com/embed/Jy6RufqwAoI?rel=0&amp;autoplay=1" width="540" height="450"></iframe>';
-
     function iframeMe()
     {
       return {
@@ -648,27 +666,28 @@ class InvestmentQuiz2 extends Component {
     return (
         <HeroBanner>
           <HeroBannerTitle>Basic Investing Quiz</HeroBannerTitle>          
-          <div id="Container" ref={ (divMainContainer) => this.divMainContainer = divMainContainer} style={{width: '100%', margin: '0px', display: 'block', backgroundColor: 'white', boxShadow: 'darkslategrey 10px 10px 50px'}}>
+          <div id="Container" ref={ (divMainContainer) => this.divMainContainer = divMainContainer} style={{width: '100%', margin: '0px', display: 'block', backgroundColor: '#FFFBCE', boxShadow: 'darkslategrey 10px 10px 50px'}}>
             <div style={{position: 'relative', width: '100%', height: '100%'}}>
-            <div style={{display: 'block', width: '100%', height: '80%', backgroundColor: 'white', overflowY: 'auto', overflowX: 'hidden'}}>
+            <div style={{display: 'block', width: '100%', height: ' 80%', backgroundColor: '#FFFBCE', overflowY: 'auto', overflowX: 'hidden'}}>
               <div id="divContainer" ref={ (divContainer) => this.divContainer = divContainer} style={{position: 'relative', display: 'block'}} onKeyDown={(e) => this.onKeyDown(e)}>
                 {this.state.questions.map((question, index) =>
                   <SlidingQuestion ref={ (divSliding) => this.divSliding = divSliding} question={question} style={{display: 'block'}} index={index} onOptionChange={(e) => this.onOptionChange(e)}
                     Width={this.state.width} Next={(index<(this.state.questions.length-1))?"true":"false"} Back={(index>0)?"true":"false"} Location={this.state.containerX} />
                   )}
                 
-                <div id="divStartInfo" style={{display: 'table-cell', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
+                <div id="divStartInfo" style={{display: 'table-cell', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: '#FFFBCE'}}>
                   <HeroBannerSub style={{borderBottom: '1px solid', padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px', textAlign: 'center'}}>How will do you know investing?  Take the short quiz below to find out.<br/>Explanations will be provided after completing the quiz.</HeroBannerSub>
                   <BigButton id="btnStart" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.StartQuiz(e)}>Start</BigButton>
                 </div>
-                <div id="divReviewQuiz" style={{display: 'none', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
-                  <HeroBannerSub style={{borderBottom: '1px solid', padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px', textAlign: 'center'}}>Congratulations!!!<br/><br/>You have scored {this.state.yourScore} out of the {this.state.questions.length} questions</HeroBannerSub>
-                  <BigButton id="btnReview" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ReviewQuiz(e)}>Review Answers</BigButton>
+                <div id="divReviewQuiz" style={{display: 'none', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: '#FFFBCE'}}>
+                  <HeroBannerSub style={{borderBottom: '1px solid', padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px', textAlign: 'center'}}>Congratulations!!!<br/><br/>You have scored {this.state.yourScore} out of the {this.state.questions.length} questions</HeroBannerSub>                  
+                  <HeroBannerSub style={{padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px', textAlign: 'center'}}>Please enter your email to review your results.</HeroBannerSub>
+                  {/*<BigButton id="btnReview" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ReviewQuiz(e)}>Review Answers</BigButton>*/}
                 </div>
               </div>
             </div> 
             <div style={{display: 'table', width: '100%', height: '20%', textAlign: 'center'}}>
-              <div style={{display: 'table-cell', height: '75%', verticalAlign: 'middle'}}>
+              <div style={{display: 'table-cell', height: '75%', verticalAlign: 'middle'}}>                  
                 <Button id="btnShow" style={{display: 'inline-block', opacity: '0'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ShowAnswers(e)}>Show Answers</Button>
                 <Button id="btnBack" style={{display: 'inline-block', opacity: '0', position: 'absolute', left: '10px' }} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'back')}>Back</Button>
                 <Button id="btnNext" style={{display: 'inline-block', opacity: '0', position: 'absolute', right: '10px', backgroundColor: '#cccccc', pointerEvents: 'none'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'next')}>Next</Button>

@@ -368,7 +368,6 @@ class App extends React.Component {
   ShowSavingsBreakdown(e)
   {
     //e.preventDefault();
-    alert('kapoy');
     this.setState({
       tableDesc: 'Savings',
       data:  [
@@ -393,7 +392,10 @@ class App extends React.Component {
     this.hideInfo();
     window.addEventListener("resize", this.hideInfo.bind(this));
     
-    select("#imgNeeds").on('click touchstart', (e) => this.ShowNeedsBreakdown(e));
+    select("#imgWants").on('mousemove', (e) => this.ShowHoverWantsBreakdown(e));
+
+    select("#imgNeeds").on('click', (e) => this.ShowNeedsBreakdown(e));
+    select("#imgNeeds").on('touchstart', (e) => this.ShowNeedsBreakdown(e));
     select("#imgWants").on('click touchstart', (e) => this.ShowWantsBreakdown(e));
     select("#imgSavings").on('click touchstart', (e) => this.ShowSavingsBreakdown(e));
   }
@@ -411,7 +413,7 @@ class App extends React.Component {
 
     if(this.info !== "show")
     {
-      select("#tooltip").style('opacity','0');
+      select("#tooltip").style('opacity','0').style('left', '0px').style('top', '0px');
     }
 
     this.info = "";
@@ -482,7 +484,8 @@ class App extends React.Component {
               <TipContent style={{backgroundColor:'#FFFBCE8c'}}>If your "Needs" exceeds 50%, steal from your "Wants" bucket.</TipContent>
             </TipContainer>
           </TipSection>
-      </Line2>      
+      </Line2>
+      {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >abc
       </Tooltip>
       <div style={{cursor:'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}>abcdefasdfasdfasdf</div>

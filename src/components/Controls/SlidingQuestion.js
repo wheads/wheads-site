@@ -54,7 +54,12 @@ const QuestionDiv = styled.div`
   font-weight: bold;
 
   @media (max-width: 768px) {
-    font-size: calc(1vw + 1vh + .5vmin);
+    //font-size: calc(1vw + 1vh + .5vmin);
+    font-size: 12px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 12px;
   }
 `;
 
@@ -75,7 +80,12 @@ const AnswerChoice = styled.div`
   text-align: left;
 
   @media (max-width: 768px) {
-    font-size: calc(1vw + 1vh + .5vmin);
+    //font-size: calc(1vw + 1vh + .5vmin);
+    font-size: 12px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 12px;
   }
 `;
 
