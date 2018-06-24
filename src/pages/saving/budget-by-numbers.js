@@ -452,7 +452,8 @@ class App extends React.Component {
           <LeftHeader>A Closer Look at {this.state.tableDesc}</LeftHeader>
           <ClickHint>* Click on each category to get some insights.</ClickHint>
           <TableNeeds>
-          {this.state.data.map((data, index) =>
+            <tbody>
+              {this.state.data.map((data, index) =>
                   {
                     if((index % 2) == 0)
                     {
@@ -475,6 +476,7 @@ class App extends React.Component {
                     }
                   }
                   )}
+              </tbody>
           </TableNeeds>
         </div>
       </Line1>
@@ -484,15 +486,18 @@ class App extends React.Component {
             <div style={{display: 'grid', gridTemplateColumns: 'auto auto auto'}}>
               <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgNeeds" src={bucket1} style={{cursor: 'pointer'}}  />
+                <Buckets id="imgNeeds" src={bucket1} 
+                style={{cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)} />
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}} />
+                <Buckets id="imgWants" src={bucket2} 
+                style={{cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)} />
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}}/>
+                <Buckets id="imgSavings" src={bucket3} 
+                style={{cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)} />
               </div>
             </div>
           </BucketsContainer>
@@ -507,8 +512,8 @@ class App extends React.Component {
             </TipContainer>
           </TipSection>
       </Line2>
-      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)} />
-      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)} />
+      {/*<Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)} />
+      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)} />*/}
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >
       </Tooltip>      
