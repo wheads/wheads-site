@@ -507,8 +507,8 @@ class App extends React.Component {
             </TipContainer>
           </TipSection>
       </Line2>
-      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)} />
-      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.Samok2(e)} />
+      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)} />
+      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)} />
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >
       </Tooltip>      
