@@ -457,7 +457,8 @@ class App extends React.Component {
                     if((index % 2) == 0)
                     {
                       {/*return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
-                      return(<TrMain style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
+                      {/*return(<TrMain style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>*/}
+                      return(<TrMain>
                         <TdDesc>{data.desc}</TdDesc>
                         <TdPercent>{data.percent}</TdPercent>
                       </TrMain>)
@@ -466,8 +467,10 @@ class App extends React.Component {
                     {
                       {/*return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
                       return(<TrAlt >
-                        <TdDesc style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>{data.desc}</TdDesc>
-                        <TdPercent style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>{data.percent}</TdPercent>
+                        {/*<TdDesc style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>{data.desc}</TdDesc>
+                        <TdPercent style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>{data.percent}</TdPercent>*/}
+                        <TdDesc >{data.desc}</TdDesc>
+                        <TdPercent >{data.percent}</TdPercent>
                       </TrAlt>)
                     }
                   }
@@ -479,18 +482,17 @@ class App extends React.Component {
           <BucketsContainer>
             <ClickHint>* Click on each bucket to have a closer look.</ClickHint>
             <div style={{display: 'grid', gridTemplateColumns: 'auto auto auto'}}>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgNeeds" src={bucket1} style={{cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)} />
+                <Buckets id="imgNeeds" src={bucket1} style={{cursor: 'pointer'}}  />
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}}  onClick={(e) => this.ShowSavingsBreakdown(e)} />
+                <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}} />
               </div>
-              <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}>
+              <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}
-                onTouchEnd={(e) => this.ShowSavingsBreakdown(e)}/>
+                <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}}/>
               </div>
             </div>
           </BucketsContainer>
@@ -505,11 +507,11 @@ class App extends React.Component {
             </TipContainer>
           </TipSection>
       </Line2>
+      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)} />
+      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.Samok2(e)} />
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >
-      </Tooltip>
-      
-      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)} />
+      </Tooltip>      
     </ToolContainer>);
   }
 }
