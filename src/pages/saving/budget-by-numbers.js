@@ -508,6 +508,8 @@ class App extends React.Component {
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >
       </Tooltip>
+      
+      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)} />
     </ToolContainer>);
   }
 }
