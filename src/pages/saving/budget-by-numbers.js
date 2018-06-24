@@ -340,8 +340,8 @@ class App extends React.Component {
   }
 
   ShowNeedsBreakdown(e)
-  {
-
+  {    
+    alert('whats wrong with you');
     this.setState({
       tableDesc: 'Needs',
       data:  [  
@@ -357,7 +357,7 @@ class App extends React.Component {
 
   ShowWantsBreakdown(e)
   {
-
+    alert('whats wrong with you');
     this.setState({
       tableDesc: 'Wants',
       data:  [
@@ -372,6 +372,7 @@ class App extends React.Component {
 
   ShowSavingsBreakdown(e)
   {
+    alert('whats wrong with you');
     //e.preventDefault();
     this.setState({
       tableDesc: 'Savings',
@@ -480,15 +481,15 @@ class App extends React.Component {
             <div style={{display: 'grid', gridTemplateColumns: 'auto auto auto'}}>
               <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgNeeds" src={bucket1} />
+                <Buckets id="imgNeeds" src={bucket1} style={{cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)} />
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}}/>
+                <Buckets id="imgWants" src={bucket2} style={{cursor: 'pointer'}}  onClick={(e) => this.ShowSavingsBreakdown(e)} />
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}>
                 <span style={{display: 'inline-block'}}></span>
-                <Buckets id="imgSavings" src={bucket3} 
+                <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)}
                 onTouchEnd={(e) => this.ShowSavingsBreakdown(e)}/>
               </div>
             </div>
