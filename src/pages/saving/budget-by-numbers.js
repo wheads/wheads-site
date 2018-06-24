@@ -341,7 +341,6 @@ class App extends React.Component {
 
   ShowNeedsBreakdown(e)
   {    
-    alert('whats wrong with you');
     this.setState({
       tableDesc: 'Needs',
       data:  [  
@@ -352,12 +351,10 @@ class App extends React.Component {
         {desc: 'Health & Insurance', percent: '5-10%'}
     ]
     });
-    alert('needs');
   }
 
   ShowWantsBreakdown(e)
   {
-    alert('whats wrong with you');
     this.setState({
       tableDesc: 'Wants',
       data:  [
@@ -367,12 +364,10 @@ class App extends React.Component {
         {desc: 'Entertainment', percent: '5-10%'},
     ]
     });
-    alert('wants');
   }
 
   ShowSavingsBreakdown(e)
   {
-    alert('whats wrong with you');
     //e.preventDefault();
     this.setState({
       tableDesc: 'Savings',
@@ -382,7 +377,6 @@ class App extends React.Component {
         {desc: 'Long-term Care', percent: '5-10%'},
     ]
     });
-    alert('savings');
   }
 
   /**
@@ -440,7 +434,7 @@ class App extends React.Component {
   render(){
     
     return(
-    <ToolContainer > {/*onClick={(e) => this.hideInfo(e)}>*/}
+    <ToolContainer onClick={(e) => this.hideInfo(e)}>
       <Line1>
         <div style={{backgroundColor: 'white', marginLeft: '15px'}}>
           <Header1>&nbsp;Your Budget</Header1>
@@ -458,16 +452,17 @@ class App extends React.Component {
                     if((index % 2) == 0)
                     {
                       {/*return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
-                      {/*return(<TrMain style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>*/}
-                      return(<TrMain>
+                      {/*return(<TrMain style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
+                      return(<TrMain> */}
+                      return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} >
                         <TdDesc>{data.desc}</TdDesc>
                         <TdPercent>{data.percent}</TdPercent>
                       </TrMain>)
                     }
                     else
                     {
-                      {/*return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
-                      return(<TrAlt >
+                      return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} >
+                      {/*return(<TrAlt >*/}
                         {/*<TdDesc style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>{data.desc}</TdDesc>
                         <TdPercent style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>{data.percent}</TdPercent>*/}
                         <TdDesc >{data.desc}</TdDesc>
@@ -492,7 +487,7 @@ class App extends React.Component {
               <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
                 <Buckets id="imgWants" src={bucket2} 
-                style={{cursor: 'pointer'}} onClick={(e) => this.ShowNeedsBreakdown(e)} />
+                style={{cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)} />
               </div>
               <div style={{position: 'relative', cursor: 'pointer'}} >
                 <span style={{display: 'inline-block'}}></span>
@@ -512,8 +507,6 @@ class App extends React.Component {
             </TipContainer>
           </TipSection>
       </Line2>
-      {/*<Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowWantsBreakdown(e)} />
-      <Buckets id="imgSavings" src={bucket3} style={{cursor: 'pointer'}} onClick={(e) => this.ShowSavingsBreakdown(e)} />*/}
       {/*<iframe src="https://4374kf.imgcorp.com/register/" style={{width: '500px', height: '500px'}}/>*/}
       <Tooltip id="tooltip" ref={(divTooltip) => this.divTooltip = divTooltip} >
       </Tooltip>      
