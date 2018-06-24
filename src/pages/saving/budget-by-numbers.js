@@ -167,12 +167,15 @@ const BucketsContainer = styled.div`
 `
 
 const Buckets = styled.img`
-  width: 250px;
+  width: 220px;
   margin: 10px 0px 10px 0px;
   vertical-align: middle;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: 170px;
+  }
+
+  @media (max-width: 768px) {
     margin: 8px 0px 8px 0px;
   }
 
@@ -450,7 +453,7 @@ class App extends React.Component {
                     if((index % 2) == 0)
                     {
                       {/*return(<TrMain onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
-                      return(<TrMain>
+                      return(<TrMain style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>
                         <TdDesc>{data.desc}</TdDesc>
                         <TdPercent>{data.percent}</TdPercent>
                       </TrMain>)
@@ -459,8 +462,8 @@ class App extends React.Component {
                     {
                       {/*return(<TrAlt onClick={(e) => this.ShowInfo(e, this.state.tableDesc, index)} onMouseOver={(e) => this.ShowInfoMouseOver(e, this.state.tableDesc, index)}>*/}
                       return(<TrAlt >
-                        <TdDesc>{data.desc}</TdDesc>
-                        <TdPercent>{data.percent}</TdPercent>
+                        <TdDesc style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>{data.desc}</TdDesc>
+                        <TdPercent style={{cursor: 'pointer'}} onClick={(e) => this.samok(e)}>{data.percent}</TdPercent>
                       </TrAlt>)
                     }
                   }
