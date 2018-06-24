@@ -352,6 +352,7 @@ class App extends React.Component {
         {desc: 'Health & Insurance', percent: '5-10%'}
     ]
     });
+    alert('needs');
   }
 
   ShowWantsBreakdown(e)
@@ -366,6 +367,7 @@ class App extends React.Component {
         {desc: 'Entertainment', percent: '5-10%'},
     ]
     });
+    alert('wants');
   }
 
   ShowSavingsBreakdown(e)
@@ -379,6 +381,7 @@ class App extends React.Component {
         {desc: 'Long-term Care', percent: '5-10%'},
     ]
     });
+    alert('savings');
   }
 
   /**
