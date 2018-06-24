@@ -439,7 +439,7 @@ class App extends React.Component {
       <meta property="og:title" content="Budget by numbers"/>
       <meta property="og:description" content="Set-up a budget that works."/>
       <meta property="og:description" content="Set-up a budget that works."/>
-      <meta property="og:image" content="http://localhost:8000/static/Bucket%20Savings.e4eaf276.png" />
+      <meta property="og:image" content="https://dev.everypeso.com/static/Bucket%20Savings.e4eaf276.png" />
     </Helmet>
       <Line1>
         <div style={{backgroundColor: 'white', marginLeft: '15px'}}>
