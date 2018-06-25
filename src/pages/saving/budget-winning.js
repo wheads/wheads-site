@@ -35,7 +35,6 @@ const WinningBudget = styled.div`
   grid-template-columns: 50% 50%;
   font-size: 16px;
   margin: 10px;
-  //background-color: #14641499;
 
   @media (max-width: 1200px) {
     display: block;
