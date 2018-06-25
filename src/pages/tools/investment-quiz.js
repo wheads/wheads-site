@@ -4,10 +4,22 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
 import BarChart from '../../components/BarChart';
-import InvestmentQuiz from '../../components/Tools/InvestmentQuiz2';
+import InvestmentQuiz from '../../components/Tools/InvestmentQuiz';
 
 const ToolContainer = styled.div`
-  display: block;
+  display: grid;
+  grid-template-columns: 65% 35%;
+
+  @media (max-width: 1111px) {
+    display: block;
+  }
+`;
+
+const IFrameContainer = styled.iframe`
+  width: 100%;
+  height: 356px;
+  border: none;
+  background-color: #FFFFFF;
 `;
 
 class App extends React.Component {
@@ -39,6 +51,7 @@ class App extends React.Component {
     return(
     <ToolContainer >
       <InvestmentQuiz onClick={e => this.onClick(e)} />
+      <IFrameContainer src="https://4374kf.imgcorp.com/register/" />
     </ToolContainer>);
   }
 }

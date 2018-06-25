@@ -5,7 +5,11 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
 import Background from './budget_bg.png';
-import test from './bucket1.png';
+import b01 from './b01.png';
+import b02 from './b02.png';
+import b03 from './b03.png';
+import b04 from './b04.png';
+import b05 from './b05.png';
 
 //DARK GREEN - 146414
 //LIGHT GREEN - 9AE48B
@@ -308,7 +312,12 @@ class App extends React.Component {
   render(){
     
     return(
-      <WinningBudget>
+      <WinningBudget>        
+      <Helmet>
+        <meta property="og:title" content="Win with a budget"/>
+        <meta property="og:description" content="Create a winning budget."/>
+        <meta property="og:image" content="http://localhost:8000/static/b04.e5b9431d.png" />
+      </Helmet>
         <Holder>
           <TitleHolder id="titleHolder" ref={(divTitleHolder) => this.divTitleHolder = divTitleHolder}>
             {/*<DivBG/>
@@ -326,7 +335,7 @@ class App extends React.Component {
               <StepDesc>Write down your financial goals. Be sure to include actual amounts and time frames to make tracking possible.&nbsp;&nbsp;For example, measurable goals would be "Have" a 50,000 emergency fund by April 1" and "Pay off 25,000 credit card debt in a year".  Then divided the amount by the number of months to figure out your monthly goals.</StepDesc>
               <div>
                 <span style={{display: 'inline-block', height: '100%', verticalAlign: 'middle'}}/>
-                <StepImg src={test}/>
+                <StepImg src={b01}/>
               </div>
             </StepContainer>
           </DescriptionHolder>
@@ -339,7 +348,7 @@ class App extends React.Component {
               <StepDesc>Before you can establish a budget, you have to know exactly how much money you have coming in every month from your employer and other sources.&nbsp;&nbsp;Make sure to include only the money you actually receive (for example, the exact amount of your salary rather than your gross pay).</StepDesc>
               <div>
                 <span style={{display: 'inline-block', height: '100%', verticalAlign: 'middle'}}/>
-                <StepImg src={test}/>
+                <StepImg src={b02}/>
               </div>
             </StepContainer>
           </DescriptionHolder>
@@ -354,7 +363,7 @@ class App extends React.Component {
               <StepDesc>You'll need to know how much money you're spending every month.  When figuring out your total monthly expenses, be sure to include groceries, rent or mortgages, all debt payments (including car loans and credit cards), cell phone load, cable and entertainment.  Remember to include occassional expenses, like doctor visits and car insurance.  Look through bank and credit card statements to get a realistic picture of your spending.</StepDesc>
               <div>
                 <span style={{display: 'inline-block', height: '100%', verticalAlign: 'middle'}}/>
-                <StepImg src={test}/>
+                <StepImg src={b03}/>
               </div>
             </StepContainer>
           </DescriptionHolder>
@@ -367,7 +376,7 @@ class App extends React.Component {
               <StepDesc>To make your first stab at a budget, add your monthly expenses from Step 3 to the monthly goals you calculated in Step 1, then subtract that total from your monthly income.  If the balance is positive, you've created a budget that is compatible with your current lifestyle.  If the balance is negative, take another look at your goals, expenses and income.</StepDesc>
               <div>
                 <span style={{display: 'inline-block', height: '100%', verticalAlign: 'middle'}}/>
-                <StepImg src={test}/>
+                <StepImg src={b04}/>
               </div>
             </StepContainer>
           </DescriptionHolder>
@@ -380,7 +389,7 @@ class App extends React.Component {
               <StepDesc>If the first draft of your budget came out negative, rework the numbers and try again.  Think about what areas you may be able to alter in order to create a budget that's manageable and still fits your needs.  For example, you can revisit your expenses, and decide which are priority items that need to stay in your budget and which you can do without.  You can consider changing the amount of time or money needed to meet your goals.  Or you can figure out a way to increase your income.  Any one of those changes could make your budget come together.</StepDesc>
               <div>
                 <span style={{display: 'inline-block', height: '100%', verticalAlign: 'middle'}}/>
-                <StepImg src={test}/>
+                <StepImg src={b05}/>
               </div>
             </StepContainer>
           </DescriptionHolder>

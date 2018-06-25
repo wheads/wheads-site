@@ -12,7 +12,7 @@ import { transition } from 'd3-transition'
 
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #dff9fb;
+  background-color: #fffbce;
 
   @media (max-width: 768px) {
     padding: 15px;
@@ -53,7 +53,7 @@ const HeroBannerSub = styled.h1`
 `;
 const BigButton = styled(Link)`
   display: block;
-  background-color: orange;
+  background-color: #146414;
   box-shadow: 0 8px 6px -6px black;
   color: #fff;
   text-transform: uppercase;
@@ -73,11 +73,15 @@ const BigButton = styled(Link)`
     max-width: 350px;
     padding: 10px 10px;
   }
+
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 
 const Button = styled(Link)`
   display: block;
-  background-color: orange;
+  background-color: #146414;
   box-shadow: 0 8px 6px -6px black;
   color: #fff;
   text-transform: uppercase;
@@ -90,6 +94,10 @@ const Button = styled(Link)`
   min-width: 200px;
   max-width: 280px;
   font-size: calc(0.75vw + 0.75vh + .5vmin);
+
+  &:hover {
+    opacity: 0.9;
+  }
 
   @media (max-width: 768px) {    
     font-size: calc(1vw + 1vh + .5vmin);
@@ -106,7 +114,7 @@ const Button = styled(Link)`
   }
 `;
 
-class InvestmentQuiz2 extends Component {   
+class InvestmentQuiz extends Component {   
   
   constructor(props) {
     super(props);
@@ -365,7 +373,6 @@ class InvestmentQuiz2 extends Component {
   }  
 
   updateDimensions() {
-    console.log('resize');
     var container = this.divContainer;
     var mainContainer = this.divMainContainer;
     if(mainContainer !== undefined)
@@ -394,7 +401,7 @@ class InvestmentQuiz2 extends Component {
   }
   
   enableButton(id){
-    select(id).style('pointer-events', 'auto').style('background-color','orange')
+    select(id).style('pointer-events', 'auto').style('background-color','#146414')
   }
 
   disableButton(id){
@@ -403,10 +410,12 @@ class InvestmentQuiz2 extends Component {
 
   showButton(id){
     select(id).style('opacity','1');
+    select(id).style('pointer-events','auto');
   }
 
   hideButton(id){
     select(id).style('opacity','0');
+    select(id).style('pointer-events','none');
   }
 
   onOptionChange(e)
@@ -422,16 +431,22 @@ class InvestmentQuiz2 extends Component {
     return;
   }
 
-  ReviewQuiz()
+  ReviewQuiz(e)
   {
+    e.preventDefault();
     select("#divReviewQuiz").style('display','none');
     this.showButton("#btnNext");
     this.setState({index: 0, status: 'done'});
+    for(var i = 0; i < this.state.questions.length; i++)
+    {      
+      select("#detail" + this.state.questions[i].number).style('display','block');
+    }
+    select('#Container').selectAll('input').attr('disabled','disabled').style('cursor','default').style('pointer-events','none');
   }
 
-  StartQuiz()
+  StartQuiz(e)
   { 
-    //e.preventDefault();
+    e.preventDefault();
     transition(
       select('#divStartInfo')
           .transition()
@@ -498,13 +513,12 @@ class InvestmentQuiz2 extends Component {
         }
       }
       
-      select("#detail" + this.state.questions[i].number).style('display','block');
       if(correctOption !== null)
-        correctOption.checked = true;
-      this.setState({
-        yourScore: score
-      });
+        correctOption.checked = true;      
     }
+    this.setState({
+      yourScore: score
+    });
 
   }
 
@@ -543,6 +557,8 @@ class InvestmentQuiz2 extends Component {
     else if (this.state.index !== 0)
       index--;
     
+    if(index>9)
+      index = 9;
     loc = 0 - (this.divSliding.props.Width * index);
     
     this.setState({
@@ -565,7 +581,10 @@ class InvestmentQuiz2 extends Component {
       this.showButton("#btnBack");
       this.hideButton("#btnShow");
      } 
-    (index == 9) ? this.hideButton("#btnNext") : this.showButton("#btnNext");
+    (index == 9) ? this.hideButton("#btnNext") : this.showButton("#btnNext");    
+
+    if(index === 9 && this.state.status !== "done" && this.state.questions[index].answer !== "")
+      this.showButton("#btnShow");
   }
 
   onClick(e)
@@ -669,9 +688,9 @@ class InvestmentQuiz2 extends Component {
             </div> 
             <div style={{display: 'table', width: '100%', height: '20%', textAlign: 'center'}}>
               <div style={{display: 'table-cell', height: '75%', verticalAlign: 'middle'}}>
-                <Button id="btnShow" style={{display: 'inline-block', opacity: '0'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ShowAnswers(e)}>Show Answers</Button>
-                <Button id="btnBack" style={{display: 'inline-block', opacity: '0', position: 'absolute', left: '10px' }} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'back')}>Back</Button>
-                <Button id="btnNext" style={{display: 'inline-block', opacity: '0', position: 'absolute', right: '10px', backgroundColor: '#cccccc', pointerEvents: 'none'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'next')}>Next</Button>
+                <Button id="btnShow" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ShowAnswers(e)}>Show Answers</Button>
+                <Button id="btnBack" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none', position: 'absolute', left: '10px' }} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'back')}>Back</Button>
+                <Button id="btnNext" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none', position: 'absolute', right: '10px', backgroundColor: '#cccccc', pointerEvents: 'none'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'next')}>Next</Button>
               </div>
             </div> 
             </div>
