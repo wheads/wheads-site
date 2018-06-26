@@ -11,7 +11,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 25px 50px 20px;
-  background-color: #9AE48B;
+  background-color: #e8f0e8;
 
   @media (max-width: 767px) {
     display: block;
@@ -46,7 +46,7 @@ const MainNav = styled.div`
 const MainNavLink = styled(Link)`
   padding-right: 50px;
   font-size: 20px;
-  color: #146414;
+  color: #00b8f8;
   text-decoration: none;
 
   &:hover {

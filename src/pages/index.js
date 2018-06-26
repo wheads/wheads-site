@@ -9,7 +9,7 @@ const BannerContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  background-color: #FFFBCE;
+  background-color: #00b8f8;
 
   @media (max-width: 768px) {
     display: block;
@@ -27,7 +27,7 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
-  color: #146414;
+  color: #e8f0e8;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -36,7 +36,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 52px;
-  color: #146414;
+  color: #e8f0e8;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -55,8 +55,8 @@ const HeroBannerSub = styled.h1`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: #205098;
-  color: #ffffff;
+  background-color: #50e8a0;
+  color: #e8f0e8;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
