@@ -96,15 +96,17 @@ class App extends React.Component {
 
   updateDimensions() {
     
-    //var div = select("#divSliderContainer").node()
-    var div = null;
-    if(div !== null)
+    if(typeof document !== "undefined")
     {
-      this.setState(
-        {
-          Width: div.offsetWidth
-        }
-      );
+      var div = select("#divSliderContainer").node()
+      if(div !== null)
+      {
+        this.setState(
+          {
+            Width: div.offsetWidth
+          }
+        );
+      }
     }
   }
 
