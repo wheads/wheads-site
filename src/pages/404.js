@@ -1,15 +1,16 @@
 import React from "react";
+import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import bannerBg from "./img-hero-banner-404.jpeg"
+import SubMenuSection from "../components/SubMenuSection"
 import Img from "gatsby-image";
 
 import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
 
 const BannerContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  background-color: #FFFBCE;
+  background-size: cover;
+  background-position: center;
 
   @media (max-width: 768px) {
     display: block;
@@ -17,7 +18,8 @@ const BannerContainer = styled.div`
 `;
 
 const HeroBanner = styled.div`
-  padding: 50px;
+  text-align: center;
+  padding: 130px 100px;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -27,7 +29,7 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
-  color: #146414;
+  color: #fff;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -35,8 +37,8 @@ const HeroBannerTitle = styled.h2`
   margin-bottom: 16px;
   padding-bottom: 0;
   border-bottom: none;
-  font-size: 52px;
-  color: #146414;
+  font-size: 60px;
+  color: #fff;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -55,8 +57,8 @@ const HeroBannerSub = styled.h1`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: #205098;
-  color: #ffffff;
+  background-color: orange;
+  color: #fff;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -74,27 +76,26 @@ const BigButton = styled(Link)`
 
 export default ({ data }) => (
   <div>
-    <BannerContainer>
+    <Helmet>
+      <title>Get Started - {data.site.siteMetadata.title}</title>
+    </Helmet>
+
+    <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
-          <HeroBannerTitle>Every peso counts</HeroBannerTitle>
-          <HeroBannerParag>Saving money is simple!</HeroBannerParag>
-          <HeroBannerParag>All you need is a proper plan.</HeroBannerParag>
-          <HeroBannerParag>Big or small, your income won't matter much, it's just a matter of discipline through budgeting.</HeroBannerParag>
-          <BigButton to="#">Learn More</BigButton>
+        <HeroBannerTitle>Page Not Found</HeroBannerTitle>
+        <HeroBannerParag>Oops! The page you're looking for is not here.</HeroBannerParag>
+        <HeroBannerParag>Error code: 404</HeroBannerParag>
       </HeroBanner>
-      <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
   </div>
   
 );
 
 export const query = graphql`
-  query HomePageQuery {
-    imageBannerBg: file(relativePath: { eq: "indeximage.png" }) {
-      childImageSharp {
-        sizes(maxWidth: 1302, maxHeight: 1035) {
-          ...GatsbyImageSharpSizes
-        }
+  query NotFoundPageQuery {
+    site {
+      siteMetadata {
+        title
       }
     }
   }

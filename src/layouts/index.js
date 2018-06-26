@@ -14,9 +14,8 @@ export default ({ data, children }) => (
       imgAltTitle={data.site.siteMetadata.title} 
       menuLink1="/get-started"
       menuLink2="/classes"
-      menuLink3="/events"
-      menuLink4="/tools"
-      menuLink5="/contact"
+      menuLink3="/tools"
+      menuLink4="/contact"
     />
 
     {children()}
@@ -25,9 +24,8 @@ export default ({ data, children }) => (
       footerSiteTitle={data.site.siteMetadata.title} 
       menuLink1="/get-started"
       menuLink2="/classes"
-      menuLink3="/events"
-      menuLink4="/tools"
-      menuLink5="/contact"
+      menuLink3="/tools"
+      menuLink4="/contact"
     />
   </div>
 );

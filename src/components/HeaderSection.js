@@ -6,13 +6,22 @@ import { HideOnMobile } from '../styles/style.js';
 
 import logo from './logo.svg';
 
-const Header = styled.header`
-  padding: 16px 50px;
+const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //background-color: #00548C;
+  padding: 25px 50px 20px;
   background-color: #9AE48B;
+
+  @media (max-width: 767px) {
+    display: block;
+    padding: 32px 32px 20px;
+    text-align: center;
+  }
+`;
+
+const Header = styled.div`
+  position: relative;
 `;
 
 const Logo = styled.img`
@@ -21,14 +30,13 @@ const Logo = styled.img`
 `;
 
 const MainNav = styled.div`
-  background-color: #FFFFF;
-  color: #FFFFF;
   display: flex;
   padding: 16px 0;
   padding-left: 50px;
   //margin-left: 50px;
+
   @media (max-width: 768px) {
-    padding: 10px 20px;
+    padding: 10px 0 0;
     margin: 0;
     flex-wrap: wrap;
     justify-content: center;
@@ -37,10 +45,17 @@ const MainNav = styled.div`
 
 const MainNavLink = styled(Link)`
   padding-right: 50px;
-  font-weight: 250;
   font-size: 20px;
-  color: #205098;
+  color: #146414;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    font-weight: bold;
+  }
 
   @media (max-width: 768px) {
     padding: 5px 10px;
@@ -65,26 +80,25 @@ const BigButton = styled(Link)`
 
 class HeaderSection extends Component {
   render() {
-    const { imgAltTitle, menuLink1, menuLink2, menuLink3, menuLink4, menuLink5 } = this.props;
+    const { imgAltTitle, menuLink1, menuLink2, menuLink3, menuLink4 } = this.props;
     
     return (
-      <div>
+      <HeaderContainer>
         <Header>
           <Link to="/" style={{ textDecoration: `none`}}>
             <Logo src={logo} alt={imgAltTitle} />
           </Link>
-          <HideOnMobile>
-            <BigButton to="/get-started">Sign Up</BigButton>
-          </HideOnMobile>
         </Header>
         <MainNav>
           <MainNavLink to="/">Home</MainNavLink>
           <MainNavLink to={menuLink1}>Get Started</MainNavLink>
           <MainNavLink to={menuLink2}>Classes</MainNavLink>          
-          <MainNavLink to={menuLink4}>Tools</MainNavLink>          
-          <MainNavLink to={menuLink5}>Contact</MainNavLink>
+          <MainNavLink to={menuLink3}>Tools</MainNavLink>
+          <HideOnMobile>          
+            <MainNavLink to={menuLink4}>Contact</MainNavLink>
+          </HideOnMobile>  
         </MainNav>
-      </div>
+      </HeaderContainer>
     );
   }
 }

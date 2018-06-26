@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from "styled-components";
 
-import facebook from './facebook.svg';
-import instagram from './instagram.svg';
-import twitter from './twitter.svg';
+import facebook from './img-facebook.svg';
+import instagram from './img-instagram.svg';
+import twitter from './img-twitter.svg';
 
 const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
   padding: 50px;
   align-items: center;
-  background-color: #000;
+  background-color: #fff;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -70,7 +70,7 @@ const SocialIcon = styled.img`
 
 class FooterSection extends Component {
   render() {
-    const { footerSiteTitle, menuLink1, menuLink2, menuLink3, menuLink4, menuLink5 } = this.props;
+    const { footerSiteTitle, menuLink1, menuLink2, menuLink3, menuLink4 } = this.props;
     
     return (
       <Footer>
@@ -83,10 +83,9 @@ class FooterSection extends Component {
         <FooterNav>
           <FooterNavLink to="/">Home</FooterNavLink>
           <FooterNavLink to={menuLink1}>Get Started</FooterNavLink>
-          <FooterNavLink to={menuLink1}>Classes</FooterNavLink>
-          <FooterNavLink to={menuLink1}>Events</FooterNavLink>
-          <FooterNavLink to={menuLink1}>Tools</FooterNavLink>            
-          <FooterNavLink to={menuLink1}>Contact</FooterNavLink>
+          <FooterNavLink to={menuLink2}>Classes</FooterNavLink>
+          <FooterNavLink to={menuLink3}>Tools</FooterNavLink>            
+          <FooterNavLink to={menuLink4}>Contact</FooterNavLink>
         </FooterNav>
       </Footer>
     );

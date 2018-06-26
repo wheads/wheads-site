@@ -2,22 +2,22 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import Img from "gatsby-image";
-
-import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
+import bannerBg from "./img-hero-banner-debt.jpeg"
+import sectionBannerBg from "./img-section-banner-create-budget.jpg"
+import SubMenuSection from "../components/SubMenuSection"
 
 const BannerContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  background-size: cover;
+  background-position: center;
 
-  @media (max-width: 768px) {
-    display: block;
-  }
+  // @media (max-width: 768px) {
+  //  display: block;
+  // }
 `;
 
 const HeroBanner = styled.div`
-  padding: 50px;
-  background-color: #dff9fb;
+  text-align: center;
+  padding: 130px 100px;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -34,27 +34,64 @@ const HeroBannerTitle = styled.h2`
   margin-bottom: 16px;
   padding-bottom: 0;
   border-bottom: none;
-  font-size: 52px;
-  color: #000;
+  font-size: 60px;
+  color: #fff;
 
   @media (max-width: 768px) {
     font-size: 40px;
   }
 `;
 
-const HeroBannerSub = styled.h1`
-  font-size: 30px;
-  color: #fff;
-  margin-bottom: 20px;
+const SectionContainer = styled.div`
+  background-color: #00b9ff;
+`;
+
+const SectionContainerWithBg = styled.div`
+  background-size: cover;
+  background-position: center;
+`;
+
+const SectionContent = styled.div`
+  text-align: center;
+  padding: 50px 100px;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+`;
+
+const SectionContentWithBg = styled.div`
+  text-align: center;
+  padding: 100px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  }
+`;
+
+const SectionParag = styled.p`
+  font-size: 18px;
+  color: #000;
+`;
+
+const SectionTitle = styled.h2`
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-bottom: 0;
+  border-bottom: none;
+  font-size: 40px;
+  color: #000;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
   }
 `;
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: orange;
+  background-color: #9ae48b;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
@@ -63,7 +100,7 @@ const BigButton = styled(Link)`
   letter-spacing: 1px;
   padding: 15px 20px;
   border-radius: 3px;
-  margin-top: 15px;
+  margin: 15px auto 0;
   max-width: 230px;
 
   @media (max-width: 768px) {
@@ -77,15 +114,35 @@ export default ({ data }) => (
       <title>Get Started - {data.site.siteMetadata.title}</title>
     </Helmet>
 
-    <BannerContainer>
+    <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
-          <HeroBannerTitle>Get Started</HeroBannerTitle>
-          <HeroBannerParag>I’m a paragraph. Use this space to tell people more about what you do and the services you offer.</HeroBannerParag>
-          <HeroBannerParag>Another paragrah here.</HeroBannerParag>
-          <BigButton to="#">Read More</BigButton>
+        <HeroBannerTitle>Debt</HeroBannerTitle>
       </HeroBanner>
-      <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
+
+    <SubMenuSection 
+      menuLink1="/get-started/savings"
+      menuLink2="/get-started/debt"
+      menuLink3="/get-started/budgeting"
+      menuLink4="/get-started/retirement"
+      menuLink5="/get-started/insurance"
+    />  
+
+    <SectionContainer>
+      <SectionContent>
+        <SectionTitle>Get out of debt with these simple steps</SectionTitle>
+        <SectionParag>[infographic content on paying debt]</SectionParag>
+        <BigButton to="#">Sign Up</BigButton>
+      </SectionContent>
+    </SectionContainer>
+
+    <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
+      <SectionContentWithBg>
+        <SectionTitle style={{color:`#fff`}}>Create a working budget</SectionTitle>
+        <SectionParag style={{color:`#fff`}}>[note: this is subtle ad regarding budgeting]</SectionParag>
+        <BigButton to="#">Learn More</BigButton>
+      </SectionContentWithBg>
+    </SectionContainerWithBg>
   </div>
   
 );
@@ -95,13 +152,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    imageBannerBg: file(relativePath: { eq: "get-started-bg.jpeg" }) {
-      childImageSharp {
-        sizes(maxWidth: 1920, maxHeight: 1280) {
-          ...GatsbyImageSharpSizes
-        }
       }
     }
   }
