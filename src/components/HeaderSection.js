@@ -21,8 +21,8 @@ const Logo = styled.img`
 `;
 
 const MainNav = styled.div`
-  background-color: #146414;
-  color: #FFFBCE;
+  background-color: #FFFFF;
+  color: #FFFFF;
   display: flex;
   padding: 16px 0;
   padding-left: 50px;
@@ -39,7 +39,7 @@ const MainNavLink = styled(Link)`
   padding-right: 50px;
   font-weight: 250;
   font-size: 20px;
-  color: #FFFBCE;
+  color: #205098;
   text-decoration: none;
 
   @media (max-width: 768px) {
@@ -51,9 +51,8 @@ const MainNavLink = styled(Link)`
 
 const BigButton = styled(Link)`
   display: block;
-  //background-color: orange;
-  background-color: #fffbce;
-  color: #146414;
+  background-color: #146414;
+  color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -81,8 +80,7 @@ class HeaderSection extends Component {
         <MainNav>
           <MainNavLink to="/">Home</MainNavLink>
           <MainNavLink to={menuLink1}>Get Started</MainNavLink>
-          <MainNavLink to={menuLink2}>Classes</MainNavLink>
-          <MainNavLink to={menuLink3}>Events</MainNavLink>
+          <MainNavLink to={menuLink2}>Classes</MainNavLink>          
           <MainNavLink to={menuLink4}>Tools</MainNavLink>          
           <MainNavLink to={menuLink5}>Contact</MainNavLink>
         </MainNav>

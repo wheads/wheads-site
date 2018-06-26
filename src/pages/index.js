@@ -35,7 +35,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 52px;
-  color: #00b9ff;
+  color: #146414;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -54,8 +54,8 @@ const HeroBannerSub = styled.h1`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: #00b9ff;
-  color: #FFFBCE;
+  background-color: #205098;
+  color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -76,7 +76,7 @@ export default ({ data }) => (
     <BannerContainer>
       <HeroBanner>
           <HeroBannerTitle>Every peso counts</HeroBannerTitle>
-          <HeroBannerParag>Saving money is easy!</HeroBannerParag>
+          <HeroBannerParag>Saving money is simple!</HeroBannerParag>
           <HeroBannerParag>All you need is a proper plan.</HeroBannerParag>
           <HeroBannerParag>Big or small, your income won't matter much, it's just a matter of discipline through budgeting.</HeroBannerParag>
           <BigButton to="#">Learn More</BigButton>
