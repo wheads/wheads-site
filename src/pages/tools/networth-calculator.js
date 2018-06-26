@@ -96,7 +96,8 @@ class App extends React.Component {
 
   updateDimensions() {
     
-    var div = select("#divSliderContainer").node()
+    //var div = select("#divSliderContainer").node()
+    var div = null;
     if(div !== null)
     {
       this.setState(
