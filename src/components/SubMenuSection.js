@@ -10,7 +10,7 @@ const MainNav = styled.div`
   justify-content: center;
   padding: 16px 0;
   padding-left: 50px;
-  background-color: #e8f0e8;
+  background-color: #e79702;
 
   @media (max-width: 768px) {
     padding: 10px 0;
@@ -23,7 +23,7 @@ const MainNav = styled.div`
 const MainNavLink = styled(Link)`
   padding-right: 50px;
   font-size: 20px;
-  color: #146414;
+  color: #ffffff;
   text-decoration: none;
 
   &:hover {
