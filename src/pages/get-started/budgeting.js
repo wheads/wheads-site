@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import bannerBg from "./img-hero-banner-savings.jpg"
 import sectionBannerBg from "./img-hero-banner-debt.jpeg"
-import SubMenuSection from "../components/SubMenuSection"
+import SubMenuSection from "../../components/SubMenuSection"
 
 const BannerContainer = styled.div`
   background-size: cover;
@@ -181,7 +181,7 @@ export default ({ data }) => (
 );
 
 export const query = graphql`
-  query GetStartedPageQuery {
+  query GetStartedBudgetingPageQuery {
     site {
       siteMetadata {
         title
