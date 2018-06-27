@@ -9,7 +9,7 @@ const BannerContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  background-color: #00b8f8;
+  background-color: #0695a4;
 
   @media (max-width: 768px) {
     display: block;
@@ -55,8 +55,8 @@ const HeroBannerSub = styled.h1`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: #366f14;
-  color: #e8f0e8;
+  background-color: #e79702;
+  color: #2d3939;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
