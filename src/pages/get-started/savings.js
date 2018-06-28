@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import bannerBg from "./img-hero-banner-savings.jpg"
 import sectionBannerInfo from "./savingsInfog.jpg"
-import sectionBannerBg from "./img-hero-banner-debt.jpeg"
+import sectionBannerBg from "./img-footer-debt.jpeg"
 import SubMenuSection from "../../components/SubMenuSection"
 
 const BannerContainer = styled.div`
@@ -128,20 +128,19 @@ export default ({ data }) => (
       menuLink4="/get-started/retirement"
       menuLink5="/get-started/insurance"
     />  
-    <SectionContainerWithBg>
-    <img src={sectionBannerInfo}/>;  
-    </SectionContainerWithBg>  
-    
+    <SectionContent>
+        <img src={sectionBannerInfo}/>
+    </SectionContent>  
+
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
         <SectionTitle style={{color:`#fff`}}>Manage your debt</SectionTitle>
         <SectionParag style={{color:`#fff`}}>Tired of all your monthly payments?</SectionParag>
         <SectionParag style={{color:`#fff`}}>You deserve better.</SectionParag>
-        <BigButton to="#">Learn More</BigButton>
+        <BigButton to="/get-started/debt">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>
-  
 );
 
 export const query = graphql`
@@ -153,4 +152,3 @@ export const query = graphql`
     }
   }
 `
-

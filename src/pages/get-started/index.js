@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import bannerBg from "./img-hero-banner-savings.jpg"
-import sectionBannerBg from "./img-hero-banner-debt.jpeg"
+import sectionBannerBg from "./img-hero-banner-debt.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 
 const BannerContainer = styled.div`

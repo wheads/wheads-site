@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import bannerBg from "./img-hero-banner-savings.jpg"
-import sectionBannerBg from "./img-hero-banner-debt.jpeg"
+import sectionBannerBg from "./img-hero-banner-debt.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 
 const BannerContainer = styled.div`
@@ -116,7 +116,7 @@ export default ({ data }) => (
 
     <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
-        <HeroBannerTitle>Savings</HeroBannerTitle>
+        <HeroBannerTitle>Retirement</HeroBannerTitle>
       </HeroBanner>
     </BannerContainer>
 
@@ -130,7 +130,7 @@ export default ({ data }) => (
 
     <SectionContainer>
       <SectionContent>
-        <SectionTitle>Simple ways to save</SectionTitle>
+        <SectionTitle>Retirement</SectionTitle>
         <SectionParag>
           Most people would say "How can we save? We don't even have extra money every month.  We could hardly pay our bills."
           You're probably thinking the same thing.  But give yourself a chance. 
@@ -173,7 +173,7 @@ export default ({ data }) => (
         <SectionTitle style={{color:`#fff`}}>Manage your debt</SectionTitle>
         <SectionParag style={{color:`#fff`}}>Tired of all your monthly payments?</SectionParag>
         <SectionParag style={{color:`#fff`}}>You deserve better.</SectionParag>
-        <BigButton to="#">Learn More</BigButton>
+        <BigButton to="/get-started/insurance">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>
