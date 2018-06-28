@@ -3,8 +3,8 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import bannerBg from "./img-hero-banner-debt.jpg"
-import sectionBannerInfo from "./debtInfog.png"
-import sectionBannerBg from "./img-footer-budgeting.png"
+import sectionBannerInfo from "./debtInfog.jpg"
+import sectionBannerBg from "./img-footer-budgeting.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 
 const BannerContainer = styled.div`
@@ -127,16 +127,26 @@ export default ({ data }) => (
       menuLink3="/get-started/budgeting"
       menuLink4="/get-started/retirement"
       menuLink5="/get-started/insurance"
-    />  
+    />
 
-    <SectionContent>
-        <img src={sectionBannerInfo}/>
-    </SectionContent>  
+    <SectionContainer>
+      <SectionContent>
+        <SectionTitle>You Can Be Debt-Free</SectionTitle>
+        <SectionParag>
+          Most people think that having debt is normal.  This mentality robs you of having a better future.<br/>
+          If you don't have any payments you will unlock a very powerful wealth-building tool - your income.
+        </SectionParag>
+        <SectionContent>
+          <img src={sectionBannerInfo}/>
+        </SectionContent>
+        {/*<BigButton to="#">Sign Up</BigButton>*/}
+      </SectionContent>
+    </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
-        <SectionTitle style={{color:`#fff`}}>Create a working budget</SectionTitle>
-        <SectionParag style={{color:`#fff`}}>You're in control</SectionParag>
+        <SectionTitle style={{color:`#fff`}}>Is your budget working?</SectionTitle>
+        <SectionParag style={{color:`#fff`}}>Take total control of your money</SectionParag>
         <BigButton to="/get-started/budgeting">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>

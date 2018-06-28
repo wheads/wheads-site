@@ -44,7 +44,7 @@ const HeroBannerTitle = styled.h2`
 `;
 
 const SectionContainer = styled.div`
-  background-color: #ccc6ba;
+  background-color: #ffffff;
 `;
 
 const SectionContainerWithBg = styled.div`
@@ -73,6 +73,7 @@ const SectionContentWithBg = styled.div`
 `;
 
 const SectionParag = styled.p`
+  //text-align: left;
   font-size: 18px;
   color: #000;
 `;
@@ -128,15 +129,30 @@ export default ({ data }) => (
       menuLink4="/get-started/retirement"
       menuLink5="/get-started/insurance"
     />  
-    <SectionContent>
-        <img src={sectionBannerInfo}/>
-    </SectionContent>  
+
+    <SectionContainer>
+      <SectionContent>
+        <SectionTitle>Get Started Now</SectionTitle>
+        <SectionParag>
+          Most people would say "How can we save?  We don't even have extra money every month."
+        </SectionParag>
+        <SectionParag>         
+          You're probably thinking the same thing.  Give yourself a chance. 
+          If you're serious about having a financially secure future for you and your family, there are ways to save.  It's not how much your earn the counts, it's how much you keep.
+        </SectionParag>
+        <SectionContent>
+          <img src={sectionBannerInfo}/>
+        </SectionContent>
+        {/*<BigButton to="#">Sign Up</BigButton>*/}
+      </SectionContent>
+    </SectionContainer>
+
+
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
-        <SectionTitle style={{color:`#fff`}}>Manage your debt</SectionTitle>
-        <SectionParag style={{color:`#fff`}}>Tired of all your monthly payments?</SectionParag>
-        <SectionParag style={{color:`#fff`}}>You deserve better.</SectionParag>
+        <SectionTitle style={{color:`#fff`}}>Sick and tired of paying your debts?</SectionTitle>        
+        <SectionParag style={{color:`#fff`}}>You deserve better</SectionParag>        
         <BigButton to="/get-started/debt">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
