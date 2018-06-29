@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import bannerBg from "./img-hero-banner-savings.jpg"
+import bannerBg from "./img-hero-banner-budgeting.jpg"
 import sectionBannerBg from "./img-footer-retirement.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 
@@ -90,6 +90,7 @@ const SectionTitle = styled.h2`
 `;
 
 const BigButton = styled(Link)`
+  align: right;
   display: block;
   background-color: #0695a4;
   color: #fff;
@@ -140,9 +141,9 @@ export default ({ data }) => (
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
-        <SectionTitle style={{color:`#fff`}}>Are you ready for retirement?</SectionTitle>
-        <SectionParag style={{color:`#fff`}}>You deserve a brighter future.</SectionParag>
-        <BigButton to="/get-started/retirement">Learn More</BigButton>
+        <SectionTitle style={{color:`#fff`,textAlign:`right`}}>Not enough saved for retirement?</SectionTitle>
+        <SectionParag style={{color:`#fff`,textAlign:`right`}}>You can change that.  It's never too late or too early to start.</SectionParag>
+        <BigButton to="/get-started/retirement" style={{position:`absolute`, right:`100px`}}>Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>

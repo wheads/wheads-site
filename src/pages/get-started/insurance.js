@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import bannerBg from "./img-hero-banner-savings.jpg"
+import bannerBg from "./img-hero-banner-insurance.jpg"
 import sectionBannerBg from "./img-hero-banner-debt.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 
