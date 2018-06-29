@@ -65,12 +65,18 @@ class App extends React.Component {
 
   constructor(props){
     super(props)
-
     
     this.state = {
       currentIndex: 0,
       Worth: 0,
       contents : [
+        {Number: '',
+        Color: '#2d3939',
+        Text1: 'The best thermometer for your financial health is your net worth.' ,
+        Text2: 'Answer the questions and use the slider to determine your Net Worth.',
+        Value: 0,
+        InfoOnly: true,
+        },
         {Number: '',
         Color: 'GREEN',
         Asset: true,
@@ -178,8 +184,12 @@ class App extends React.Component {
         Value: 0,
         },
         {Number: '',
-        Color: '#146414',
+        Color: '#2d3939',
         Text1: 'Your Net Worth' ,
+        Positive1: 'Congratulations in having a positive Net Worth, keep it up!',
+        Positive2: 'Do you want to know if it is enough? Click here.',
+        Negative1: 'Having a negative Net Worth is bad, you need to take action.',
+        Negative2: 'Need help? Click here.',
         Text2: 'Total all other loans/debts/liabilities you owe.',
         Value: 0,
         Last: true,
@@ -280,7 +290,7 @@ class App extends React.Component {
       <PageContainer >
         <Content>
           <Title>Find out your Net Worth</Title>&nbsp;
-          <SubTitle>The best thermometer for your financial health is your net worth.  Answer the questions below and use the slider to determine your Net Worth</SubTitle>&nbsp;
+          <SubTitle></SubTitle>&nbsp;
           <SliderContainer ref={ (divSliderContainer) => this.divSliderContainer = divSliderContainer}  id="divSliderContainer">
             <MovingContainer id="divMoving">
               {this.state.contents.map((content, index) =>
@@ -295,7 +305,7 @@ class App extends React.Component {
               )}
             </MovingContainer>
           </SliderContainer>
-          <div style={{display: 'block'}}>Anhi ang uban</div>
+          &nbsp;
         </Content>
       </PageContainer>);
   }

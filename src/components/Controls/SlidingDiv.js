@@ -91,6 +91,26 @@ const TextInfo = styled.h3`
   margin-left: 15px;
 `;
 
+const Final = styled.h3`
+  text-align: center;
+  margin: 0px;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #2d3939;
+  font-weight: normal;
+`;
+
+const Final2 = styled.h3`
+  text-align: center;
+  margin: 0px;
+  display: block;
+  margin-bottom: 0px;
+  font-size: 0.75rem;
+  color: #2d3939;
+  font-weight: normal;
+`;
+
 const TextSubInfo = styled.h3`
   margin: 0px;
   display: block;
@@ -243,14 +263,17 @@ class SlidingDiv extends Component {
                 <TextSubInfo>{Content.Text2}</TextSubInfo>
               </TextDiv>
             </div>
-            <div style={{display: Content.Last ? 'block' : 'none' }}>
+            <div style={{display: Content.Last ? 'block' : 'none', textAlign: 'center' }}>
               <ContentHolder>
                 <TextDiv>                          
-                  <TextDisplay1 Color={Content.Color} >{Content.Text1}</TextDisplay1>
-                  <TextSubInfo></TextSubInfo>
+                  <TextInfo Color={Content.Color} >{Content.Text1}</TextInfo>
                 </TextDiv>
                 <AmountDiv Color={(this.props.Worth >= 0) ? 'green': 'red'}>{Math.round(this.props.Worth,2).toLocaleString()}</AmountDiv>
               </ContentHolder>
+              <Final>{(this.props.Worth >=0) ? Content.Positive1 : Content.Negative1 }</Final>
+              <Final>{(this.props.Worth >=0) ? Content.Positive2 : Content.Negative2 }</Final>
+              <Final2 style={{marginTop: '25px'}}>Download this free ebook to learn and help you.</Final2>
+              <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '-15px', border: 'none', width: '335px', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
             </div>
             <ButtonHolder>
               <LeftButtonHolder>
