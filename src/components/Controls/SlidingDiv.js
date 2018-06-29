@@ -272,8 +272,6 @@ class SlidingDiv extends Component {
               </ContentHolder>
               <Final>{(this.props.Worth >=0) ? Content.Positive1 : Content.Negative1 }</Final>
               <Final>{(this.props.Worth >=0) ? Content.Positive2 : Content.Negative2 }</Final>
-              <Final2 style={{marginTop: '25px'}}>Download this free ebook to learn and help you.</Final2>
-              <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '-15px', border: 'none', width: '335px', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
             </div>
             <ButtonHolder>
               <LeftButtonHolder>
@@ -283,6 +281,10 @@ class SlidingDiv extends Component {
                 <BigButton id="next" style={{float: 'left', display: this.props.Next !== 'true' ? 'none' : 'block'}} onClick={(e) => this.onClick(e, "forward")} to="#">Next</BigButton>
               </RightButtonHolder>
             </ButtonHolder>
+            <div style={{display: Content.Last ? 'block' : 'none', textAlign: 'center' }}>
+              <Final2 style={{marginTop: '25px'}}>Download this free ebook to learn and help you.</Final2>
+              <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '-15px', border: 'none', width: '335px', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
+            </div>
         </Container>
     );
   }
