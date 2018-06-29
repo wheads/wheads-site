@@ -35,9 +35,11 @@ const RightButtonHolder = styled.div`
 const ContentHolder = styled.div`
   display: grid;  
   grid-template-columns: auto auto;
+  margin-top: 15px;
 
   @media (max-width: 400px) {
     display: block;
+    margin-top: 0px;
   }
 `;
 
@@ -45,16 +47,28 @@ const TextDiv = styled.div`
   display: block;  
 `;
 
-const AmountDiv = styled.div`
+const AmountDiv = styled.h3`
   min-width: 180px;
   text-align: right;
   font-size: 2rem;
   font-weight: bold;
-  color: #00B9FF;
+  color: ${props => props.Color};
+
+  @media (max-width: 400px) {
+    margin-bottom: 20px;
+  }
+  
+  &::before {
+    content: 'Php';
+    position: relative;
+    left: -1.5rem;
+    top: -0.5rem;
+    font-size: 1rem;
+  }
 `
 
 const Container = styled.div`
-  padding: 20px;
+  padding: 5px 20px;
   position: relative;
   width: 100%;
   max-width: 600px;
@@ -63,6 +77,30 @@ const Container = styled.div`
   @media (max-width: 400px) {
     min-width: ${props => props.width}px;
   }
+`;
+
+const TextInfo = styled.h3`
+  margin: 0px;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 1.65rem;
+  color: ${props => props.Color};
+  font-weight: bold;
+  padding-left: 5px;
+  margin-left: 15px;
+`;
+
+const TextSubInfo = styled.h3`
+  margin: 0px;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 1.15rem;
+  color: #2d3939;
+  font-weight: normal;
+  padding-left: 5px;
+  margin-left: 15px;
 `;
 
 const TextDisplay1 = styled.h3`
@@ -75,7 +113,7 @@ const TextDisplay1 = styled.h3`
   font-weight: bold;
   padding-left: 5px;
   margin-left: 15px;
-  border-left: 3px solid #FFFBCE;
+  border-left: 3px solid ${props => props.Color};
 
   @media (max-width: 600px) {
     display: block;
@@ -113,14 +151,14 @@ const Slider = styled.input`
 
 const BigButton = styled(Link)`
   display: inline;
-  color: #000000;
+  color: #2d3939;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
   letter-spacing: 1px;
   padding: 15px 40px;
   border-radius: 5px;
-  border: 4px solid #9AE48B;
+  border: 4px solid #e79702;
   margin: 15px;
 
   @media (max-width: 400px) {
@@ -129,8 +167,7 @@ const BigButton = styled(Link)`
   }
 
   &:hover {
-    background-color: #9AE48B;
-    opacity: 0.9;
+    background-color: #e79702;
   }
 `;
 
@@ -157,7 +194,7 @@ class SlidingDiv extends Component {
   {    
     e.preventDefault();
     
-    var i = this.props.Content.Number;
+    var i = this.props.Index;
     
     if(movement == "back")
     {
@@ -169,7 +206,6 @@ class SlidingDiv extends Component {
       i++;
       //x -= parseInt(this.props.Width);
     }
-    
     this.props.onMovePanels(i);
   }
 
@@ -181,6 +217,8 @@ class SlidingDiv extends Component {
         Amount: e.target.value,
       }
     )
+    
+    this.props.Content.Value = e.target.value;
   }
 
   render() {
@@ -188,14 +226,32 @@ class SlidingDiv extends Component {
 
     return (
         <Container width={this.props.Width} >
+            <div style={{display: (Content.InfoOnly || Content.Last) ? 'none' : 'block' }}>
             <ContentHolder>
               <TextDiv>                          
-                <TextDisplay1 Number={this.props.Content.Number}>{this.props.Content.Text1}</TextDisplay1>
+                <TextDisplay1 Color={this.props.Content.Color} Number={this.props.Content.Number}>{this.props.Content.Text1}</TextDisplay1>
                 <TextDisplay2>{this.props.Content.Text2}</TextDisplay2>
               </TextDiv>
-              <AmountDiv>{Math.round(this.state.Amount,2).toLocaleString()}</AmountDiv>
+              <AmountDiv Color={this.props.Content.Color}>{Math.round(this.state.Amount,2).toLocaleString()}</AmountDiv>
             </ContentHolder>
-            <Slider type="range" defaultValue={0} max={Content.Max} step={Content.Step} onChange={(e) => this.onSliderChange(e)} />
+            <Slider type="range" defaultValue={0} max={Content.Max} step={Content.Step} 
+              onChange={(e) => this.onSliderChange(e)} />
+            </div>
+            <div style={{display: (Content.InfoOnly && !Content.Last) ? 'block' : 'none' }}>
+              <TextDiv>                          
+                <TextInfo Color={Content.Color} >{Content.Text1}</TextInfo>
+                <TextSubInfo>{Content.Text2}</TextSubInfo>
+              </TextDiv>
+            </div>
+            <div style={{display: Content.Last ? 'block' : 'none' }}>
+              <ContentHolder>
+                <TextDiv>                          
+                  <TextDisplay1 Color={Content.Color} >{Content.Text1}</TextDisplay1>
+                  <TextSubInfo></TextSubInfo>
+                </TextDiv>
+                <AmountDiv Color={(this.props.Worth >= 0) ? 'green': 'red'}>{Math.round(this.props.Worth,2).toLocaleString()}</AmountDiv>
+              </ContentHolder>
+            </div>
             <ButtonHolder>
               <LeftButtonHolder>
                 <BigButton id="back" style={{float: 'right', display: this.props.Back !== 'true' ? 'none' : 'block' }} onClick={(e) => this.onClick(e, "back")} to="#">Back</BigButton>

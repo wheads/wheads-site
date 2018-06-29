@@ -15,7 +15,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 36px;
   width: 36px;
   border-radius: 50%;
-  background: #00b2f6;
+  background: #0695a4;
   cursor: pointer;
   margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */   
   box-shadow: inset 1px 2px 5px rgba(255,255,255,255), inset 1px -2px 5px rgba(255,255,255), 2px 3px 5px 1px #0c0c0c
@@ -64,13 +64,13 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #3071a9;
+  background: #2d3939;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #367ebd;
+  background: #2d3939;
 }
 
 input[type=range]::-moz-range-track {
@@ -78,7 +78,7 @@ input[type=range]::-moz-range-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #3071a9;
+  background: #146414; /*#3071a9;*/
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -93,20 +93,20 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-  background: #2a6495;
+  background: #2d3939;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: #3071a9;
+  background: #2d3939;
 }
 input[type=range]::-ms-fill-upper {
-  background: #3071a9;
+  background: #2d3939;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 input[type=range]:focus::-ms-fill-upper {
-  background: #367ebd;
+  background:#2d3939;
 } 
