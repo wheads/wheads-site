@@ -135,15 +135,15 @@ export default ({ data }) => (
           <SectionParag>
             [Infographic on budgeting]
            </SectionParag>  
-        <BigButton to="#">Learn More</BigButton>       
+        {/*<BigButton to="#">Learn More</BigButton>*/}       
       </SectionContent>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
-        <SectionTitle style={{color:`#fff`,textAlign:`right`}}>Not enough saved for retirement?</SectionTitle>
-        <SectionParag style={{color:`#fff`,textAlign:`right`}}>You can change that.  It's never too late or too early to start.</SectionParag>
-        <BigButton to="/get-started/retirement" style={{position:`absolute`, right:`100px`}}>Learn More</BigButton>
+        <SectionTitle style={{color:`#fff`}}>Not enough saved for retirement?</SectionTitle>
+        <SectionParag style={{color:`#fff`}}>You can change that.  It's never too late or too early to start.</SectionParag>
+        <BigButton to="/get-started/retirement">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>

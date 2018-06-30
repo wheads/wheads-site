@@ -146,7 +146,7 @@ export default ({ data }) => (
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
         <SectionTitle style={{color:`#fff`}}>Is your family protected?</SectionTitle>
-        <SectionParag style={{color:`#fff`}}>Show them that you really care.</SectionParag>
+        <SectionParag style={{color:`#fff`}}>Show them you really care.</SectionParag>
         <BigButton to="/get-started/insurance">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>

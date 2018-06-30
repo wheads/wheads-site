@@ -44,7 +44,17 @@ const HeroBannerTitle = styled.h2`
 `;
 
 const SectionContainer = styled.div`
+  display: grid;
+  grid-template-columns: 40% 60%;
   background-color: #ffffff;
+  width: 85%;
+  margin: auto;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+  }
 `;
 
 const SectionContainerWithBg = styled.div`
@@ -54,12 +64,17 @@ const SectionContainerWithBg = styled.div`
 
 const SectionContent = styled.div`
   text-align: center;
-  padding: 50px 100px;
+  padding: 50px;
 
   @media (max-width: 768px) {
     padding: 20px;
     text-align: center;
   }
+`;
+
+const SectionConteInfoGraphic = styled.div`
+  padding: 0px;
+  margin: 0px;
 `;
 
 const SectionContentWithBg = styled.div`
@@ -129,18 +144,19 @@ export default ({ data }) => (
       menuLink5="/get-started/insurance"
     />
 
+
     <SectionContainer>
       <SectionContent>
         <SectionTitle>You Can Be Debt-Free</SectionTitle>
         <SectionParag>
           Most people think that having debt is normal.  This mentality robs you of having a better future.<br/>
-          If you don't have any payments you will unlock a very powerful wealth-building tool - your income.
-        </SectionParag>
-        <SectionContent>
-          <img src={sectionBannerInfo}/>
-        </SectionContent>
+          If you get rid of those payments you will unlock a very powerful wealth-building tool - your income.
+        </SectionParag>        
         {/*<BigButton to="#">Sign Up</BigButton>*/}
       </SectionContent>
+      <SectionConteInfoGraphic>
+          <img src={sectionBannerInfo}/>
+        </SectionConteInfoGraphic>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
