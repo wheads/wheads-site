@@ -106,7 +106,7 @@ const Final2 = styled.h3`
   margin: 0px;
   display: block;
   margin-bottom: 0px;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #2d3939;
   font-weight: normal;
 `;
@@ -281,8 +281,9 @@ class SlidingDiv extends Component {
                 <BigButton id="next" style={{float: 'left', display: this.props.Next !== 'true' ? 'none' : 'block'}} onClick={(e) => this.onClick(e, "forward")} to="#">Next</BigButton>
               </RightButtonHolder>
             </ButtonHolder>
-            <div style={{display: Content.Last ? 'block' : 'none', textAlign: 'center' }}>
-              <Final2 style={{marginTop: '25px'}}>Download this free ebook to learn and help you.</Final2>
+            {/*<div style={{display: Content.Last ? 'block' : 'none', textAlign: 'center' }}>*/}
+            <div>
+              <Final2 style={{marginTop: '25px'}}>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
               <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '-15px', border: 'none', width: '335px', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
             </div>
         </Container>

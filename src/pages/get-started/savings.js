@@ -45,6 +45,12 @@ const HeroBannerTitle = styled.h2`
 
 const SectionContainer = styled.div`
   background-color: #ffffff;
+  width: 85%;
+  margin: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const SectionContainerWithBg = styled.div`
@@ -114,6 +120,8 @@ export default ({ data }) => (
   <div>
     <Helmet>
       <title>Get Started - {data.site.siteMetadata.title}</title>
+      <meta property="og:description" content="Give yourself a chance. If you're serious about having a financially secure future for you and your family, there are ways to save. It's not how much your earn the counts, it's how much you keep."/>
+      <meta property="og:image" content="https://dev.everypeso.com/static/img-hero-banner-savings.50a3f662.jpg" />      
     </Helmet>
 
     <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
