@@ -44,7 +44,17 @@ const HeroBannerTitle = styled.h2`
 `;
 
 const SectionContainer = styled.div`
+  display: grid;
+  grid-template-columns: 40% 60%;
   background-color: #ffffff;
+  width: 85%;
+  margin: auto;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+  }
 `;
 
 const SectionContainerWithBg = styled.div`
@@ -60,6 +70,11 @@ const SectionContent = styled.div`
     padding: 20px;
     text-align: center;
   }
+`;
+
+const SectionConteInfoGraphic = styled.div`
+  padding: 0px;
+  margin: 0px;
 `;
 
 const SectionContentWithBg = styled.div`
@@ -136,11 +151,10 @@ export default ({ data }) => (
           Just like any sports you need both offense and defense to win. <br/>
           Your financial defense is insurance.
         </SectionParag>
-        <SectionContent>
-          <img src={sectionBannerInfo}/>
-          {/*<BigButton to="#">Sign Up</BigButton>*/} 
-        </SectionContent>
       </SectionContent>
+      <SectionConteInfoGraphic>
+        <img src={sectionBannerInfo}/>
+      </SectionConteInfoGraphic>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>

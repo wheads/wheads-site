@@ -44,7 +44,17 @@ const HeroBannerTitle = styled.h2`
 `;
 
 const SectionContainer = styled.div`
+  display: grid;
+  grid-template-columns: 40% 60%;
   background-color: #ffffff;
+  width: 85%;
+  margin: auto;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+  }
 `;
 
 const SectionContainerWithBg = styled.div`
@@ -60,6 +70,11 @@ const SectionContent = styled.div`
     padding: 20px;
     text-align: center;
   }
+`;
+
+const SectionConteInfoGraphic = styled.div`
+  padding: 0px;
+  margin: 0px;
 `;
 
 const SectionContentWithBg = styled.div`
@@ -136,11 +151,10 @@ export default ({ data }) => (
          It's how fast you can save enough for the retirement you want.<br/>
          At 70, you will still have to find a job just to survive if you don't have enough saved.
         </SectionParag>
-        <SectionContent>
-          <img src={sectionBannerInfo}/>
-          {/*<BigButton to="#">Sign Up</BigButton>*/} 
-        </SectionContent>
       </SectionContent>
+      <SectionConteInfoGraphic>
+        <img src={sectionBannerInfo}/>
+      </SectionConteInfoGraphic>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>

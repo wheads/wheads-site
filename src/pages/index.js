@@ -76,10 +76,10 @@ export default ({ data }) => (
   <div>
     <BannerContainer>
       <HeroBanner>
-          <HeroBannerTitle>Every peso counts</HeroBannerTitle>
-          <HeroBannerParag>Saving money is simple!</HeroBannerParag>
-          <HeroBannerParag>All you need is a proper plan.</HeroBannerParag>
-          <HeroBannerParag>Big or small, your income won't matter much, it's just a matter of discipline through budgeting.</HeroBannerParag>
+          <HeroBannerTitle>Welcome!</HeroBannerTitle>
+          <HeroBannerParag>Saving money is simple! All you need is a proper plan</HeroBannerParag>
+          <HeroBannerParag>Big or small, your income won't matter much, it's just a matter of discipline.</HeroBannerParag>
+          <HeroBannerParag>Every peso counts.</HeroBannerParag>
           <BigButton to="/get-started/savings">Learn More</BigButton>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />

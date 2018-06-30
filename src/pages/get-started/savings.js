@@ -157,7 +157,7 @@ export default ({ data }) => (
         <SectionParag>         
           You're probably thinking the same thing.  Give yourself a chance. 
           If you're serious about having a financially secure future for you and your family, there are ways to save.  It's not how much your earn the counts, it's how much you keep.
-        </SectionParag>>
+        </SectionParag>
         {/*<BigButton to="#">Sign Up</BigButton>*/}
       </SectionContent>
         <SectionConteInfoGraphic>

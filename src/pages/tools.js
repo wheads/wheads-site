@@ -17,7 +17,7 @@ const BannerContainer = styled.div`
 
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #dff9fb;
+  background-color: #e79702;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -27,6 +27,7 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
+  color: #ffffff;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -35,7 +36,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 52px;
-  color: #000;
+  color: #ffffff;
 
   @media (max-width: 768px) {
     font-size: 40px;
