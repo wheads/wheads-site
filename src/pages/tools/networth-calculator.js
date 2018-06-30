@@ -19,6 +19,19 @@ const Title = styled.h2`
   margin: 0px;
 `;
 
+const Final2 = styled.h3`
+  text-align: center;
+  display: block;
+  font-size: 1rem;
+  color: #2d3939;
+  font-weight: normal;
+  margin: 0px 50px;
+
+  @media (max-width: 786px) {
+    margin: 10px 15px 5px 15px;
+  }
+`;
+
 const SubTitle = styled.h3`
   font-size: 1.25rem;
   text-align: center;
@@ -305,7 +318,11 @@ class App extends React.Component {
               )}
             </MovingContainer>
           </SliderContainer>
-          &nbsp;
+          
+          <div>
+            <Final2 style={{marginTop: '25px'}}>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
+            <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
+          </div>
         </Content>
       </PageContainer>);
   }

@@ -282,10 +282,6 @@ class SlidingDiv extends Component {
               </RightButtonHolder>
             </ButtonHolder>
             {/*<div style={{display: Content.Last ? 'block' : 'none', textAlign: 'center' }}>*/}
-            <div>
-              <Final2 style={{marginTop: '25px'}}>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
-              <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '-15px', border: 'none', width: '335px', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
-            </div>
         </Container>
     );
   }

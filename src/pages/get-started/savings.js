@@ -44,12 +44,16 @@ const HeroBannerTitle = styled.h2`
 `;
 
 const SectionContainer = styled.div`
+  display: grid;
+  grid-template-columns: 40% 60%;
   background-color: #ffffff;
   width: 85%;
   margin: auto;
+  margin-top: 10px;
 
   @media (max-width: 768px) {
     width: 100%;
+    display: block;
   }
 `;
 
@@ -60,12 +64,17 @@ const SectionContainerWithBg = styled.div`
 
 const SectionContent = styled.div`
   text-align: center;
-  padding: 50px 100px;
+  padding: 50px;
 
   @media (max-width: 768px) {
     padding: 20px;
     text-align: center;
   }
+`;
+
+const SectionConteInfoGraphic = styled.div`
+  padding: 0px;
+  margin: 0px;
 `;
 
 const SectionContentWithBg = styled.div`
@@ -148,12 +157,12 @@ export default ({ data }) => (
         <SectionParag>         
           You're probably thinking the same thing.  Give yourself a chance. 
           If you're serious about having a financially secure future for you and your family, there are ways to save.  It's not how much your earn the counts, it's how much you keep.
-        </SectionParag>
-        <SectionContent>
-          <img src={sectionBannerInfo}/>
-        </SectionContent>
+        </SectionParag>>
         {/*<BigButton to="#">Sign Up</BigButton>*/}
       </SectionContent>
+        <SectionConteInfoGraphic>
+            <img src={sectionBannerInfo}/>
+        </SectionConteInfoGraphic>
     </SectionContainer>
 
 
