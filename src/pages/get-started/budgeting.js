@@ -6,6 +6,7 @@ import bannerBg from "./img-hero-banner-budgeting.jpg"
 import sectionBannerBg from "./img-footer-retirement.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
+import BudgetWinning from "../../components/Tools/BudgetWinning/budget-winning"
 
 const BannerContainer = styled.div`
   background-size: cover;
@@ -130,12 +131,12 @@ export default ({ data }) => (
       <SectionContent>
         <SectionTitle>Budgeting Effectively</SectionTitle>
           <SectionParag>
-            [Infographic on budgeting]
+            [Text on budgeting]
            </SectionParag>  
         {/*<BigButton to="#">Learn More</BigButton>*/}       
       </SectionContent>
       <SectionContentInfoGraphic>
-        [Infographic on budgeting]
+        <BudgetWinning/>
       </SectionContentInfoGraphic>
     </SectionContainer>
 

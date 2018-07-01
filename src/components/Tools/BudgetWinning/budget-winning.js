@@ -16,6 +16,11 @@ import b05 from './b05.png';
 //BLUE - 00B9FF
 //BEIGE - FFFBCE
 
+//Blue - #0695a4
+//Brown - #ccc6ba
+//Orange - #e79702
+//Dark Green - #2d3939
+
 const DivBG = styled.div`
   position: absolute;
   display: block;
@@ -76,6 +81,7 @@ const StepTitle = styled.span`
 
 const StepSub = styled.span`
   font-size: 1.5em;
+  line-height: 1.5rem;
   letter-spacing: 8px;
   font-weight: bold;
   position: relative;
@@ -85,6 +91,7 @@ const StepSub = styled.span`
   @media (max-width: 1200px) {
     letter-spacing: 8px;
     font-size: 2.5em;
+    line-height: 2.5rem;
     position: relative;
     top: 50px;
     padding-left: 10px;
@@ -92,6 +99,7 @@ const StepSub = styled.span`
 
   @media (max-width: 400px) {
     font-size: 1.75em;
+    line-height: 1.75rem;
     letter-spacing: 4px;
     position: relative;
     top: 20px;
@@ -134,9 +142,10 @@ const Note = styled.div`
   display: block;
   border-radius: 15px;
   padding: 25px;
-  background-color: #FFFBCE;
+  background-color: #0695a4;
   top: -15px;
   position: relative;
+  color: #FFFFFF;
   margin: 0px 25px;
   font-size: 1em;
 
@@ -157,13 +166,15 @@ const Note = styled.div`
 
 const TitleHolder = styled.div`
   display: block;
-  background-color: #14641499;
+  background-color: #2d393999;
   background-image: url(${Background});
   background-position: -150px -50px;
 `;
 
 const TitleMain = styled.span`
-  font-size: 8em;
+  font-size: 8rem;
+  position: relative;
+  top: -25px;
   padding: 5px 10px 5px 25px;
   font-weight: bold;
 
@@ -179,9 +190,11 @@ const TitleMain = styled.span`
 `;
 
 const TitleSub = styled.span`
-  font-size: 2.5em;
+  font-size: 2.5rem;
   letter-spacing: 5px;
   font-weight: bold;
+  position: relative;
+  top: 10px;
 
   @media (max-width: 1200px) {
     font-size: 3.25em;
@@ -195,11 +208,13 @@ const TitleSub = styled.span`
 `;
 
 const TitleSub2 = styled.span`
-  font-size: 1.5em;
+  font-size: 1.5rem;
   letter-spacing: 8px;
   padding-left: 25px;
-  top: -35px;
-  position: relative;  
+  line-spaceing 0.25rem;
+  position: relative;
+  top: -50px;
+  left: -100px;
 
   @media (max-width: 1200px) {
     font-size: 2.5em;
@@ -215,7 +230,8 @@ const TitleSub2 = styled.span`
 const DivStyle1 = styled.div`
   display: block;
   padding: 20px 10px;
-  background-color: #14641499;
+  background-color: #2d3939;
+  color: #ccc6ba;
 
   @media (max-width: 1200px) {
     padding: 10px 5px;
@@ -229,7 +245,8 @@ const DivStyle1 = styled.div`
 const DivStyle2 = styled.div`
   display: block;
   padding: 20px 10px;
-  background-color: #1464140A;
+  background-color: #ccc6ba;
+  color: #2d3939;
 
   @media (max-width: 1200px) {
     padding: 10px 5px;
@@ -264,7 +281,7 @@ class DescriptionHolder extends React.Component {
   }
 }
 
-class App extends React.Component {
+class BudgetWinning extends React.Component {
 
   constructor(props){
     super(props)
@@ -321,8 +338,11 @@ class App extends React.Component {
           <TitleHolder id="titleHolder" ref={(divTitleHolder) => this.divTitleHolder = divTitleHolder}>
             {/*<DivBG/>
             <div style={{position: 'absolute', opacity: '0.02', backgroundImage: `url(${Background})`, width: '100%', height: '100%', backgroundPosition: '-150px -50px'}}></div>*/}
-            <TitleMain style={{opacity: '1'}}>5</TitleMain><TitleSub>STEPS IN CREATING</TitleSub><br/>
-            <TitleSub2>a Winning Budget</TitleSub2>
+            <div style={{  display: 'grid', gridTemplateColumns: '100px auto', verticalAlign: 'middle'}}>
+              <TitleMain style={{opacity: '1'}}>5</TitleMain>
+              <TitleSub>STEPS IN CREATING</TitleSub>&nbsp;
+              <TitleSub2>a Winning Budget</TitleSub2>
+            </div>
             <Note>Developing a budget can do more than track your spending and savings.&nbsp;&nbsp;It can also help you work toward your financial goals.&nbsp;&nbsp;The following steps will show your how to build a budget that works for your life, so you don't have to worry about falling short of your plans.</Note>
           </TitleHolder>
           <DescriptionHolder type="1">
@@ -397,9 +417,4 @@ class App extends React.Component {
   }
 }
 
-export default ({ data, scales, margins, svgDimensions }) => (
-    <div>
-        <App/>
-    </div>
-     
-  );
+export default BudgetWinning;
