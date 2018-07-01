@@ -11,11 +11,6 @@ import b03 from './b03.png';
 import b04 from './b04.png';
 import b05 from './b05.png';
 
-//DARK GREEN - 146414
-//LIGHT GREEN - 9AE48B
-//BLUE - 00B9FF
-//BEIGE - FFFBCE
-
 //Blue - #0695a4
 //Brown - #ccc6ba
 //Orange - #e79702

@@ -42,7 +42,7 @@ const Final2 = styled.h3`
   font-size: 1rem;
   color: #2d3939;
   font-weight: normal;
-  margin: 0px 50px;
+  margin: 25px 20px 0px 20px;
 
   @media (max-width: 786px) {
     margin: 10px 15px 5px 15px;
@@ -344,7 +344,7 @@ class App extends React.Component {
             </MovingContainer>
           </SliderContainer>
           
-          <div style={{textAlign: 'center', margin: '10px'}}>
+          <div style={{textAlign: 'center', padding: '10px', backgroundColor: '#ccc6ba', margin: '0px 5px'}}>
             <BookContent>
               <img src={bobook}/>
               <div>
@@ -352,7 +352,7 @@ class App extends React.Component {
                 <ForewordBy>- Bro. Bo Sanchez</ForewordBy>
               </div>
             </BookContent>
-            <Final2 style={{marginTop: '25px'}}>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
+            <Final2>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
             <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
           </div>
         </Content>
