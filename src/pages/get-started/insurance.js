@@ -130,12 +130,18 @@ export default ({ data }) => (
       <SectionContent>
         <SectionTitle>Insurance</SectionTitle>
         <SectionParag>
+<<<<<<< HEAD
+          Just like any sport you need both good offense and defense to win. <br/>
+          Your financial defense is insurance.
+        </SectionParag>
+=======
           Most people would say "How can we save? We don't even have extra money every month.  We could hardly pay our bills."
           You're probably thinking the same thing.  But give yourself a chance. 
           If you're serious about having a financially secure future for you and your family, there are ways to save.
           It's not how much your earn the counts, it's how much you save.
           </SectionParag>
         <BigButton to="#">Sign Up</BigButton>
+>>>>>>> refs/remotes/origin/dev
       </SectionContent>
       <SectionContentInfoGraphic>
         <img src={sectionBannerInfo}/>
