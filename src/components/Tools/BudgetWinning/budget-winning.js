@@ -323,12 +323,7 @@ class BudgetWinning extends React.Component {
   render(){
     
     return(
-      <WinningBudget>        
-      <Helmet>
-        <meta property="og:title" content="Win with a budget"/>
-        <meta property="og:description" content="Create a winning budget."/>
-        <meta property="og:image" content="http://localhost:8000/static/b04.e5b9431d.png" />
-      </Helmet>
+      <WinningBudget>
         <Holder>
           <TitleHolder id="titleHolder" ref={(divTitleHolder) => this.divTitleHolder = divTitleHolder}>
             {/*<DivBG/>
