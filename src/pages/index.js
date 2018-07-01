@@ -79,7 +79,7 @@ export default ({ data }) => (
           <HeroBannerTitle>Welcome!</HeroBannerTitle>
           <HeroBannerParag>Saving money is simple! All you need is a proper plan</HeroBannerParag>
           <HeroBannerParag>Big or small, your income won't matter much,<br/>
-                          it's just a matter knowing your options.
+                           it's just a matter knowing your options.
           </HeroBannerParag>
           <HeroBannerParag>Every peso counts.</HeroBannerParag>
           <BigButton to="/get-started/savings">Learn More</BigButton>

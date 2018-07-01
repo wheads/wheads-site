@@ -343,7 +343,7 @@ class BudgetWinning extends React.Component {
               <StepSub>START WITH YOUR GOALS</StepSub>
             </StepTitleContainer>
             <StepContainer>
-              <StepDesc>Write down your financial goals. Be sure to include actual amounts and time frames to make tracking possible.&nbsp;&nbsp;For example, measurable goals would be "Have" a 50,000 emergency fund by April 1" and "Pay off 25,000 credit card debt in a year".  Then divided the amount by the number of months to figure out your monthly goals.</StepDesc>
+              <StepDesc>Write down your financial goals. Be sure to include actual amounts and time frames to make tracking possible.&nbsp;&nbsp;For example, measurable goals would be "Have" a 50,000 emergency fund by April 1" and "Pay off 25,000 credit card debt in a year".  Then divide the amount by the number of months to figure out your monthly goals.</StepDesc>
               <div>
                 <span style={{display: 'inline-block', height: '100%', verticalAlign: 'middle'}}/>
                 <StepImg src={b01}/>

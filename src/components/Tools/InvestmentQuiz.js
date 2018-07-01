@@ -126,7 +126,7 @@ class InvestmentQuiz extends Component {
       yourScore: 0,
       questions : [
         {number: '1',
-        text: 'A mutual fund is an investment vehicle made up of a pool of moneys collected from many investors for the purpose of investing in securities such as stocks, bonds, money market instruments, etc., and are managed by professional fund managers.' ,
+        text: 'A mutual fund is an investment vehicle made up of a pool of money collected from many investors for the purpose of investing in securities such as stocks, bonds, money market instruments, etc., and are managed by professional fund managers.' ,
         name: 'rdQuestion',
         expected: 'true',
         answer: '',
@@ -148,7 +148,7 @@ class InvestmentQuiz extends Component {
         name: 'rdQuestion',
         expected: 'false',
         answer: '',
-        detailAnswer2: 'To see a single stock perform 50% in 1 year is very tempting, but if it can go 50% in a year it can also go 50% in a year.',
+        detailAnswer2: 'To see a single stock perform 50% in 1 year is very tempting, but if it can go up 50% in a year it can also go down 50% in a year.',
         detailAnswer3: 'And, if you place much of your nest egg with one or two single stocks, your risk skyrockets.',
         options: [{
             selected: '',
@@ -326,7 +326,7 @@ class InvestmentQuiz extends Component {
         answer: '',
         link: 'http://www.google.com',
         linkText: "Know more.",
-        detailAnswer: 'When you get old you are more sickly.  Putting your money in a mutual fund can be a challenge especially if you need money for hospitalization. While inflation might eat up your fund if you just put it in the bank.',
+        detailAnswer: 'When you get old you are more sickly.  Putting your money in a mutual fund can be a challenge especially if you need money for hospitalization.',
         detailAnswer2: 'While inflation might eat up your fund if you just put it in the bank.',
         detailAnswer3: 'Long-term care fund have both the strength of Savings Account liquidity and the inflation-beating returns of a mutual fund.',
         options: [{
@@ -677,7 +677,7 @@ class InvestmentQuiz extends Component {
                   )}
                 
                 <div id="divStartInfo" style={{display: 'table-cell', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
-                  <HeroBannerSub style={{borderBottom: '1px solid', padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px', textAlign: 'center'}}>How will do you know investing?  Take the short quiz below to find out.<br/>Explanations will be provided after completing the quiz.</HeroBannerSub>
+                  <HeroBannerSub style={{borderBottom: '1px solid', padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px', textAlign: 'center'}}>How well do you know investing?  Take the short quiz below to find out.<br/>Explanations will be provided after completing the quiz.</HeroBannerSub>
                   <BigButton id="btnStart" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.StartQuiz(e)}>Start</BigButton>
                 </div>
                 <div id="divReviewQuiz" style={{display: 'none', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
