@@ -131,7 +131,7 @@ export default ({ data }) => (
       <SectionContent>
         <SectionTitle>Budgeting Effectively</SectionTitle>
           <SectionParag>
-            [Text on budgeting]
+          Developing a budget can do more than track your spending and savings.&nbsp;&nbsp;It can also help you work toward your financial goals.&nbsp;&nbsp;The following steps will show your how to build a budget that works for your life, so you don't have to worry about falling short of your plans.
            </SectionParag>  
         {/*<BigButton to="#">Learn More</BigButton>*/}       
       </SectionContent>

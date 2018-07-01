@@ -112,10 +112,12 @@ const StepDesc = styled.div`
 
   @media (max-width: 1200px) {
     font-size: 1.5em;
+    margin-bottom: 15px;
   }
 
   @media (max-width: 400px) {
     font-size: 1.25em;
+    margin-bottom: 25px;
   }
 `;
 
@@ -333,9 +335,9 @@ class BudgetWinning extends React.Component {
               <TitleSub>STEPS IN CREATING</TitleSub>&nbsp;
               <TitleSub2>a Winning Budget</TitleSub2>
             </div>
-            <Note>Developing a budget can do more than track your spending and savings.&nbsp;&nbsp;It can also help you work toward your financial goals.&nbsp;&nbsp;The following steps will show your how to build a budget that works for your life, so you don't have to worry about falling short of your plans.</Note>
+            {/*<Note></Note>*/}
           </TitleHolder>
-          <DescriptionHolder type="1">
+          <DescriptionHolder type="1" >
             <StepTitleContainer>
               <StepTitle>1</StepTitle>
               <StepSub>START WITH YOUR GOALS</StepSub>
