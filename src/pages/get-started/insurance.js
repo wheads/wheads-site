@@ -148,7 +148,7 @@ export default ({ data }) => (
       <SectionContent>
         <SectionTitle>Insurance</SectionTitle>
         <SectionParag>
-          Just like any sports you need both offense and defense to win. <br/>
+          Just like any sport you need both good offense and defense to win. <br/>
           Your financial defense is insurance.
         </SectionParag>
       </SectionContent>
