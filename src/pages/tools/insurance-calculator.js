@@ -110,36 +110,36 @@ class App extends React.Component {
       contents : [
         {Number: '',
         Color: '#2d3939',
-        Text1: 'The best thermometer for your financial health is your net worth.' ,
-        Text2: 'Answer the questions and use the slider to determine your Net Worth.',
+        Text1: 'D.I.M.E method is the simplest way to determine, how much insurance you need.' ,
+        Text2: "Let's step through each item, click NEXT to being",
         Value: 0,
         InfoOnly: true,
         },
+        //{Number: '',
+        //Color: 'GREEN',
+        //Asset: true,
+        //Text1: 'ASSETS' ,
+        //Text2: 'These are everything your own, Real Estate Properties/Savings & Investments/Cars',
+        //Value: 0,
+        //InfoOnly: true,
+        //},
         {Number: '',
-        Color: 'GREEN',
-        Asset: true,
-        Text1: 'ASSETS' ,
-        Text2: 'These are everything your own, Real Estate Properties/Savings & Investments/Cars',
-        Value: 0,
-        InfoOnly: true,
-        },
-        {Number: '1',
         Color: '#146414',
         Asset: true,
-        Text1: 'Do you own a House?' ,
-        Text2: 'Total all your real estate properties',
+        Text1: 'How much DEBT do you have?' ,
+        Text2: 'Combined Credit Cards, Loans and other Debts',
         Amount: 0,
         Max: 8000000,
         Step: 10000,
         Value: 0,
         },
-        {Number: '2',
+        {Number: '',
         Color: '#146414',
         Asset: true,
-        Text1: 'Do you own shares of stocks/mutual funds?' ,
-        Text2: 'Total all your investment portfolio.',
+        Text1: 'What is your Annual INCOME?' ,
+        Text2: 'This includes your other sideline income.',
         Amount: 0,
-        Max: 8000000,
+        Max: 4000000,
         Step: 10000,
         Value: 0,
         },
@@ -327,7 +327,7 @@ class App extends React.Component {
     return(
       <PageContainer >
         <Content>
-          <Title>Find out your Net Worth</Title>&nbsp;
+          <Title>How much Insurance do you Need?</Title>&nbsp;
           <SubTitle></SubTitle>&nbsp;
           <SliderContainer ref={ (divSliderContainer) => this.divSliderContainer = divSliderContainer}  id="divSliderContainer">
             <MovingContainer id="divMoving">
@@ -371,7 +371,7 @@ export default ({ data, scales, margins, svgDimensions }) => (
 );
 
 export const query = graphql`
-  query NetWorthCalculator {
+  query InsuranceCalculator {
     site {
       siteMetadata {
         title

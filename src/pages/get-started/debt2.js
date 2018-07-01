@@ -2,9 +2,9 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import bannerBg from "./img-hero-banner-insurance.jpg"
-import sectionBannerInfo from "./insuranceInfog.jpg"
-import sectionBannerBg from "./img-footer-insurancetag.jpg"
+import bannerBg from "./img-hero-banner-debt.jpg"
+import sectionBannerInfo from "./debtInfog.jpg"
+import sectionBannerBg from "./img-footer-budgeting.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
@@ -114,7 +114,7 @@ export default ({ data }) => (
 
     <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
-        <HeroBannerTitle>Insurance</HeroBannerTitle>
+        <HeroBannerTitle>Debt</HeroBannerTitle>
       </HeroBanner>
     </BannerContainer>
 
@@ -124,35 +124,27 @@ export default ({ data }) => (
       menuLink3="/get-started/budgeting"
       menuLink4="/get-started/retirement"
       menuLink5="/get-started/insurance"
-    />  
+    />
 
     <SectionContainer>
       <SectionContent>
-        <SectionTitle>Insurance</SectionTitle>
+        <SectionTitle>You Can Be Debt-Free</SectionTitle>
         <SectionParag>
-<<<<<<< HEAD
-          Just like any sport you need both good offense and defense to win. <br/>
-          Your financial defense is insurance.
+          Most people think that having debt is normal.  This mentality robs you of having a better future.<br/>
+          If you don't have any payments you will unlock a very powerful wealth-building tool - your income.
         </SectionParag>
-=======
-          Most people would say "How can we save? We don't even have extra money every month.  We could hardly pay our bills."
-          You're probably thinking the same thing.  But give yourself a chance. 
-          If you're serious about having a financially secure future for you and your family, there are ways to save.
-          It's not how much your earn the counts, it's how much you save.
-          </SectionParag>
-        <BigButton to="#">Sign Up</BigButton>
->>>>>>> refs/remotes/origin/dev
+        {/*<BigButton to="#">Sign Up</BigButton>*/}
       </SectionContent>
       <SectionContentInfoGraphic>
-        <img src={sectionBannerInfo}/>
+          <img src={sectionBannerInfo}/>
       </SectionContentInfoGraphic>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
-        <SectionTitle style={{color:`#fff`}}>How much life insurance do you need?</SectionTitle>
-        <SectionParag style={{color:`#fff`}}>Calculate it by using this tool.</SectionParag>
-        <BigButton to="#">Calculate</BigButton>
+        <SectionTitle style={{color:`#fff`}}>Is your budget working?</SectionTitle>
+        <SectionParag style={{color:`#fff`}}>Take total control of your money</SectionParag>
+        <BigButton to="/get-started/budgeting">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>
@@ -160,7 +152,7 @@ export default ({ data }) => (
 );
 
 export const query = graphql`
-  query GetStartedInsurancePageQuery {
+  query GetStartedDebt2Query {
     site {
       siteMetadata {
         title

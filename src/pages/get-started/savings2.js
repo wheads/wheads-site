@@ -2,9 +2,9 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import bannerBg from "./img-hero-banner-insurance.jpg"
-import sectionBannerInfo from "./insuranceInfog.jpg"
-import sectionBannerBg from "./img-footer-insurancetag.jpg"
+import bannerBg from "./img-hero-banner-savings.jpg"
+import sectionBannerInfo from "./savingsInfog.jpg"
+import sectionBannerBg from "./img-footer-debt.jpeg"
 import SubMenuSection from "../../components/SubMenuSection"
 import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
@@ -51,7 +51,7 @@ const SectionContainerWithBg = styled.div`
 
 const SectionContent = styled.div`
   text-align: center;
-  padding: 50px 100px;
+  padding: 50px;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -70,6 +70,7 @@ const SectionContentWithBg = styled.div`
 `;
 
 const SectionParag = styled.p`
+  //text-align: left;
   font-size: 18px;
   color: #000;
 `;
@@ -109,12 +110,15 @@ const BigButton = styled(Link)`
 export default ({ data }) => (
   <div>
     <Helmet>
-      <title>Get Started - {data.site.siteMetadata.title}</title>
+      {/*<title>Get Started - {data.site.siteMetadata.title}</title>*/}
+      <meta property="og:title" content={"Get Started - " + data.site.siteMetadata.title}/>
+      <meta property="og:description" content="Give yourself a chance. If you're serious about having a financially secure future for you and your family, there are ways to save. It's not how much your earn the counts, it's how much you keep."/>
+      <meta property="og:image" content="https://dev.everypeso.com/static/img-hero-banner-savings.50a3f662.jpg" />      
     </Helmet>
 
     <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
-        <HeroBannerTitle>Insurance</HeroBannerTitle>
+        <HeroBannerTitle>Savings</HeroBannerTitle>
       </HeroBanner>
     </BannerContainer>
 
@@ -128,39 +132,35 @@ export default ({ data }) => (
 
     <SectionContainer>
       <SectionContent>
-        <SectionTitle>Insurance</SectionTitle>
+        <SectionTitle>Get Started Now</SectionTitle>
         <SectionParag>
-<<<<<<< HEAD
-          Just like any sport you need both good offense and defense to win. <br/>
-          Your financial defense is insurance.
+          Most people would say "How can we save?  We don't even have extra money every month."
         </SectionParag>
-=======
-          Most people would say "How can we save? We don't even have extra money every month.  We could hardly pay our bills."
-          You're probably thinking the same thing.  But give yourself a chance. 
-          If you're serious about having a financially secure future for you and your family, there are ways to save.
-          It's not how much your earn the counts, it's how much you save.
-          </SectionParag>
-        <BigButton to="#">Sign Up</BigButton>
->>>>>>> refs/remotes/origin/dev
+        <SectionParag>         
+          You're probably thinking the same thing.  Give yourself a chance. 
+          If you're serious about having a financially secure future for you and your family, there are ways to save.  It's not how much your earn the counts, it's how much you keep.
+        </SectionParag>>
+        {/*<BigButton to="#">Sign Up</BigButton>*/}
       </SectionContent>
       <SectionContentInfoGraphic>
-        <img src={sectionBannerInfo}/>
+          <img src={sectionBannerInfo}/>
       </SectionContentInfoGraphic>
     </SectionContainer>
 
+
+
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
-        <SectionTitle style={{color:`#fff`}}>How much life insurance do you need?</SectionTitle>
-        <SectionParag style={{color:`#fff`}}>Calculate it by using this tool.</SectionParag>
-        <BigButton to="#">Calculate</BigButton>
+        <SectionTitle style={{color:`#fff`}}>Sick and tired of paying your debts?</SectionTitle>        
+        <SectionParag style={{color:`#fff`}}>You deserve better</SectionParag>        
+        <BigButton to="/get-started/debt">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>
-  
 );
 
 export const query = graphql`
-  query GetStartedInsurancePageQuery {
+  query GetStartedSavings2PageQuery {
     site {
       siteMetadata {
         title

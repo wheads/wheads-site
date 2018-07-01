@@ -61,7 +61,7 @@ const AmountDiv = styled.h3`
   &::before {
     content: 'Php';
     position: relative;
-    left: -1.5rem;
+    left: -0.5rem;
     top: -0.5rem;
     font-size: 1rem;
   }
@@ -116,11 +116,16 @@ const TextSubInfo = styled.h3`
   display: block;
   text-align: left;
   margin-bottom: 5px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: #2d3939;
   font-weight: normal;
   padding-left: 5px;
+  padding-top: 25px;
   margin-left: 15px;
+  
+  @media (max-width: 400px) {
+    padding-top: 15px;
+  }
 `;
 
 const TextDisplay1 = styled.h3`
