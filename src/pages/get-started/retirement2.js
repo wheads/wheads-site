@@ -2,9 +2,9 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import bannerBg from "./img-hero-banner-insurance.jpg"
-import sectionBannerInfo from "./insuranceInfog.jpg"
-import sectionBannerBg from "./img-footer-insurancetag.jpg"
+import bannerBg from "./img-hero-banner-retirement.jpg"
+import sectionBannerInfo from "./retirementInfog.jpg"
+import sectionBannerBg from "./img-footer-insurance.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
@@ -114,7 +114,7 @@ export default ({ data }) => (
 
     <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
-        <HeroBannerTitle>Insurance</HeroBannerTitle>
+        <HeroBannerTitle>Retirement</HeroBannerTitle>
       </HeroBanner>
     </BannerContainer>
 
@@ -128,14 +128,14 @@ export default ({ data }) => (
 
     <SectionContainer>
       <SectionContent>
-        <SectionTitle>Insurance</SectionTitle>
+        <SectionTitle>Retirement Is Not About Age</SectionTitle>
         <SectionParag>
-          Most people would say "How can we save? We don't even have extra money every month.  We could hardly pay our bills."
-          You're probably thinking the same thing.  But give yourself a chance. 
-          If you're serious about having a financially secure future for you and your family, there are ways to save.
-          It's not how much your earn the counts, it's how much you save.
-          </SectionParag>
-        <BigButton to="#">Sign Up</BigButton>
+         It's how fast you can save enough for the retirement you want.<br/>
+         At 70, you will still have to find a job just to survive if you don't have enough saved.
+        </SectionParag>
+        <SectionContent>
+          {/*<BigButton to="#">Sign Up</BigButton>*/} 
+        </SectionContent>
       </SectionContent>
       <SectionContentInfoGraphic>
         <img src={sectionBannerInfo}/>
@@ -144,17 +144,16 @@ export default ({ data }) => (
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
-        <SectionTitle style={{color:`#fff`}}>How much life insurance do you need?</SectionTitle>
-        <SectionParag style={{color:`#fff`}}>Calculate it by using this tool.</SectionParag>
-        <BigButton to="#">Calculate</BigButton>
+        <SectionTitle style={{color:`#fff`}}>Is your family protected?</SectionTitle>
+        <SectionParag style={{color:`#fff`}}>Show them that you really care.</SectionParag>
+        <BigButton to="/get-started/insurance">Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>
-  
 );
 
 export const query = graphql`
-  query GetStartedInsurancePageQuery {
+  query GetStartedRetirement2PageQuery {
     site {
       siteMetadata {
         title

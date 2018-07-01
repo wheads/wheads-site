@@ -5,6 +5,7 @@ import Link from "gatsby-link";
 import bannerBg from "./img-hero-banner-budgeting.jpg"
 import sectionBannerBg from "./img-footer-retirement.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
+import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
 const BannerContainer = styled.div`
   background-size: cover;
@@ -40,10 +41,6 @@ const HeroBannerTitle = styled.h2`
   @media (max-width: 768px) {
     font-size: 40px;
   }
-`;
-
-const SectionContainer = styled.div`
-  background-color: #ffffff;
 `;
 
 const SectionContainerWithBg = styled.div`
@@ -137,6 +134,9 @@ export default ({ data }) => (
            </SectionParag>  
         {/*<BigButton to="#">Learn More</BigButton>*/}       
       </SectionContent>
+      <SectionContentInfoGraphic>
+        [Infographic on budgeting]
+      </SectionContentInfoGraphic>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>

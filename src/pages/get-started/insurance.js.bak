@@ -6,7 +6,6 @@ import bannerBg from "./img-hero-banner-insurance.jpg"
 import sectionBannerInfo from "./insuranceInfog.jpg"
 import sectionBannerBg from "./img-footer-insurancetag.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
-import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
 const BannerContainer = styled.div`
   background-size: cover;
@@ -44,6 +43,20 @@ const HeroBannerTitle = styled.h2`
   }
 `;
 
+const SectionContainer = styled.div`
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background-color: #ffffff;
+  width: 85%;
+  margin: auto;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+  }
+`;
+
 const SectionContainerWithBg = styled.div`
   background-size: cover;
   background-position: center;
@@ -57,6 +70,11 @@ const SectionContent = styled.div`
     padding: 20px;
     text-align: center;
   }
+`;
+
+const SectionConteInfoGraphic = styled.div`
+  padding: 0px;
+  margin: 0px;
 `;
 
 const SectionContentWithBg = styled.div`
@@ -130,16 +148,13 @@ export default ({ data }) => (
       <SectionContent>
         <SectionTitle>Insurance</SectionTitle>
         <SectionParag>
-          Most people would say "How can we save? We don't even have extra money every month.  We could hardly pay our bills."
-          You're probably thinking the same thing.  But give yourself a chance. 
-          If you're serious about having a financially secure future for you and your family, there are ways to save.
-          It's not how much your earn the counts, it's how much you save.
-          </SectionParag>
-        <BigButton to="#">Sign Up</BigButton>
+          Just like any sports you need both offense and defense to win. <br/>
+          Your financial defense is insurance.
+        </SectionParag>
       </SectionContent>
-      <SectionContentInfoGraphic>
+      <SectionConteInfoGraphic>
         <img src={sectionBannerInfo}/>
-      </SectionContentInfoGraphic>
+      </SectionConteInfoGraphic>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>

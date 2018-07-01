@@ -2,9 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import bannerBg from "./img-hero-banner-insurance.jpg"
-import sectionBannerInfo from "./insuranceInfog.jpg"
-import sectionBannerBg from "./img-footer-insurancetag.jpg"
+import bannerBg from "./img-hero-banner-budgeting.jpg"
+import sectionBannerBg from "./img-footer-retirement.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
@@ -88,6 +87,7 @@ const SectionTitle = styled.h2`
 `;
 
 const BigButton = styled(Link)`
+  align: right;
   display: block;
   background-color: #0695a4;
   color: #fff;
@@ -114,7 +114,7 @@ export default ({ data }) => (
 
     <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
-        <HeroBannerTitle>Insurance</HeroBannerTitle>
+        <HeroBannerTitle>Budgeting</HeroBannerTitle>
       </HeroBanner>
     </BannerContainer>
 
@@ -128,25 +128,22 @@ export default ({ data }) => (
 
     <SectionContainer>
       <SectionContent>
-        <SectionTitle>Insurance</SectionTitle>
-        <SectionParag>
-          Most people would say "How can we save? We don't even have extra money every month.  We could hardly pay our bills."
-          You're probably thinking the same thing.  But give yourself a chance. 
-          If you're serious about having a financially secure future for you and your family, there are ways to save.
-          It's not how much your earn the counts, it's how much you save.
-          </SectionParag>
-        <BigButton to="#">Sign Up</BigButton>
+        <SectionTitle>Budgeting Effectively</SectionTitle>
+          <SectionParag>
+            [Text about budgeting]
+          </SectionParag>  
+        <BigButton to="#">Learn More</BigButton>       
       </SectionContent>
       <SectionContentInfoGraphic>
-        <img src={sectionBannerInfo}/>
+        [Infographic on budgeting]
       </SectionContentInfoGraphic>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
-        <SectionTitle style={{color:`#fff`}}>How much life insurance do you need?</SectionTitle>
-        <SectionParag style={{color:`#fff`}}>Calculate it by using this tool.</SectionParag>
-        <BigButton to="#">Calculate</BigButton>
+        <SectionTitle style={{color:`#fff`,textAlign:`right`}}>Not enough saved for retirement?</SectionTitle>
+        <SectionParag style={{color:`#fff`,textAlign:`right`}}>You can change that.  It's never too late or too early to start.</SectionParag>
+        <BigButton to="/get-started/retirement" style={{position:`absolute`, right:`100px`}}>Learn More</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>
@@ -154,7 +151,7 @@ export default ({ data }) => (
 );
 
 export const query = graphql`
-  query GetStartedInsurancePageQuery {
+  query GetStartedBudgeting2PageQuery {
     site {
       siteMetadata {
         title

@@ -6,6 +6,7 @@ import bannerBg from "./img-hero-banner-debt.jpg"
 import sectionBannerInfo from "./debtInfog.jpg"
 import sectionBannerBg from "./img-footer-budgeting.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
+import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
 const BannerContainer = styled.div`
   background-size: cover;
@@ -43,20 +44,6 @@ const HeroBannerTitle = styled.h2`
   }
 `;
 
-const SectionContainer = styled.div`
-  display: grid;
-  grid-template-columns: 40% 60%;
-  background-color: #ffffff;
-  width: 85%;
-  margin: auto;
-  margin-top: 10px;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    display: block;
-  }
-`;
-
 const SectionContainerWithBg = styled.div`
   background-size: cover;
   background-position: center;
@@ -70,11 +57,6 @@ const SectionContent = styled.div`
     padding: 20px;
     text-align: center;
   }
-`;
-
-const SectionConteInfoGraphic = styled.div`
-  padding: 0px;
-  margin: 0px;
 `;
 
 const SectionContentWithBg = styled.div`
@@ -144,7 +126,6 @@ export default ({ data }) => (
       menuLink5="/get-started/insurance"
     />
 
-
     <SectionContainer>
       <SectionContent>
         <SectionTitle>You Can Be Debt-Free</SectionTitle>
@@ -154,9 +135,9 @@ export default ({ data }) => (
         </SectionParag>        
         {/*<BigButton to="#">Sign Up</BigButton>*/}
       </SectionContent>
-      <SectionConteInfoGraphic>
+      <SectionContentInfoGraphic>
           <img src={sectionBannerInfo}/>
-        </SectionConteInfoGraphic>
+      </SectionContentInfoGraphic>
     </SectionContainer>
 
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
