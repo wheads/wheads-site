@@ -109,11 +109,11 @@ const BigButton = styled(Link)`
 
 export default ({ data }) => (
   <div>
-  <Helmet>
-    <meta property="og:title" content="Want to start saving?"/>
-    <meta property="og:description" content="If you're serious about having a financially secure future for you and your family, there are ways to save. It's not how much your earn the counts, it's how much you keep."/>
-    <meta property="og:image" content="https://dev.everypeso.com/static/img-hero-banner-savings.50a3f662.jpg" />
-  </Helmet>
+    <Helmet>
+      <meta property="og:title" content="Want to start saving?"/>
+      <meta property="og:description" content="If you're serious about having a financially secure future for you and your family, there are ways to save. It's not how much your earn the counts, it's how much you keep."/>
+      <meta property="og:image" content="https://dev.everypeso.com/static/img-hero-banner-savings.50a3f662.jpg" />
+    </Helmet>
 
     <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
@@ -145,9 +145,6 @@ export default ({ data }) => (
           <img src={sectionBannerInfo}/>
       </SectionContentInfoGraphic>
     </SectionContainer>
-
-
-
     <SectionContainerWithBg style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <SectionContentWithBg>
         <SectionTitle style={{color:`#fff`}}>Sick and tired of paying your debts?</SectionTitle>        
@@ -158,7 +155,7 @@ export default ({ data }) => (
   </div>
 );
 
-export const query = graphql`
+{/*export const query = graphql`
   query GetStartedSavingsPageQuery {
     site {
       siteMetadata {
@@ -166,4 +163,4 @@ export const query = graphql`
       }
     }
   }
-`
+`*/}

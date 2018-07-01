@@ -420,17 +420,7 @@ class App extends React.Component {
 
     this.info = "";
   }
-
-  samok(e)
-  {
-    alert('samok!');
-  }
-
-  Samok2(e)
-  {
-    alert('Samok 2');
-  }
-
+  
   render(){
     
     return(
