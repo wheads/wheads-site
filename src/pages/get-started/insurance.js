@@ -146,7 +146,7 @@ export default ({ data }) => (
       <SectionContentWithBg>
         <SectionTitle style={{color:`#fff`}}>How much life insurance do you need?</SectionTitle>
         <SectionParag style={{color:`#fff`}}>Calculate it by using this tool.</SectionParag>
-        <BigButton to="#">Calculate</BigButton>
+        <BigButton to="/tools/insurance-calculator">Calculate</BigButton>
       </SectionContentWithBg>
     </SectionContainerWithBg>
   </div>
