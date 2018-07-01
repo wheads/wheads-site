@@ -110,8 +110,8 @@ class App extends React.Component {
       contents : [
         {Number: '',
         Color: '#2d3939',
-        Text1: 'D.I.M.E method is the simplest way to determine, how much insurance you need.' ,
-        Text2: "Let's step through each item, click NEXT to being",
+        Text1: 'D.I.M.E method is the simplest way to determine how much insurance you need.' ,
+        Text2: "Let's step through each item, click NEXT to begin",
         Value: 0,
         InfoOnly: true,
         },
@@ -129,7 +129,7 @@ class App extends React.Component {
         Text1: 'How much DEBT do you have?' ,
         Text2: 'Combined Credit Cards, Loans and other Debts',
         Amount: 0,
-        Max: 8000000,
+        Max: 4000000,
         Step: 10000,
         Value: 0,
         },
@@ -140,95 +140,37 @@ class App extends React.Component {
         Text2: 'This includes your other sideline income.',
         Amount: 0,
         Max: 4000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '3',
-        Color: '#146414',
-        Asset: true,
-        Text1: 'Do you have cars?' ,
-        Text2: 'Total the current value of all your vehicles.',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '4',
-        Color: '#146414',
-        Asset: true,
-        Text1: 'Do you own other things?' ,
-        Text2: 'Total it all here.',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
+        Step: 50000,
         Value: 0,
         },
         {Number: '',
-        Color: 'RED',
-        Text1: 'LIABILITIES',
-        Asset: false,
-        Text2: 'These are everything your owe, Morgages/Loans/Credit Cards Debts',
-        Value: 0,
-        InfoOnly: true,
-        },
-        {Number: '1',
-        Color: 'red',
-        Asset: false,
-        Text1: 'Do you still have a home mortgage?' ,
-        Text2: 'Total all your real estate mortgages.',
+        Color: '#146414',
+        Asset: true,
+        Text1: 'Are you paying any Mortgages?' ,
+        Text2: 'Total all your mortgages under your name',
         Amount: 0,
         Max: 10000000,
-        Step: 10000,
+        Step: 20000,
         Value: 0,
         },
-        {Number: '2',
-        Color: 'red',
-        Asset: false,
-        Text1: 'Do you have an existing car loan?' ,
-        Text2: 'Total all of your car loans.',
+        {Number: '',
+        Color: '#146414',
+        Asset: true,
+        Text1: 'Do you have kids who are still studying?' ,
+        Text2: 'Total the tuition fee cost for the remaining years up to college.',
         Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '3',
-        Color: 'red',
-        Asset: false,
-        Text1: 'Do you have a Personal Loan?' ,
-        Text2: 'This includes loans from SSS/GSIS/PAG-BIG/BANKS',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '4',
-        Color: 'red',
-        Asset: false,
-        Text1: 'Do you have credit card debts?' ,
-        Text2: 'Total all your outstanding credit card balances',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '5',
-        Color: 'red',
-        Asset: false,
-        Text1: 'What other liabilities do you have that was not listed?' ,
-        Text2: 'Total all other loans/debts/liabilities you owe.',
-        Amount: 0,
-        Max: 10000000,
+        Max: 4000000,
         Step: 10000,
         Value: 0,
         },
         {Number: '',
         Color: '#2d3939',
-        Text1: 'Your Net Worth' ,
-        Positive1: 'Congratulations in having a positive Net Worth, keep it up!',
-        Positive2: 'Do you want to know if it is enough? Click here.',
-        Negative1: 'Having a negative Net Worth is bad, you need to take action.',
-        Negative2: 'Need help? Click here.',
-        Text2: 'Total all other loans/debts/liabilities you owe.',
+        Text1: 'Your need : ' ,
+        Positive1: 'Congratulations in planning to take care of your family.',
+        Positive2: 'It is not that expensive to be covered. Click here to learn more.',
+        Negative1: '',
+        Negative2: '',
+        Text2: '',
         Value: 0,
         Last: true,
         },
@@ -306,18 +248,17 @@ class App extends React.Component {
       }
     }
 
-    var Worth = 0;
-    for(var i=0; i < this.state.contents.length; i++)
+    var InsuranceNeed = 0;
+    for(var i=1; i < this.state.contents.length; i++)
     {
-      if(this.state.contents[i].Asset)
-        Worth += parseInt(this.state.contents[i].Value);
-      else
-        Worth -= parseInt(this.state.contents[i].Value);
+      var val = parseInt(this.state.contents[i].Value);
+      if(i==2) val *= 10;
+      InsuranceNeed += val;
     }
     
     this.setState(
       {
-        Worth: Worth,
+        InsuranceNeed: InsuranceNeed,
       }
     )
   }
@@ -338,7 +279,7 @@ class App extends React.Component {
                   Next={(index<(this.state.contents.length-1))?"true":"false"} Back={(index>0)?"true":"false"} 
                   Width={this.state.Width}
                   onMovePanels={(e) => this.onMovePanels(e, true)}
-                  Worth={this.state.Worth}
+                  Worth={this.state.InsuranceNeed}
                 />
               )}
             </MovingContainer>
