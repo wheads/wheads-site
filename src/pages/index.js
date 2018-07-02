@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
+import sectionBannerBg from "./img-homepage.jpg"
 
 import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
 
@@ -36,7 +37,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 52px;
-  color: #e8f0e8;
+  color: #ffffff;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -74,7 +75,7 @@ const BigButton = styled(Link)`
 
 export default ({ data }) => (
   <div>
-    <BannerContainer>
+    <BannerContainer style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <HeroBanner>
           <HeroBannerTitle>Welcome!</HeroBannerTitle>
           <HeroBannerParag>Saving money is simple! All you need is a proper plan</HeroBannerParag>

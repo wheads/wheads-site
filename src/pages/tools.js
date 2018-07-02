@@ -74,7 +74,7 @@ const BigButton = styled(Link)`
 
 const NormalLinks = styled(Link)`
   display: block;
-  color: #0a0a0a;
+  color: #2d3939;
   text-transform: uppercase;
   text-decoration: none;
   text-align: left;
@@ -96,7 +96,7 @@ export default ({ data }) => (
       <HeroBanner>
           <HeroBannerTitle>Tools</HeroBannerTitle>
           <HeroBannerParag>Taking control of your money may seem overwhelming at first, but you are not alone. We have developed a variety of tools to keep you on track and focused!</HeroBannerParag>
-          <h3>Investing:</h3>
+          {/*<h3>Investing:</h3>*/}
           <ul>
             <li><NormalLinks to="/tools/investment-calc">Investment Calculator</NormalLinks></li>
             <li><NormalLinks to="/tools/investment-quiz">Investment Quiz</NormalLinks></li>
