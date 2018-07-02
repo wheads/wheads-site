@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from "styled-components";
 
-import { HideOnMobile } from '../styles/style.js';
-
 import logo from './logo.svg';
 
 const HeaderContainer = styled.div`
@@ -11,7 +9,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 25px 50px 20px;
-  background-color: #2d3939;
+  background-color: #e8f0e8;
 
   @media (max-width: 767px) {
     display: block;
@@ -27,15 +25,17 @@ const Header = styled.div`
 const Logo = styled.img`
   width: 300px;
   margin-bottom: 0;
+
+  @media (max-width: 1023px) {
+    width: 200px;
+  }
 `;
 
 const MainNav = styled.div`
   display: flex;
   padding: 16px 0;
-  padding-left: 50px;
-  //margin-left: 50px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 10px 0 0;
     margin: 0;
     flex-wrap: wrap;
@@ -44,9 +44,9 @@ const MainNav = styled.div`
 `;
 
 const MainNavLink = styled(Link)`
-  padding-right: 50px;
+  padding-left: 50px;
   font-size: 20px;
-  color: #0695a4;
+  color: #00b8f8;
   text-decoration: none;
 
   &:hover {
@@ -58,24 +58,10 @@ const MainNavLink = styled(Link)`
   }
 
   @media (max-width: 768px) {
-    padding: 5px 10px;
+    padding-left: 20px;
     font-size: 16px;
     margin: 0;
   }
-`;
-
-const BigButton = styled(Link)`
-  display: block;
-  background-color: #146414;
-  color: #ffffff;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 1px;
-  padding: 15px 20px;
-  border-radius: 3px;
-  max-width: 230px;
 `;
 
 class HeaderSection extends Component {
@@ -94,9 +80,7 @@ class HeaderSection extends Component {
           <MainNavLink to={menuLink1}>Get Started</MainNavLink>
           <MainNavLink to={menuLink2}>Classes</MainNavLink>          
           <MainNavLink to={menuLink3}>Tools</MainNavLink>
-          <HideOnMobile>          
-            <MainNavLink to={menuLink4}>Contact</MainNavLink>
-          </HideOnMobile>  
+          <MainNavLink to={menuLink4}>Contact</MainNavLink>
         </MainNav>
       </HeaderContainer>
     );

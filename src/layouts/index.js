@@ -1,7 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
 import HeaderSection from "../components/HeaderSection.js";
+import MobileHeaderSection from "../components/MobileHeaderSection.js";
 import FooterSection from "../components/FooterSection.js";
+import { HideOnMobile, HideOnDesktop } from '../styles/style.js';
 
 export default ({ data, children }) => (
   <div>
@@ -10,19 +12,31 @@ export default ({ data, children }) => (
       <meta name="description" content={data.site.siteMetadata.description} />
     </Helmet>
 
-    <HeaderSection 
-      imgAltTitle={data.site.siteMetadata.title} 
-      menuLink1="/get-started"
-      menuLink2="/classes"
-      menuLink3="/tools"
-      menuLink4="/contact"
-    />
+    <HideOnMobile>
+      <HeaderSection 
+        imgAltTitle={data.site.siteMetadata.title} 
+        menuLink1="/get-started/savings"
+        menuLink2="/classes"
+        menuLink3="/tools"
+        menuLink4="/contact"
+      />
+    </HideOnMobile>  
+
+    <HideOnDesktop>
+      <MobileHeaderSection 
+        imgAltTitle={data.site.siteMetadata.title} 
+        mobileMenuLink1="/get-started/savings"
+        mobileMenuLink2="/classes"
+        mobileMenuLink3="/tools"
+        mobileMenuLink4="/contact"
+      />
+    </HideOnDesktop>
 
     {children()}
     
     <FooterSection 
       footerSiteTitle={data.site.siteMetadata.title} 
-      menuLink1="/get-started"
+      menuLink1="/get-started/savings"
       menuLink2="/classes"
       menuLink3="/tools"
       menuLink4="/contact"
