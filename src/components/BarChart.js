@@ -61,7 +61,7 @@ class BarChart extends Component {
             select(node)
                 .append('polygon')
                 .attr('points', points)
-                .style('fill','#0a0a0a')
+                .style('fill','#2d3939')
                 .style('stroke', '#333')
                 .style('stroke-width','1')
         }
@@ -104,7 +104,7 @@ class BarChart extends Component {
                 .append('div')
                 .attr('id','tooltip')
                 .style('position','absolute')
-                .style('background','#0a0a0a')
+                .style('background','#2d3939')
                 .style('color','#f4f4f4')
                 .style('border','1px #333 solid')
                 .style('border-radius', '5px')
@@ -121,7 +121,7 @@ class BarChart extends Component {
         select(node)
             .selectAll('rect')
             .data(this.props.data.schedule.map(d => d.money))
-            .style('fill', '#9bcb52')
+            .style('fill', '#0695a4')
             .style('cursor','pointer')
             .attr('x', (d,i) => xScale(d))
             .attr('width', xScale.bandwidth())
@@ -144,7 +144,7 @@ class BarChart extends Component {
                 
                 showInfo(d, i);
 
-                select(this).style('fill', '#0073b9')
+                select(this).style('fill', '#e79702')
                 this.visible = 1;
             })
             .on('mousemove', function(d, i){                
@@ -159,7 +159,7 @@ class BarChart extends Component {
                 tooltip.transition()
                     .style('opacity', 0)
                 
-                select(this).style('fill', '#9bcb52')
+                select(this).style('fill', '#0695a4')
                 this.visible = 0;
 
                 

@@ -10,6 +10,11 @@ NumericInput.size = '50px';
 import { Wrapper, SectionH2, SectionParag, Section1ColGray, HideOnMobile } from "../../styles/style.js";
 import MyInput from '../MyInput.js';
 
+//Blue - #0695a4
+//Brown - #ccc6ba
+//Orange - #e79702
+//Dark Green - #2d3939
+
 class CurrencyInput extends React.Component {  
   constructor(props) {
     super(props);
@@ -36,8 +41,10 @@ class CurrencyInput extends React.Component {
                 </div>
               </div>
             </div>
-          <NumericInput strict={true} precision={2} onChange={this.onChange}
-            defaultValue={this.props.value}
+          <NumericInput //strict={true} 
+            precision={2} onChange={this.onChange}
+            //defaultValue={this.props.value}
+            strict={true}
             style={{
               width: '80%',
               float: 'left',
@@ -99,8 +106,10 @@ class PercentInput extends React.Component {
     return (
       <div>
         <InputContainer style={{height: '40px', verticalAlign: 'middle'}}>          
-          <NumericInput strict={true} precision={2} onChange={this.onChange}
-            defaultValue={this.props.value}
+          <NumericInput //strict={true} 
+            precision={2} onChange={this.onChange}
+            defaultValue={this.props.value}            
+            strict={true}
             style={{
               width: '80%',
               float: 'left',
@@ -223,7 +232,7 @@ class NumberInput extends React.Component {
 
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #dff9fb;
+  background-color: #ccc6ba;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -261,7 +270,7 @@ const HeroBannerSub = styled.h1`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: orange;
+  background-color: #e79702;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
@@ -275,6 +284,11 @@ const BigButton = styled(Link)`
 
   @media (max-width: 768px) {
     margin: 15px auto;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    font-weight: bold;
   }
 `;
 
@@ -292,7 +306,7 @@ const InputContainer = styled.div`
   height: 50px;
   padding: 0px;
   border-width: 2px;
-  border-color: #9bcb52;
+  border-color: #0695a4;
   border-style: solid;
   vertical-align: middle;
   display: inline-flex;
