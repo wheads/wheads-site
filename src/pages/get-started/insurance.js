@@ -70,8 +70,13 @@ const SectionContentWithBg = styled.div`
 `;
 
 const SectionParag = styled.p`
-  font-size: 18px;
   color: #000;
+  font-size: 1.15rem;
+  color: #000;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const SectionTitle = styled.h2`

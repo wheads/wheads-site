@@ -18,6 +18,26 @@ const Title = styled.h2`
   text-align: center;
   color: #2d3939;
   margin: 0px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    padding: 0px 10px;
+  }
+`;
+
+const SubTitle = styled.h3`
+  font-size: 1.25rem;
+  text-align: center;
+  color: #2d3939;
+  font-weight: normal;
+  margin: 0px 100px;
+  border-bottom: 2px solid #0695a4;
+  padding-bottom: 15px;
+
+  @media (max-width: 786px) {
+    margin: 0px 15px;
+    font-size: 1rem;
+  }
 `;
 
 const Quote = styled.q`
@@ -46,20 +66,6 @@ const Final2 = styled.h3`
 
   @media (max-width: 786px) {
     margin: 10px 15px 5px 15px;
-  }
-`;
-
-const SubTitle = styled.h3`
-  font-size: 1.25rem;
-  text-align: center;
-  color: #2d3939;
-  font-weight: normal;
-  margin: 0px 100px;
-  border-bottom: 2px solid #0695a4;
-  padding-bottom: 15px;
-
-  @media (max-width: 786px) {
-    margin: 0px 15px;
   }
 `;
 
@@ -124,7 +130,7 @@ class App extends React.Component {
         //InfoOnly: true,
         //},
         {Number: '',
-        Color: '#146414',
+        Color: '#0695a4',
         Asset: true,
         Text1: 'How much DEBT do you have?' ,
         Text2: 'Combined Credit Cards, Loans and other Debts',
@@ -134,7 +140,7 @@ class App extends React.Component {
         Value: 0,
         },
         {Number: '',
-        Color: '#146414',
+        Color: '#0695a4',
         Asset: true,
         Text1: 'What is your Annual INCOME?' ,
         Text2: 'This includes your other sideline income.',
@@ -144,7 +150,7 @@ class App extends React.Component {
         Value: 0,
         },
         {Number: '',
-        Color: '#146414',
+        Color: '#0695a4',
         Asset: true,
         Text1: 'Are you paying any Mortgages?' ,
         Text2: 'Total all your mortgages under your name',
@@ -154,7 +160,7 @@ class App extends React.Component {
         Value: 0,
         },
         {Number: '',
-        Color: '#146414',
+        Color: '#0695a4',
         Asset: true,
         Text1: 'Do you have kids who are still studying?' ,
         Text2: 'Total the tuition fee cost for the remaining years up to college.',
@@ -164,7 +170,7 @@ class App extends React.Component {
         Value: 0,
         },
         {Number: '',
-        Color: '#2d3939',
+        Color: '#0695a4',
         Text1: 'Your need : ' ,
         Positive1: 'Congratulations in planning to take care of your family.',
         Positive2: 'It is not that expensive to be covered. Click here to learn more.',
@@ -294,7 +300,7 @@ class App extends React.Component {
               </div>
             </BookContent>
             <Final2>Start your journey now. &nbsp;Get the first 2 chapters of <br/><b>"The Secret to Saving and Building Your Future"</b>.</Final2>
-            <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
+            <iframe allowTransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
           </div>
         </Content>
       </PageContainer>);
