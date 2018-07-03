@@ -17,7 +17,7 @@ const BannerContainer = styled.div`
 
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #0695a4;
+  background-color: #ccc6ba;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -27,7 +27,7 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
-  color: #ffffff;
+  color: #2d3939;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -36,7 +36,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 52px;
-  color: #ffffff;
+  color: #2d3939;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -56,7 +56,7 @@ const HeroBannerSub = styled.h1`
 const BigButton = styled(Link)`
   display: block;
   background-color: #e79702;
-  color: #fff;
+  color: #2d3939;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -80,12 +80,11 @@ export default ({ data }) => (
 
     <BannerContainer>
       <HeroBanner>
-          <HeroBannerTitle>Classes</HeroBannerTitle>
+          <HeroBannerTitle>Classes and Training</HeroBannerTitle>
           <HeroBannerParag>Live and Recorded classes are coming soon!</HeroBannerParag>
-          <HeroBannerParag>Stay tuned.</HeroBannerParag>
-          <HeroBannerParag>Sign up for updates.</HeroBannerParag>
+          <HeroBannerParag>Stay tuned. Sign up for updates.</HeroBannerParag>
           <BigButton to="#">Send me updates</BigButton>
-      </HeroBanner>
+      </HeroBanner>    
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
   </div>

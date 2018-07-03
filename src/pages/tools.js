@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
+import heroBannerBg from "../components/img-tools.jpg"
 
 import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
 
@@ -23,6 +24,7 @@ const ContentContainer = styled.div`
 const HeroBanner = styled.div`
   text-align: center;
   padding: 130px 100px;
+  background-color: #ccc6ba;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -40,7 +42,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 60px;
-  color: #000;
+  color: #ffffff;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -98,7 +100,7 @@ export default ({ data }) => (
     </Helmet>
 
     <ContentContainer>
-      <HeroBanner>
+      <HeroBanner style={{backgroundImage:`url(` + heroBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
         <HeroBannerTitle>Tools</HeroBannerTitle>
       </HeroBanner>
       <HeroBanner>
@@ -112,7 +114,7 @@ export default ({ data }) => (
           </ul>
       </HeroBanner>
     </ContentContainer>
-    <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
+    {/*<Img sizes={data.imageBannerBg.childImageSharp.sizes} />*/}
   </div>
   
 );
