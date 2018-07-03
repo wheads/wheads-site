@@ -84,7 +84,7 @@ export default ({ data }) => (
           <HeroBannerParag>Live and Recorded classes are coming soon!</HeroBannerParag>
           <HeroBannerParag>Stay tuned.</HeroBannerParag>
           <HeroBannerParag>Sign up for updates.</HeroBannerParag>
-          <BigButton to="#">Sign up</BigButton>
+          <BigButton to="#">Send me updates</BigButton>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>

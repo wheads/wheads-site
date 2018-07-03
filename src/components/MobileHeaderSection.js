@@ -8,7 +8,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 25px 50px;
-  background-color: #e8f0e8;
+  background-color: #2d3939;
 
   @media (max-width: 767px) {
     padding: 22px 32px;
@@ -33,7 +33,7 @@ const MenuLink = styled(Link)`
   margin-left: 24px;
   font-size: 20px;
   text-decoration: none;
-  color: #69757a;
+  color: #0695a4;
   border-bottom: 2px solid #f5f7f8;
   width: 100%;
   

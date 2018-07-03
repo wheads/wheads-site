@@ -77,15 +77,14 @@ export default ({ data }) => (
   <div>
     <BannerContainer style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <HeroBanner>
-          <HeroBannerTitle>Welcome!</HeroBannerTitle>
-          <HeroBannerParag>Saving money is simple! All you need is a proper plan</HeroBannerParag>
-          <HeroBannerParag>Big or small, your income won't matter much,<br/>
-                           it's just a matter knowing your options.
+          <HeroBannerTitle>Saving money is simple!</HeroBannerTitle>
+          <HeroBannerParag> All you need is a proper plan</HeroBannerParag>
+          <HeroBannerParag>Know your options, big or small your income won't matter much.
           </HeroBannerParag>
           <HeroBannerParag>Every peso counts.</HeroBannerParag>
           <BigButton to="/get-started/savings">Learn More</BigButton>
       </HeroBanner>
-      <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
+      {/*<Img sizes={data.imageBannerBg.childImageSharp.sizes} />*/}
     </BannerContainer>
   </div>
   
