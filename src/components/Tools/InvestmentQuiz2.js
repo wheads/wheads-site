@@ -370,7 +370,6 @@ class InvestmentQuiz2 extends Component {
   }  
 
   updateDimensions() {
-    console.log('resize');
     var container = this.divContainer;
     var mainContainer = this.divMainContainer;
     if(mainContainer !== undefined)
@@ -546,7 +545,6 @@ class InvestmentQuiz2 extends Component {
     else if (this.state.index !== 0)
       index--;
     
-    console.log(index);
     if(index == 10)
     {
       this.ShowAnswersDiv(e)

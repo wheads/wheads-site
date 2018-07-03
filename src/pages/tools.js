@@ -7,6 +7,11 @@ import Img from "gatsby-image";
 import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
 
 const BannerContainer = styled.div`
+  background-size: cover;
+  background-position: center;
+`;
+
+const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -16,8 +21,8 @@ const BannerContainer = styled.div`
 `;
 
 const HeroBanner = styled.div`
-  padding: 50px;
-  background-color: #e79702;
+  text-align: center;
+  padding: 130px 100px;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -27,7 +32,6 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
-  color: #ffffff;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -35,11 +39,12 @@ const HeroBannerTitle = styled.h2`
   margin-bottom: 16px;
   padding-bottom: 0;
   border-bottom: none;
-  font-size: 52px;
-  color: #ffffff;
+  font-size: 60px;
+  color: #000;
 
   @media (max-width: 768px) {
     font-size: 40px;
+    margin-bottom: 4px;
   }
 `;
 
@@ -92,18 +97,22 @@ export default ({ data }) => (
       <title>Tools - {data.site.siteMetadata.title}</title>
     </Helmet>
 
-    <BannerContainer>
+    <ContentContainer>
       <HeroBanner>
-          <HeroBannerTitle>Tools</HeroBannerTitle>
+        <HeroBannerTitle>Tools</HeroBannerTitle>
+      </HeroBanner>
+      <HeroBanner>
           <HeroBannerParag>Taking control of your money may seem overwhelming at first, but you are not alone. We have developed a variety of tools to keep you on track and focused!</HeroBannerParag>
           {/*<h3>Investing:</h3>*/}
           <ul>
-            <li><NormalLinks to="/tools/investment-calc">Investment Calculator</NormalLinks></li>
             <li><NormalLinks to="/tools/investment-quiz">Investment Quiz</NormalLinks></li>
+            <li><NormalLinks to="/tools/investment-calc">Investment Calculator</NormalLinks></li>
+            <li><NormalLinks to="/tools/networth-calculator">Net Worth Calculator</NormalLinks></li>
+            <li><NormalLinks to="/tools/insurance-calculator">Insurance Calculator</NormalLinks></li>
           </ul>
       </HeroBanner>
-      <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
-    </BannerContainer>
+    </ContentContainer>
+    <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
   </div>
   
 );

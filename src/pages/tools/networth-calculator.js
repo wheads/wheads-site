@@ -7,6 +7,7 @@ import { select } from 'd3-selection'
 import SlidingDiv from '../../components/Controls/SlidingDiv';
 import { transition } from 'd3-transition'
 import bobook from "./book.jpg"
+import {ToolContainer} from "../../components/ToolContainer";
 
 // Blue - #0695a4
 // Brown - #ccc6ba
@@ -325,38 +326,40 @@ class App extends React.Component {
   render(){
     
     return(
-      <PageContainer >
-        <Content>
-          <Title>Find out your Net Worth</Title>&nbsp;
-          <SubTitle></SubTitle>&nbsp;
-          <SliderContainer ref={ (divSliderContainer) => this.divSliderContainer = divSliderContainer}  id="divSliderContainer">
-            <MovingContainer id="divMoving">
-              {this.state.contents.map((content, index) =>
-                <SlidingDiv key={index.toString()} ref={ (divSliding) => this.divSliding = divSliding} 
-                  Index = {index}
-                  Content = {content}
-                  Next={(index<(this.state.contents.length-1))?"true":"false"} Back={(index>0)?"true":"false"} 
-                  Width={this.state.Width}
-                  onMovePanels={(e) => this.onMovePanels(e, true)}
-                  Worth={this.state.Worth}
-                />
-              )}
-            </MovingContainer>
-          </SliderContainer>
-          
-          <div style={{textAlign: 'center', padding: '10px', backgroundColor: '#ccc6ba', margin: '0px 5px'}}>
-            <BookContent>
-              <img src={bobook}/>
-              <div>
-                <Quote>Friend, this book is your ticket to upgrading your financial life. Read it, devour it, and share it with people who need a financial revolution in their life.</Quote>
-                <ForewordBy>- Bro. Bo Sanchez</ForewordBy>
-              </div>
-            </BookContent>
-            <Final2>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
-            <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
-          </div>
-        </Content>
-      </PageContainer>);
+      <ToolContainer>
+        <PageContainer >
+          <Content>
+            <Title>Find out your Net Worth</Title>&nbsp;
+            <SubTitle></SubTitle>&nbsp;
+            <SliderContainer ref={ (divSliderContainer) => this.divSliderContainer = divSliderContainer}  id="divSliderContainer">
+              <MovingContainer id="divMoving">
+                {this.state.contents.map((content, index) =>
+                  <SlidingDiv key={index.toString()} ref={ (divSliding) => this.divSliding = divSliding} 
+                    Index = {index}
+                    Content = {content}
+                    Next={(index<(this.state.contents.length-1))?"true":"false"} Back={(index>0)?"true":"false"} 
+                    Width={this.state.Width}
+                    onMovePanels={(e) => this.onMovePanels(e, true)}
+                    Worth={this.state.Worth}
+                  />
+                )}
+              </MovingContainer>
+            </SliderContainer>
+            
+            <div style={{textAlign: 'center', padding: '10px', backgroundColor: '#ccc6ba', margin: '0px 5px'}}>
+              <BookContent>
+                <img src={bobook}/>
+                <div>
+                  <Quote>Friend, this book is your ticket to upgrading your financial life. Read it, devour it, and share it with people who need a financial revolution in their life.</Quote>
+                  <ForewordBy>- Bro. Bo Sanchez</ForewordBy>
+                </div>
+              </BookContent>
+              <Final2>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
+              <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
+            </div>
+          </Content>
+        </PageContainer>
+      </ToolContainer>);
   }
 }
 

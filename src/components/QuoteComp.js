@@ -8,24 +8,24 @@ const Quoted = styled.q`
   padding: 0px 10px;
   text-align: center;
   line-height: 1.25em;
-  font-size: ${props => props.FontSize};
+  font-size: 1em;
   color: ${props => props.Color};
   text-shadow: 1px 1px 5px #0C0C0C, -1px -1px 5px #0C0C0C;
   font-weight: bold;
 
   &::before {
-    font-size: 2em;
+    font-size: 1.5em;
     content: open-quote;
     position: relative;
-    top: 0.25em;
+    top: 0.05em;
     color: ${props => props.QuoteColor};
   }
 
   &::after {    
-    font-size: 2em;
+    font-size: 1.5em;
     content: close-quote;
     position: relative;
-    top: 0.25em;
+    top: 0.05em;
     color: ${props => props.QuoteColor};
   }
 `;
@@ -35,6 +35,7 @@ const Container = styled.div`
   padding: 20px 5px;
   display: block;
   position: relative;
+  font-size: ${props => props.FontSize};
 
   @media (max-width: 768px) {
     margin: 5px;
@@ -73,10 +74,10 @@ class ClassQuotedText extends Component {
   render() {
     
     return (
-      <Container>
+      <Container FontSize={this.props.FontSize} >
         <ContainerBg BackgroundImage={this.props.BackgroundImage}>
         </ContainerBg>
-        <Quoted style={this.props.style} Color={this.props.Color} QuoteColor={this.props.QuoteColor} FontSize={this.props.FontSize} >
+        <Quoted style={this.props.style} Color={this.props.Color} QuoteColor={this.props.QuoteColor} >
           {this.props.children}
         </Quoted>
         <QuoteBy QuoteColor={this.props.QuoteColor}>{this.props.QuoteBy}</QuoteBy>

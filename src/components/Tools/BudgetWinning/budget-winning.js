@@ -309,7 +309,6 @@ class BudgetWinning extends React.Component {
    */
   componentDidMount() {
     this.update();
-    console.log('resize');
     window.addEventListener("resize", this.update.bind(this));
   }
 
@@ -318,7 +317,6 @@ class BudgetWinning extends React.Component {
    */
   componentWillUnmount() {
     this.update()
-    console.log('resize');
     window.removeEventListener("resize", this.update.bind(this));
   }  
 

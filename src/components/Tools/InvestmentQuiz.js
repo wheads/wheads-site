@@ -375,11 +375,11 @@ class InvestmentQuiz extends Component {
   updateDimensions() {
     var container = this.divContainer;
     var mainContainer = this.divMainContainer;
-    if(mainContainer !== undefined)
+    if(mainContainer !== null && mainContainer !== undefined)
     {
       this.divMainContainer.style.height = (window.innerHeight / 2) + "px";
     }
-    if(container !== undefined)
+    if(container !== null && container !== undefined)
     {
       var containerDiv = select('#divContainer');
       
