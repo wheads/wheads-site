@@ -12,7 +12,8 @@ import { transition } from 'd3-transition'
 
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #fffbce;
+  background-color: #ccc6ba;
+  font-size: 14px;
 
   @media (max-width: 768px) {
     padding: 15px;
@@ -30,30 +31,40 @@ const HeroBannerTitle = styled.h2`
   margin-bottom: 16px;
   padding-bottom: 0;
   border-bottom: none;
-  font-size: calc(3.5vw + 1.5vh + .5vmin);
+  //font-size: calc(3.5vw + 1.5vh + .5vmin);
+  font-size: 3rem;
   color: #000;
 
   @media (max-width: 768px) {
-    font-size: calc(2.5vw + 2.5vh + .5vmin);
+    //font-size: calc(2.5vw + 2.5vh + .5vmin);
+    font-size: 2rem;
   }
 `;
 
 const HeroBannerSub = styled.h1`
-  font-size: calc(1.25vw + 1.25vh + .5vmin);
+  //font-size: calc(1.25vw + 1.25vh + .5vmin);
+  font-size: 1.75rem;
   color: #707070;
-  margin-bottom: calc(1.25vw + 1.25vh + .5vmin);
+  //margin-bottom: calc(1.25vw + 1.25vh + .5vmin);
   font-weight: 400;
+  border-bottom: 2px solid #0695a4;
+  //padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px'
+  margin: 25px 15px;
+  text-align: center;
+  padding: 0px 0px 50px 0px;
 
   @media (max-width: 768px) {
-    font-size: calc(1.5vw + 1.5vh + .5vmin);
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: calc(1vw + 1vh + .5vmin);
+    //font-size: calc(1.5vw + 1.5vh + .5vmin);
+    font-size: 1.35rem;
+    //margin-left: 5px;
+    //margin-right: 5px;
+    //margin-bottom: calc(1vw + 1vh + .5vmin);
+    padding: 0px 0px 20px 0px;
   }
 `;
 const BigButton = styled(Link)`
   display: block;
-  background-color: #146414;
+  background-color: #e79702;
   box-shadow: 0 8px 6px -6px black;
   color: #fff;
   text-transform: uppercase;
@@ -81,7 +92,7 @@ const BigButton = styled(Link)`
 
 const Button = styled(Link)`
   display: block;
-  background-color: #146414;
+  background-color: #e79702;
   box-shadow: 0 8px 6px -6px black;
   color: #fff;
   text-transform: uppercase;
@@ -401,7 +412,7 @@ class InvestmentQuiz extends Component {
   }
   
   enableButton(id){
-    select(id).style('pointer-events', 'auto').style('background-color','#146414')
+    select(id).style('pointer-events', 'auto').style('background-color','#e79702')
   }
 
   disableButton(id){
@@ -677,7 +688,7 @@ class InvestmentQuiz extends Component {
                   )}
                 
                 <div id="divStartInfo" style={{display: 'table-cell', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
-                  <HeroBannerSub style={{borderBottom: '1px solid', padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px', textAlign: 'center'}}>How well do you know investing?  Take the short quiz below to find out.<br/>Explanations will be provided after completing the quiz.</HeroBannerSub>
+                  <HeroBannerSub>How well do you know investing?  Take the short quiz below to find out.<br/><br/>Explanations will be provided after completing the quiz.</HeroBannerSub>
                   <BigButton id="btnStart" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.StartQuiz(e)}>Start</BigButton>
                 </div>
                 <div id="divReviewQuiz" style={{display: 'none', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>

@@ -101,6 +101,22 @@ const Final = styled.h3`
   font-weight: normal;
 `;
 
+const NextStep = styled.h3`
+  text-align: center;
+  margin: 0px;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #2d3939;
+  font-weight: normal;
+  margin-top: 10px;
+`
+
+const NextStepLink = styled.a`
+  font-weight: bold;
+  color: #e79702;
+`
+
 const Final2 = styled.h3`
   text-align: center;
   margin: 0px;
@@ -277,6 +293,7 @@ class SlidingDiv extends Component {
               </ContentHolder>
               <Final>{(this.props.Worth >=0) ? Content.Positive1 : Content.Negative1 }</Final>
               <Final>{(this.props.Worth >=0) ? Content.Positive2 : Content.Negative2 }</Final>
+              <NextStep>{Content.NextStep} Click <NextStepLink href={Content.NextStepLink}>here</NextStepLink> to learn more.</NextStep>
             </div>
             <ButtonHolder>
               <LeftButtonHolder>

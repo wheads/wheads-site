@@ -175,12 +175,14 @@ class App extends React.Component {
         Color: '#0695a4',
         Text1: 'Your need : ' ,
         Positive1: 'Congratulations in planning to take care of your family.',
-        Positive2: 'It is not that expensive to be covered. Click here to learn more.',
+        Positive2: '',
         Negative1: '',
         Negative2: '',
         Text2: '',
         Value: 0,
         Last: true,
+        NextStep: 'Having enough coverage is not that expensive.',
+        NextStepLink: '',
         },
       ]
       }

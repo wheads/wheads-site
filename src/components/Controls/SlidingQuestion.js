@@ -25,60 +25,71 @@ const ContainerSub = styled.div`
 
 const QuestionDiv = styled.div`
   margin: 1em 0.01em 0.5em 0.01em;
-  font-size: calc(0.75vw + 0.75vh + .5vmin);
+  //font-size: calc(0.75vw + 0.75vh + .5vmin);
+  font-size: 1.25rem;
   color: #3a3e4b;
   text-align: left;
   font-weight: bold;
 
   @media (max-width: 768px) {
     //font-size: calc(1vw + 1vh + .5vmin);
-    font-size: 12px;
+    //font-size: 12px;
+    font-size: 1rem;
   }
 
   @media (max-width: 400px) {
-    font-size: 12px;
+    //font-size: 12px;
+    font-size: 1rem;
   }
 `;
 
 const Radio = styled.input`
-  height: calc(0.5vw + 0.5vh + .5vmin);
-  width: calc(0.5vw + 0.5vh + .5vmin);
+  //height: calc(0.5vw + 0.5vh + .5vmin);
+  //width: calc(0.5vw + 0.5vh + .5vmin);
+  height: 1rem;
+  width: 1rem;
   cursor: pointer;
 
   @media (max-width: 768px) {
-    height: calc(0.75vw + 0.75vh + .5vmin);
-    width: calc(0.75vw + 0.75vh + .5vmin);
+    //height: calc(0.75vw + 0.75vh + .5vmin);
+    //width: calc(0.75vw + 0.75vh + .5vmin);
+    height: 0.75rem;
+    width: 0.75rem;
   }
 `;
 
 const AnswerChoice = styled.div`
   margin: 0px;
-  font-size: calc(0.75vw + 0.75vh + .5vmin);
+  //font-size: calc(0.75vw + 0.75vh + .5vmin);
+  font-size: 1.25rem;
   color: #3a3e4b;
   text-align: left;
 
   @media (max-width: 768px) {
     //font-size: calc(1vw + 1vh + .5vmin);
-    font-size: 12px;
+    //font-size: 12px;
+    font-size: 1rem;
   }
 
   @media (max-width: 400px) {
-    font-size: 12px;
+    //font-size: 12px;
+    font-size: 1rem;
   }
 `;
 
 const DetailedAnswer = styled.div`
   margin: 5px;
-  font-size: calc(0.5vw + 1vh + .5vmin);
+  //font-size: calc(0.5vw + 1vh + .5vmin);
+  font-size: 1.25rem;
   font-weight: 500;
-  color: green;
-  color: #004086;
+  color: #0695a4;
   display: block;
   text-align: left;
   display: none;
 
   @media (max-width: 768px) {
-    font-size: calc(1vw + 1vh + .5vmin);
+    //font-size: calc(1vw + 1vh + .5vmin);
+    font-size: 1rem;
   }
 `;
 
@@ -88,9 +99,16 @@ const DetailedAnswerSub = styled.div`
 
 const AnswersIcon = styled.img`
   margin: 0px 0.5em 0px 0px;
-  width: calc(0.5vw + 0.5vh + .5vmin);
-  height: calc(0.5vw + 0.5vh + .5vmin);
+  //width: calc(0.5vw + 0.5vh + .5vmin);
+  //height: calc(0.5vw + 0.5vh + .5vmin);
+  width: 1rem;
+  height: 1rem;
   opacity: 0;
+
+  @media (max-width: 768px) {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 `;
 
 class SlidingQuestion extends Component {   
@@ -134,7 +152,7 @@ class SlidingQuestion extends Component {
     if(this.props.question.number==10)
     {
       select("#next10").style('display','block')
-      select("#next10").style('background-color','green')
+      select("#next10").style('background-color','#e79702')
     }
 
     this.props.onOptionChange(this.props.question);

@@ -296,6 +296,7 @@ const CustomHeroBannerParag = styled(HeroBannerParag)`
   font-style: italic;
   color: #8990a4;
   margin-bottom: 15px;
+  font-size: 0.75rem;
 `;
 
 const InfoContainer = styled.div`
