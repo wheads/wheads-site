@@ -293,7 +293,7 @@ class App extends React.Component {
                 )}
               </MovingContainer>
             </SliderContainer>
-            <QuotedText BackgroundImage={`url(` + insurance + `)`} FontSize='1.5rem' Color='#ffffff' QuoteColor='#0695a4' QuoteBy="Dave Ramsey" >Term life insurance is part of a good defensive game plan.</QuotedText>
+            <QuotedText BackgroundImage={`url(` + insurance + `)`} FontSize='1.5rem' Color='#ffffff' QuoteColor='#e79702' QuoteBy="Dave Ramsey" >Term life insurance is part of a good defensive game plan.</QuotedText>
             {/*<div style={{textAlign: 'center', padding: '10px', backgroundColor: '#ccc6ba', margin: '0px 5px'}}>
               <BookContent>
                 <img src={bobook}/>

@@ -6,8 +6,10 @@ import Img from "gatsby-image";
 import { select } from 'd3-selection'
 import SlidingDiv from '../../components/Controls/SlidingDiv';
 import { transition } from 'd3-transition'
-import bobook from "./book.jpg"
+//import bobook from "./book.jpg"
 import {ToolContainer} from "../../components/ToolContainer";
+import {QuotedText} from '../../components/QuoteComp'
+import imgQuote from "../get-started/img-hero-banner-retirement.jpg"
 
 // Blue - #0695a4
 // Brown - #ccc6ba
@@ -344,9 +346,9 @@ class App extends React.Component {
                   />
                 )}
               </MovingContainer>
-            </SliderContainer>
-            
-            <div style={{textAlign: 'center', padding: '10px', backgroundColor: '#ccc6ba', margin: '0px 5px'}}>
+            </SliderContainer>            
+            <QuotedText BackgroundImage={`url(` + imgQuote + `)`} FontSize='1.5rem' Color='#ffffff' QuoteColor='#e79702' QuoteBy="Chinese Proverb" >Be not afraid of growing slowly; Be afraid only of standing still.</QuotedText>
+            {/*<div style={{textAlign: 'center', padding: '10px', backgroundColor: '#ccc6ba', margin: '0px 5px'}}>
               <BookContent>
                 <img src={bobook}/>
                 <div>
@@ -356,7 +358,7 @@ class App extends React.Component {
               </BookContent>
               <Final2>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
               <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
-            </div>
+              </div>*/}
           </Content>
         </PageContainer>
       </ToolContainer>);

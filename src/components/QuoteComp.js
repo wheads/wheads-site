@@ -12,6 +12,7 @@ const Quoted = styled.q`
   color: ${props => props.Color};
   text-shadow: 1px 1px 5px #0C0C0C, -1px -1px 5px #0C0C0C;
   font-weight: bold;
+  font-style: italic;
 
   &::before {
     font-size: 1.5em;
