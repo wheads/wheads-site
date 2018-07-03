@@ -5,8 +5,9 @@ import Link from "gatsby-link";
 import Img from "gatsby-image";
 import { select } from 'd3-selection'
 import SlidingDiv from '../../components/Controls/SlidingDiv';
+import {QuotedText} from '../../components/QuoteComp'
 import { transition } from 'd3-transition'
-import bobook from "./book.jpg"
+import insurance from "../get-started/img-hero-banner-insurance.jpg"
 
 // Blue - #0695a4
 // Brown - #ccc6ba
@@ -290,7 +291,7 @@ class App extends React.Component {
               )}
             </MovingContainer>
           </SliderContainer>
-          
+          <QuotedText BackgroundImage={`url(` + insurance + `)`} FontSize='1.5rem' Color='#ffffff' QuoteColor='#0695a4' QuoteBy="Dave Ramsey" >Term life insurance is part of a good defensive game plan.</QuotedText>
           {/*<div style={{textAlign: 'center', padding: '10px', backgroundColor: '#ccc6ba', margin: '0px 5px'}}>
             <BookContent>
               <img src={bobook}/>
