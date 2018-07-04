@@ -92,6 +92,7 @@ const FormButton = styled.button`
   border-style: none;
   margin-top: 15px;
   width: 230px;
+  cursor: pointer;
 
   @media (max-width: 767px) {
     margin: 15px auto;
@@ -116,6 +117,8 @@ export default ({ data }) => (
             <label>Your Message</label>
             <textarea name="message" placeholder="Write your message here." required />
             <FormButton type="submit" value="Send">Send</FormButton>
+            <input type="hidden" name="_next" value="/thanks" />
+            <input type="hidden" name="_subject" value="New message from contact form!" />
           </Form>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
