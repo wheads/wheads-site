@@ -16,7 +16,7 @@ const BannerContainer = styled.div`
 `;
 
 const HeroBanner = styled.div`
-  padding: 50px;
+  padding: 25px 50px;
   background-color: #ccc6ba;
 
   @media (max-width: 768px) {
@@ -53,7 +53,32 @@ const HeroBannerSub = styled.h1`
   }
 `;
 
-const BigButton = styled(Link)`
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  label {
+    text-align: left;
+  }
+
+  input {
+    max-width: 300px;
+    padding: 0.1ex 1ex 0.1ex 4px;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+
+  textarea {
+    padding: 0.1ex 1ex 0.1ex 4px;
+    font-size: 18px;
+  }
+`;
+
+const FormButton = styled.button`
   display: block;
   background-color: #e79702;
   color: #fff;
@@ -64,11 +89,13 @@ const BigButton = styled(Link)`
   letter-spacing: 1px;
   padding: 15px 20px;
   border-radius: 3px;
+  border-style: none;
   margin-top: 15px;
-  max-width: 230px;
+  width: 230px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     margin: 15px auto;
+    width: 100%;
   }
 `;
 
@@ -81,8 +108,15 @@ export default ({ data }) => (
     <BannerContainer>
       <HeroBanner>
           <HeroBannerTitle>Contact us</HeroBannerTitle>
-          <HeroBannerParag>Receive updates and more.</HeroBannerParag>
-          <BigButton to="#">Send me updates</BigButton>
+          <Form action="https://formspree.io/wealthyheads@gmail.com" method="POST">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <label>Your Email</label>
+            <input type="email" name="_replyto" placeholder="Your Email" required />
+            <label>Your Message</label>
+            <textarea name="message" placeholder="Write your message here." required />
+            <FormButton type="submit" value="Send">Send</FormButton>
+          </Form>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
