@@ -109,17 +109,15 @@ export default ({ data }) => (
     <BannerContainer>
       <HeroBanner>
           <HeroBannerTitle>Contact us</HeroBannerTitle>
-          <form action="https://formspree.io/wealthyheads@gmail.com" method="POST">
-            <label>Your Name</label>
-            <input type="text" name="name" placeholder="Your Name" required />
-            <label>Your Email</label>
-            <input type="email" name="_replyto" placeholder="Your Email" required />
-            <label>Your Message</label>
-            <textarea name="message" placeholder="Write your message here." required />
-            <input type="submit" value="Send" />
-            <input type="hidden" name="_next" value="/thanks" />
-            <input type="hidden" name="_subject" value="New message from contact form!" />
-          </form>
+          <Form method="post" action="https://briskforms.com/go/e45c5caf89fe767899d09dba532991de">
+            <label for="Name">Your Name</label>
+            <input type="text" name="Name" id="Name" placeholder="Your Name" required />
+            <label for="Email">Your Email</label>
+            <input type="email" name="Email" id="Email" placeholder="Your Email" required />
+            <label for="Message">Your Message</label>
+            <textarea name="Message" id="Message" placeholder="Write your message here." required />
+            <FormButton type="submit" name="Send" value="Send">Send</FormButton>
+          </Form>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
