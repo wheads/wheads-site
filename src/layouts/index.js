@@ -4,12 +4,14 @@ import HeaderSection from "../components/HeaderSection.js";
 import MobileHeaderSection from "../components/MobileHeaderSection.js";
 import FooterSection from "../components/FooterSection.js";
 import { HideOnMobile, HideOnDesktop } from '../styles/style.js';
+import favicon from './favicon.png'
 
 export default ({ data, children }) => (
   <div>
     <Helmet>
       <title>{data.site.siteMetadata.title}</title>
       <meta name="description" content={data.site.siteMetadata.description} />
+      <link rel="icon" type="image/png" href={favicon} />
     </Helmet>
 
     <HideOnMobile>
