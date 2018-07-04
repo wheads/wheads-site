@@ -1,7 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import Link from "gatsby-link";
 import Img from "gatsby-image";
 
 import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
@@ -53,53 +52,6 @@ const HeroBannerSub = styled.h1`
   }
 `;
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-
-  label {
-    text-align: left;
-  }
-
-  input {
-    max-width: 300px;
-    padding: 0.1ex 1ex 0.1ex 4px;
-    font-size: 18px;
-    margin-bottom: 10px;
-
-    @media (max-width: 767px) {
-      max-width: 100%;
-    }
-  }
-
-  textarea {
-    padding: 0.1ex 1ex 0.1ex 4px;
-    font-size: 18px;
-  }
-`;
-
-const FormButton = styled.button`
-  display: block;
-  background-color: #e79702;
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 1px;
-  padding: 15px 20px;
-  border-radius: 3px;
-  border-style: none;
-  margin-top: 15px;
-  width: 230px;
-  cursor: pointer;
-
-  @media (max-width: 767px) {
-    margin: 15px auto;
-    width: 100%;
-  }
-`;
-
 export default ({ data }) => (
   <div>
     <Helmet>
@@ -108,16 +60,8 @@ export default ({ data }) => (
 
     <BannerContainer>
       <HeroBanner>
-          <HeroBannerTitle>Contact us</HeroBannerTitle>
-          <Form method="post" action="https://briskforms.com/go/e45c5caf89fe767899d09dba532991de">
-            <label for="Name">Your Name</label>
-            <input type="text" name="Name" id="Name" placeholder="Your Name" required />
-            <label for="Email">Your Email</label>
-            <input type="email" name="Email" id="Email" placeholder="Your Email" required />
-            <label for="Message">Your Message</label>
-            <textarea name="Message" id="Message" placeholder="Write your message here." required />
-            <FormButton type="submit" name="Send" value="Send">Send</FormButton>
-          </Form>
+          <HeroBannerTitle>Thank you!</HeroBannerTitle>
+          <HeroBannerParag>Your message has been sent. We will contact you soon.</HeroBannerParag>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
@@ -126,7 +70,7 @@ export default ({ data }) => (
 );
 
 export const query = graphql`
-  query ContactPageQuery {
+  query ThanksPageQuery {
     site {
       siteMetadata {
         title
