@@ -2,12 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
+import sectionBannerBg from "./img-homepage.jpg"
 
 import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
 
 const BannerContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: #0695a4;
 
   @media (max-width: 768px) {
     display: block;
@@ -16,7 +19,6 @@ const BannerContainer = styled.div`
 
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #dff9fb;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -26,6 +28,7 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
+  color: #e8f0e8;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -34,7 +37,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 52px;
-  color: #000;
+  color: #ffffff;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -53,8 +56,8 @@ const HeroBannerSub = styled.h1`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: orange;
-  color: #fff;
+  background-color: #e79702;
+  color: #2d3939;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -72,15 +75,16 @@ const BigButton = styled(Link)`
 
 export default ({ data }) => (
   <div>
-    <BannerContainer>
+    <BannerContainer style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <HeroBanner>
-          <HeroBannerTitle>About Our Campaign</HeroBannerTitle>
-          <HeroBannerParag>Join our campaign for financial literacy!</HeroBannerParag>
-          <HeroBannerParag>We believe that everyone has the right to become wealthy if they have the proper financial foundation.</HeroBannerParag>
-          <HeroBannerParag>You don't have to be an expert to be financially independent, you just have to know the basics then everything will just be common sense.</HeroBannerParag>
-          <BigButton to="#">Start Here</BigButton>
+          <HeroBannerTitle>Saving money is simple!</HeroBannerTitle>
+          <HeroBannerParag> All you need is a proper plan</HeroBannerParag>
+          <HeroBannerParag>Know your options, big or small your income won't matter much.
+          </HeroBannerParag>
+          <HeroBannerParag>Every peso counts.</HeroBannerParag>
+          <BigButton to="/get-started/savings">Learn More</BigButton>
       </HeroBanner>
-      <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
+      {/*<Img sizes={data.imageBannerBg.childImageSharp.sizes} />*/}
     </BannerContainer>
   </div>
   
@@ -88,9 +92,9 @@ export default ({ data }) => (
 
 export const query = graphql`
   query HomePageQuery {
-    imageBannerBg: file(relativePath: { eq: "banner-bg.jpeg" }) {
+    imageBannerBg: file(relativePath: { eq: "indeximage.png" }) {
       childImageSharp {
-        sizes(maxWidth: 1920, maxHeight: 1280) {
+        sizes(maxWidth: 1302, maxHeight: 1035) {
           ...GatsbyImageSharpSizes
         }
       }

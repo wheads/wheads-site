@@ -17,7 +17,7 @@ const BannerContainer = styled.div`
 
 const HeroBanner = styled.div`
   padding: 50px;
-  background-color: #dff9fb;
+  background-color: #ccc6ba;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -27,6 +27,7 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
+  color: #2d3939;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -35,7 +36,7 @@ const HeroBannerTitle = styled.h2`
   padding-bottom: 0;
   border-bottom: none;
   font-size: 52px;
-  color: #000;
+  color: #2d3939;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -54,8 +55,8 @@ const HeroBannerSub = styled.h1`
 
 const BigButton = styled(Link)`
   display: block;
-  background-color: orange;
-  color: #fff;
+  background-color: #e79702;
+  color: #2d3939;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -79,10 +80,11 @@ export default ({ data }) => (
 
     <BannerContainer>
       <HeroBanner>
-          <HeroBannerTitle>Classes</HeroBannerTitle>
-          <HeroBannerParag>I’m a paragraph. Use this space to tell people more about what you do and the services you offer.</HeroBannerParag>
-          <BigButton to="#">Read More</BigButton>
-      </HeroBanner>
+          <HeroBannerTitle>Classes and Training</HeroBannerTitle>
+          <HeroBannerParag>Live and Recorded classes are coming soon!</HeroBannerParag>
+          <HeroBannerParag>Stay tuned. Sign up for updates.</HeroBannerParag>
+          <BigButton to="#">Send me updates</BigButton>
+      </HeroBanner>    
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
   </div>

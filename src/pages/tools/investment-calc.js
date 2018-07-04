@@ -14,8 +14,9 @@ import { max } from 'd3-array';
 import * as d3Axis from 'd3-axis';
 import { select } from 'd3-selection';
 import { transition } from 'd3-transition';
+import {ToolContainer} from "../../components/ToolContainer";
 
-const ToolContainer = styled.div`
+const PageContainer = styled.div`
   display: grid;
   grid-template-columns: 35% 65%;
 
@@ -107,7 +108,7 @@ class App extends React.Component {
 
   updateDimensions() {
     var bar = this.resultContainer;
-    if(bar !== undefined)
+    if(bar !== undefined && bar !== null)
     {
       this.setState({width: bar.offsetWidth, height: bar.offsetWidth * 0.75});
     }
@@ -181,112 +182,114 @@ class App extends React.Component {
     
     return(
     <ToolContainer >
-      <InvestmentCalc onClick={e => this.onClick(e)} />
-      <div ref={ (divResult) => this.divResult = divResult} style={{opacity: '0.1', display: 'block', background: 'white', float: 'left', width: '100%' }}>
-        <div style={{backgroundImage: `url(${bgImage})`, backgroundRepeat: 'repeat', display: 'block', width: '100%', textAlign: 'center'}}>
-          
-        <WhatIfContainer >
-            <div >            
-              <ResultInfoHeader>Initial Balance</ResultInfoHeader>
-              <ResultInfo>
-                <Sup style={{paddingRight: '10px'}}>Php</Sup>
-                {Math.round(this.state.data.initial,0).toLocaleString()}
-              </ResultInfo>
-              <p style={{fontSize: '1rem', textShadow: '2px 2px 15px white'}}>
-                {this.getPercentage(this.state.data.initial, (this.state.data.initial + this.state.data.contributions))}
-                % of Principal
-              </p>
-            </div>
-            <div >
-              <ResultInfoHeader>Contributions</ResultInfoHeader>
-              <ResultInfo>
-                <Sup style={{paddingRight: '10px'}}>Php</Sup>
-                {Math.round(this.state.data.contributions,0).toLocaleString()}
-              </ResultInfo>
-              <p style={{fontSize: 'rem', textShadow: '2px 2px 15px white'}}>
-                {this.getPercentage(this.state.data.contributions, (this.state.data.initial + this.state.data.contributions))}
-                % of Principal
-              </p>
-            </div>
-            <div >
-              <ResultInfoHeader>Growth</ResultInfoHeader>
-              <ResultInfo>
-                <Sup style={{paddingRight: '10px'}}>Php</Sup>
-                {Math.round(this.state.data.growth,0).toLocaleString()}
-              </ResultInfo>
-              <p style={{fontSize: '1rem', textShadow: '2px 2px 15px white'}}>
-                {this.getPercentage(this.state.data.growth, (this.state.data.initial + this.state.data.contributions))}
-                % gain
-              </p>
-            </div>
-          </WhatIfContainer>
-          <div id="summary" style={{margin: '20px 2%', background: 'white', boxShadow: '0px 20px 50px 2px #888888'}}>
-            <div style={{fontSize: '2.25rem', borderTop: '#000000 solid', marginBottom: '15', paddingTop: '20px', fontFamily: 'Arial,sans-serif', fontWeight: 'bold', lineHeight: '2.25rem'}}>Results</div>
-            <ResultContainer >
-              <EstimateDiv>
-                <div style={{paddingRight: '5px', fontWeight: '800', fontSize: '1.25rem', textAlign: 'left', padding: '2px 5px 0px 5px'}}>
-                  <p style={{marginBottom: '10px',  display: 'inline', paddingRight: '5px'}}><img style={{width: '20px'}} src={retireImage} /></p>
-                  <p style={{marginBottom: '10px', display: 'inline'}}>ESTIMATED RETIREMENT SAVINGS</p>
-                </div>
-                <div style={{textAlign: 'left', padding: '0px 5px 12px 5px'}}>Saving from {this.state.data.StartAge} y.o to your retirement at {this.state.data.RetireAge} y.o.
-                &nbsp;&nbsp;In {this.state.data.schedule[this.state.data.schedule.length-1].year - this.state.data.schedule[0].year} years, your investment could be worth:</div>
-              </EstimateDiv>
-              <div>
-                <div style={{fontSize: '3rem', fontFamily: 'Arial,sans-serif', fontWeight: 'bold', verticalAlign: 'top', textAlign: 'right', marginRight: '20px'}}>
-                  <p >
-                    <Sup style={{paddingRight: '10px'}}>Php</Sup>
-                    <span>
-                      {Math.round(this.state.data.schedule[this.state.data.schedule.length-1].money,0).toLocaleString()}
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </ResultContainer >
-            <div style={{textAlign: 'center', margin: '2px 20px 0px 20px', padding: '20px 80px 20px 80px'}}>Is that enough for your retirement?  Find out with our free assessment.</div>
-          </div>
-        </div>
-        <div style={{background: 'white'}}>
-          <div ref={ (resultContainer) => this.resultContainer = resultContainer} style={{margin: '30px 15px'}}>
-            <BarChart data={this.state.data} width={this.state.width} height={this.state.height} 
-              barsize={this.state.barsize} />
-          </div>
-        </div>        
-        <div style={{display: 'block', width: '100%', textAlign: 'center'}}>
-        <div style={{fontSize: '1.75rem', borderTop: '1px solid #d7d9e0', marginBottom: '25', paddingTop: '20px', fontFamily: 'Arial,sans-serif', fontWeight: 'bold'}}>What if...</div>
+      <PageContainer>
+        <InvestmentCalc onClick={e => this.onClick(e)} />
+        <div ref={ (divResult) => this.divResult = divResult} style={{opacity: '0.1', display: 'block', background: 'white', float: 'left', width: '100%' }}>
+          <div style={{backgroundImage: `url(${bgImage})`, backgroundRepeat: 'repeat', display: 'block', width: '100%', textAlign: 'center'}}>
+            
           <WhatIfContainer >
-              <div >
-                <p style={{marginBottom: '2px'}}><img style={{width: '40px'}} src={saveMoney} /></p>
-                <p style={{padding: '0px 10px', marginBottom: '0px', fontWeight: '800', fontSize: '1.3rem', textShadow: '2px 2px 5px white'}}>SAVE ADDITIONAL 500 PER MONTH.</p>
-                <p style={{marginBottom: '0px', fontSize: '1rem', textShadow: '2px 2px 5px white'}}>and create</p>
-                <p style={{fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0px', textShadow: '2px 2px 5px white'}}>
-                  <Sup style={{fontSize: '50%', paddingRight: '10px'}}>Php</Sup>
-                  {Math.round(this.calculateGrowth(6000),0).toLocaleString()}
-                </p>
-                <p style={{marginBottom: '20px',  fontSize: '1rem', textShadow: '2px 2px 5px white'}}>in additional growth.</p>
-              </div>
-              <div >
-                <p style={{marginBottom: '2px'}}><img style={{width: '40px'}} src={saveSoda} /></p>
-                <p style={{padding: '0px 10px', marginBottom: '0px', fontWeight: '800', fontSize: '1.3rem', textShadow: '2px 2px 5px white'}}>GAVE UP DAILY SOFTDRINK.</p>
-                <p style={{marginBottom: '0px', fontSize: '1rem', textShadow: '2px 2px 5px white'}}>and create</p>
-                <p style={{fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0px', textShadow: '2px 2px 5px white'}}>
+              <div >            
+                <ResultInfoHeader>Initial Balance</ResultInfoHeader>
+                <ResultInfo>
                   <Sup style={{paddingRight: '10px'}}>Php</Sup>
-                  {Math.round(this.calculateGrowth(9125),0).toLocaleString()}
+                  {Math.round(this.state.data.initial,0).toLocaleString()}
+                </ResultInfo>
+                <p style={{fontSize: '1rem', textShadow: '2px 2px 15px white'}}>
+                  {this.getPercentage(this.state.data.initial, (this.state.data.initial + this.state.data.contributions))}
+                  % of Principal
                 </p>
-                <p style={{marginBottom: '20px',  fontSize: '1rem', textShadow: '2px 2px 5px white'}}>in additional growth.</p>
               </div>
               <div >
-                <p style={{marginBottom: '2px'}}><img style={{width: '40px'}} src={saveResto} /></p>
-                <p style={{padding: '0px 10px', marginBottom: '0px', fontWeight: '800', fontSize: '1.3rem', textShadow: '2px 2px 5px white'}}>GAVE UP WEEKLY RESTAURANT VISITS.</p>
-                <p style={{marginBottom: '0px', fontSize: '1rem', textShadow: '2px 2px 5px white'}}>and create</p>
-                <p style={{fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0px', textShadow: '2px 2px 5px white'}}>
+                <ResultInfoHeader>Contributions</ResultInfoHeader>
+                <ResultInfo>
                   <Sup style={{paddingRight: '10px'}}>Php</Sup>
-                  {Math.round(this.calculateGrowth(38400),0).toLocaleString()}
+                  {Math.round(this.state.data.contributions,0).toLocaleString()}
+                </ResultInfo>
+                <p style={{fontSize: 'rem', textShadow: '2px 2px 15px white'}}>
+                  {this.getPercentage(this.state.data.contributions, (this.state.data.initial + this.state.data.contributions))}
+                  % of Principal
                 </p>
-                <p style={{marginBottom: '20px', fontSize: '1rem', textShadow: '2px 2px 5px white'}}>in additional growth.</p>
               </div>
-          </WhatIfContainer>
+              <div >
+                <ResultInfoHeader>Growth</ResultInfoHeader>
+                <ResultInfo>
+                  <Sup style={{paddingRight: '10px'}}>Php</Sup>
+                  {Math.round(this.state.data.growth,0).toLocaleString()}
+                </ResultInfo>
+                <p style={{fontSize: '1rem', textShadow: '2px 2px 15px white'}}>
+                  {this.getPercentage(this.state.data.growth, (this.state.data.initial + this.state.data.contributions))}
+                  % gain
+                </p>
+              </div>
+            </WhatIfContainer>
+            <div id="summary" style={{margin: '20px 2%', background: 'white', boxShadow: '0px 20px 50px 2px #888888'}}>
+              <div style={{fontSize: '2.25rem', borderTop: '#000000 solid', marginBottom: '15', paddingTop: '20px', fontFamily: 'Arial,sans-serif', fontWeight: 'bold', lineHeight: '2.25rem'}}>Results</div>
+              <ResultContainer >
+                <EstimateDiv>
+                  <div style={{paddingRight: '5px', fontWeight: '800', fontSize: '1.25rem', textAlign: 'left', padding: '2px 5px 0px 5px'}}>
+                    <p style={{marginBottom: '10px',  display: 'inline', paddingRight: '5px'}}><img style={{width: '20px'}} src={retireImage} /></p>
+                    <p style={{marginBottom: '10px', display: 'inline'}}>ESTIMATED RETIREMENT SAVINGS</p>
+                  </div>
+                  <div style={{textAlign: 'left', padding: '0px 5px 12px 5px'}}>Saving from {this.state.data.StartAge} y.o to your retirement at {this.state.data.RetireAge} y.o.
+                  &nbsp;&nbsp;In {this.state.data.schedule[this.state.data.schedule.length-1].year - this.state.data.schedule[0].year} years, your investment could be worth:</div>
+                </EstimateDiv>
+                <div>
+                  <div style={{fontSize: '3rem', fontFamily: 'Arial,sans-serif', fontWeight: 'bold', verticalAlign: 'top', textAlign: 'right', marginRight: '20px'}}>
+                    <p >
+                      <Sup style={{paddingRight: '10px'}}>Php</Sup>
+                      <span>
+                        {Math.round(this.state.data.schedule[this.state.data.schedule.length-1].money,0).toLocaleString()}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </ResultContainer >
+              <div style={{textAlign: 'center', margin: '2px 20px 0px 20px', padding: '20px 80px 20px 80px'}}>Is that enough for your retirement?  Find out with our free assessment.</div>
+            </div>
+          </div>
+          <div style={{background: 'white'}}>
+            <div ref={ (resultContainer) => this.resultContainer = resultContainer} style={{margin: '30px 15px'}}>
+              <BarChart data={this.state.data} width={this.state.width} height={this.state.height} 
+                barsize={this.state.barsize} />
+            </div>
+          </div>        
+          <div style={{display: 'block', width: '100%', textAlign: 'center'}}>
+          <div style={{fontSize: '1.75rem', borderTop: '1px solid #d7d9e0', marginBottom: '25', paddingTop: '20px', fontFamily: 'Arial,sans-serif', fontWeight: 'bold'}}>What if...</div>
+            <WhatIfContainer >
+                <div >
+                  <p style={{marginBottom: '2px'}}><img style={{width: '40px'}} src={saveMoney} /></p>
+                  <p style={{padding: '0px 10px', marginBottom: '0px', fontWeight: '800', fontSize: '1.3rem', textShadow: '2px 2px 5px white'}}>SAVE ADDITIONAL 500 PER MONTH.</p>
+                  <p style={{marginBottom: '0px', fontSize: '1rem', textShadow: '2px 2px 5px white'}}>and create</p>
+                  <p style={{fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0px', textShadow: '2px 2px 5px white'}}>
+                    <Sup style={{fontSize: '50%', paddingRight: '10px'}}>Php</Sup>
+                    {Math.round(this.calculateGrowth(6000),0).toLocaleString()}
+                  </p>
+                  <p style={{marginBottom: '20px',  fontSize: '1rem', textShadow: '2px 2px 5px white'}}>in additional growth.</p>
+                </div>
+                <div >
+                  <p style={{marginBottom: '2px'}}><img style={{width: '40px'}} src={saveSoda} /></p>
+                  <p style={{padding: '0px 10px', marginBottom: '0px', fontWeight: '800', fontSize: '1.3rem', textShadow: '2px 2px 5px white'}}>GAVE UP DAILY SOFTDRINK.</p>
+                  <p style={{marginBottom: '0px', fontSize: '1rem', textShadow: '2px 2px 5px white'}}>and create</p>
+                  <p style={{fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0px', textShadow: '2px 2px 5px white'}}>
+                    <Sup style={{paddingRight: '10px'}}>Php</Sup>
+                    {Math.round(this.calculateGrowth(9125),0).toLocaleString()}
+                  </p>
+                  <p style={{marginBottom: '20px',  fontSize: '1rem', textShadow: '2px 2px 5px white'}}>in additional growth.</p>
+                </div>
+                <div >
+                  <p style={{marginBottom: '2px'}}><img style={{width: '40px'}} src={saveResto} /></p>
+                  <p style={{padding: '0px 10px', marginBottom: '0px', fontWeight: '800', fontSize: '1.3rem', textShadow: '2px 2px 5px white'}}>GAVE UP WEEKLY RESTAURANT VISITS.</p>
+                  <p style={{marginBottom: '0px', fontSize: '1rem', textShadow: '2px 2px 5px white'}}>and create</p>
+                  <p style={{fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0px', textShadow: '2px 2px 5px white'}}>
+                    <Sup style={{paddingRight: '10px'}}>Php</Sup>
+                    {Math.round(this.calculateGrowth(38400),0).toLocaleString()}
+                  </p>
+                  <p style={{marginBottom: '20px', fontSize: '1rem', textShadow: '2px 2px 5px white'}}>in additional growth.</p>
+                </div>
+            </WhatIfContainer>
+          </div>
         </div>
-      </div>
+      </PageContainer>
     </ToolContainer>);
   }
 }

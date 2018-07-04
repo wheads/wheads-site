@@ -10,7 +10,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   //background-color: #00548C;
-  background-color: #AC3B61;
+  background-color: #ffffff;
 `;
 
 const Logo = styled.img`

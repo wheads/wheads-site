@@ -46,8 +46,7 @@ class MyInput extends React.Component {
     this.setState({
       value: parseFloat(val),
       name: this.props.name,
-    });//, () => {{this.props.onChange(this.state);console.log('aha');}}); 
-    console.log(this.props.name + ' ==> props name');
+    });
     this.props.onChange(this.props.name, parseFloat(val));
   }
 

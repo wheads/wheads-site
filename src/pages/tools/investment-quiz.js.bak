@@ -3,9 +3,16 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
+import BarChart from '../../components/BarChart';
+import InvestmentQuiz from '../../components/Tools/InvestmentQuiz';
 
 const ToolContainer = styled.div`
-  display: block;
+  display: grid;
+  grid-template-columns: 65% 35%;
+
+  @media (max-width: 1111px) {
+    display: block;
+  }
 `;
 
 class App extends React.Component {
@@ -35,8 +42,9 @@ class App extends React.Component {
   render(){
     
     return(
-    <ToolContainer >      
-      <iframe src="http://4374kf.wealthyheads.com/lifeinsurancemost18/" style={{width: '100%', height: '600px'}} />
+    <ToolContainer >
+      <InvestmentQuiz onClick={e => this.onClick(e)} />
+      <IFrameContainer src="https://4374kf.imgcorp.com/register/" />
     </ToolContainer>);
   }
 }
@@ -52,7 +60,7 @@ export default ({ data, scales, margins, svgDimensions }) => (
 );
 
 export const query = graphql`
-  query SampleWebinar {
+  query ToolsInvestmentQuizPageQuery {
     site {
       siteMetadata {
         title

@@ -2,13 +2,15 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import bannerBg from "./img-hero-banner-404.jpeg"
+import SubMenuSection from "../components/SubMenuSection"
 import Img from "gatsby-image";
 
 import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
 
 const BannerContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  background-size: cover;
+  background-position: center;
 
   @media (max-width: 768px) {
     display: block;
@@ -16,8 +18,8 @@ const BannerContainer = styled.div`
 `;
 
 const HeroBanner = styled.div`
-  padding: 50px;
-  background-color: #dff9fb;
+  text-align: center;
+  padding: 130px 100px;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -27,6 +29,7 @@ const HeroBanner = styled.div`
 
 const HeroBannerParag = styled.p`
   font-size: 18px;
+  color: #fff;
 `;
 
 const HeroBannerTitle = styled.h2`
@@ -34,8 +37,8 @@ const HeroBannerTitle = styled.h2`
   margin-bottom: 16px;
   padding-bottom: 0;
   border-bottom: none;
-  font-size: 52px;
-  color: #000;
+  font-size: 60px;
+  color: #fff;
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -77,31 +80,22 @@ export default ({ data }) => (
       <title>Get Started - {data.site.siteMetadata.title}</title>
     </Helmet>
 
-    <BannerContainer>
+    <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
       <HeroBanner>
-          <HeroBannerTitle>Get Started</HeroBannerTitle>
-          <HeroBannerParag>I’m a paragraph. Use this space to tell people more about what you do and the services you offer.</HeroBannerParag>
-          <HeroBannerParag>Another paragrah here.</HeroBannerParag>
-          <BigButton to="#">Read More</BigButton>
+        <HeroBannerTitle>Page Not Found</HeroBannerTitle>
+        <HeroBannerParag>Oops! The page you're looking for is not here.</HeroBannerParag>
+        <HeroBannerParag>Error code: 404</HeroBannerParag>
       </HeroBanner>
-      <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
   </div>
   
 );
 
 export const query = graphql`
-  query GetStartedPageQuery {
+  query NotFoundPageQuery {
     site {
       siteMetadata {
         title
-      }
-    }
-    imageBannerBg: file(relativePath: { eq: "get-started-bg.jpeg" }) {
-      childImageSharp {
-        sizes(maxWidth: 1920, maxHeight: 1280) {
-          ...GatsbyImageSharpSizes
-        }
       }
     }
   }
