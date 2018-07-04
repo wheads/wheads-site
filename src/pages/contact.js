@@ -109,17 +109,17 @@ export default ({ data }) => (
     <BannerContainer>
       <HeroBanner>
           <HeroBannerTitle>Contact us</HeroBannerTitle>
-          <Form action="https://formspree.io/wealthyheads@gmail.com" method="POST">
+          <form action="https://formspree.io/wealthyheads@gmail.com" method="POST">
             <label>Your Name</label>
             <input type="text" name="name" placeholder="Your Name" required />
             <label>Your Email</label>
             <input type="email" name="_replyto" placeholder="Your Email" required />
             <label>Your Message</label>
             <textarea name="message" placeholder="Write your message here." required />
-            <FormButton type="submit" value="Send">Send</FormButton>
+            <input type="submit" value="Send" />
             <input type="hidden" name="_next" value="/thanks" />
             <input type="hidden" name="_subject" value="New message from contact form!" />
-          </Form>
+          </form>
       </HeroBanner>
       <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
