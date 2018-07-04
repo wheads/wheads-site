@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import sectionBannerInfo from "./budgetingInfog.jpg"
 import bannerBg from "./img-hero-banner-budgeting.jpg"
 import sectionBannerBg from "./img-footer-retirement.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
@@ -141,7 +142,8 @@ export default ({ data }) => (
         {/*<BigButton to="#">Learn More</BigButton>*/}       
       </SectionContent>
       <SectionContentInfoGraphic>
-        <BudgetWinning/>
+        {/*<BudgetWinning/>*/}
+        <img src={sectionBannerInfo}/>
       </SectionContentInfoGraphic>
     </SectionContainer>
 
