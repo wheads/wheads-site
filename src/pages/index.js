@@ -1,5 +1,4 @@
 import React from "react";
-import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
@@ -76,15 +75,10 @@ const BigButton = styled(Link)`
 
 export default ({ data }) => (
   <div>
-    <Helmet>
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description} />
-    </Helmet>
-
     <BannerContainer style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <HeroBanner>
           <HeroBannerTitle>Saving money is simple!</HeroBannerTitle>
-          <HeroBannerParag> All you need is a proper plan.</HeroBannerParag>
+          <HeroBannerParag> All you need is a proper plan</HeroBannerParag>
           <HeroBannerParag>Know your options, big or small your income won't matter much.
           </HeroBannerParag>
           <HeroBannerParag>Every peso counts.</HeroBannerParag>
@@ -98,12 +92,6 @@ export default ({ data }) => (
 
 export const query = graphql`
   query HomePageQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
     imageBannerBg: file(relativePath: { eq: "indeximage.png" }) {
       childImageSharp {
         sizes(maxWidth: 1302, maxHeight: 1035) {

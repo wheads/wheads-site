@@ -9,6 +9,8 @@ import favicon from './favicon.png'
 export default ({ data, children }) => (
   <div>
     <Helmet>
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
       <link rel="icon" type="image/png" href={favicon} />
     </Helmet>
 
