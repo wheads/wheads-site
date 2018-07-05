@@ -109,7 +109,7 @@ export default ({ data }) => (
     <BannerContainer>
       <HeroBanner>
           <HeroBannerTitle>Contact us</HeroBannerTitle>
-          <Form method="post" action="https://briskforms.com/go/e45c5caf89fe767899d09dba532991de">
+          <Form method="post" action="https://briskforms.com/go/a023bb0ef385429e21bd481f2a1a33ea">
             <label for="Name">Your Name</label>
             <input type="text" name="Name" id="Name" placeholder="Your Name" required />
             <label for="Email">Your Email</label>
