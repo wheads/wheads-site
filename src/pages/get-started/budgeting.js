@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import sectionBannerInfo from "./budgetingInfog.jpg"
 import bannerBg from "./img-hero-banner-budgeting.jpg"
 import sectionBannerBg from "./img-footer-retirement.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
@@ -51,7 +52,7 @@ const SectionContainerWithBg = styled.div`
 
 const SectionContent = styled.div`
   text-align: center;
-  padding: 50px 100px;
+  padding: 50px 25px;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -136,12 +137,13 @@ export default ({ data }) => (
       <SectionContent>
         <SectionTitle>Budgeting Effectively</SectionTitle>
           <SectionParag>
-          Developing a budget can do more than track your spending and savings.&nbsp;&nbsp;It can also help you work toward your financial goals.&nbsp;&nbsp;The following steps will show you how to build a budget that works for your life, so you don't have to worry about falling short of your plans.
+          Developing a budget can do more than track your spending and savings.&nbsp;&nbsp;It can also help you work towards your financial goals.&nbsp;&nbsp;The following steps will show you how to build a budget that works for your life, so you don't have to worry about falling short of your plans.
            </SectionParag>  
         {/*<BigButton to="#">Learn More</BigButton>*/}       
       </SectionContent>
       <SectionContentInfoGraphic>
-        <BudgetWinning/>
+        {/*<BudgetWinning/>*/}
+        <img src={sectionBannerInfo}/>
       </SectionContentInfoGraphic>
     </SectionContainer>
 

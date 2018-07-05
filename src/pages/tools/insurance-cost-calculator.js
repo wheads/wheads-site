@@ -5,11 +5,10 @@ import Link from "gatsby-link";
 import Img from "gatsby-image";
 import { select } from 'd3-selection'
 import SlidingDiv from '../../components/Controls/SlidingDiv';
-import { transition } from 'd3-transition'
-//import bobook from "./book.jpg"
-import {ToolContainer} from "../../components/ToolContainer";
 import {QuotedText} from '../../components/QuoteComp'
-import imgQuote from "../get-started/img-hero-banner-retirement.jpg"
+import { transition } from 'd3-transition'
+import insurance from "../get-started/img-hero-banner-insurance.jpg"
+import {ToolContainer} from "../../components/ToolContainer";
 
 // Blue - #0695a4
 // Brown - #ccc6ba
@@ -21,6 +20,26 @@ const Title = styled.h2`
   text-align: center;
   color: #2d3939;
   margin: 0px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    padding: 0px 10px;
+  }
+`;
+
+const SubTitle = styled.h3`
+  font-size: 1.25rem;
+  text-align: center;
+  color: #2d3939;
+  font-weight: normal;
+  margin: 0px 100px;
+  border-bottom: 2px solid #0695a4;
+  padding-bottom: 15px;
+
+  @media (max-width: 786px) {
+    margin: 0px 15px;
+    font-size: 1rem;
+  }
 `;
 
 const Quote = styled.q`
@@ -49,20 +68,6 @@ const Final2 = styled.h3`
 
   @media (max-width: 786px) {
     margin: 10px 15px 5px 15px;
-  }
-`;
-
-const SubTitle = styled.h3`
-  font-size: 1.25rem;
-  text-align: center;
-  color: #2d3939;
-  font-weight: normal;
-  margin: 0px 100px;
-  border-bottom: 2px solid #0695a4;
-  padding-bottom: 15px;
-
-  @media (max-width: 786px) {
-    margin: 0px 15px;
   }
 `;
 
@@ -113,127 +118,54 @@ class App extends React.Component {
       contents : [
         {Number: '',
         Color: '#2d3939',
-        Text1: 'The best thermometer for your financial health is your net worth.' ,
-        Text2: 'Answer the questions and use the slider to determine your Net Worth.',
+        Text1: `You don't need much to be covered.` ,
+        Text2: "Let's step through each item, click NEXT to begin",
         Value: 0,
         InfoOnly: true,
         },
         {Number: '',
-        Color: 'GREEN',
+        Color: '#0695a4',
         Asset: true,
-        Text1: 'ASSETS' ,
-        Text2: 'These are everything your own, Real Estate Properties/Savings & Investments/Cars',
-        Value: 0,
-        InfoOnly: true,
+        Text1: 'How old are you?' ,
+        Text2: '',
+        Min: 18,
+        Max: 60,
+        Step: 1,
+        Value: 18,
         },
-        {Number: '1',
-        Color: '#146414',
+        {Number: '',
+        Color: '#0695a4',
         Asset: true,
-        Text1: 'Do you own a House?' ,
-        Text2: 'Total all your real estate properties',
-        Amount: 0,
-        Max: 8000000,
-        Step: 10000,
-        Value: 0,
+        Text1: 'How much insurance do you need?' ,
+        Text2: '',
+        Min: 250000,
+        Max: 4000000,
+        Step: 250000,
+        Value: 250000,
+        ShowCurrency: true,
         },
-        {Number: '2',
-        Color: '#146414',
+        {Number: '',
+        Color: '#0695a4',
         Asset: true,
-        Text1: 'Do you own shares of stocks/mutual funds?' ,
-        Text2: 'Total all your investment portfolio.',
-        Amount: 0,
-        Max: 8000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '3',
-        Color: '#146414',
-        Asset: true,
-        Text1: 'Do you have cars?' ,
-        Text2: 'Total the current value of all your vehicles.',
+        Text1: 'How long are you planning to pay?' ,
+        Text2: '',
         Amount: 0,
         Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '4',
-        Color: '#146414',
-        Asset: true,
-        Text1: 'Do you own other things?' ,
-        Text2: 'Total it all here.',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
+        Step: 20000,
         Value: 0,
         },
         {Number: '',
-        Color: 'RED',
-        Text1: 'LIABILITIES',
-        Asset: false,
-        Text2: 'These are everything you owe, Mortgages/Loans/Credit Cards Debts',
-        Value: 0,
-        InfoOnly: true,
-        },
-        {Number: '1',
-        Color: 'red',
-        Asset: false,
-        Text1: 'Do you still have a home mortgage?' ,
-        Text2: 'Total all your real estate mortgages.',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '2',
-        Color: 'red',
-        Asset: false,
-        Text1: 'Do you have an existing car loan?' ,
-        Text2: 'Total all of your car loans.',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '3',
-        Color: 'red',
-        Asset: false,
-        Text1: 'Do you have a Personal Loan?' ,
-        Text2: 'This includes loans from SSS/GSIS/PAG-IBIG/BANKS',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '4',
-        Color: 'red',
-        Asset: false,
-        Text1: 'Do you have credit card debts?' ,
-        Text2: 'Total all your outstanding credit card balances',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '5',
-        Color: 'red',
-        Asset: false,
-        Text1: 'What other liabilities do you have that was not listed?' ,
-        Text2: 'Total all other loans/debts/liabilities you owe.',
-        Amount: 0,
-        Max: 10000000,
-        Step: 10000,
-        Value: 0,
-        },
-        {Number: '',
-        Color: '#2d3939',
-        Text1: 'Your Net Worth' ,
-        Positive1: 'Congratulations on having a positive Net Worth, keep it up!',
-        //Positive2: 'Do you want to know if it is enough? Click here.}',
-        Negative1: 'Having a negative Net Worth is not ideal, you can do better.',
-        //Negative2: 'Need help? Click here.',
-        Text2: 'Total all other loans/debts/liabilities you owe.',
+        Color: '#0695a4',
+        Text1: 'Your need : ' ,
+        Positive1: 'Congratulations in planning to take care of your family.',
+        Positive2: '',
+        Negative1: '',
+        Negative2: '',
+        Text2: '',
         Value: 0,
         Last: true,
+        NextStep: 'Having enough coverage is not that expensive.',
+        NextStepLink: '',
         },
       ]
       }
@@ -282,6 +214,23 @@ class App extends React.Component {
     }
   }
 
+  calculateInsurancePremium()
+  {
+    var table1 = [
+      {
+        Age: 18,
+        Table:
+        [
+          {
+            T1 : 20000,
+            T2 : 30000,
+            T3 : 40000,
+          }
+        ]
+      }
+    ]
+  }
+
   onMovePanels(index, animate)
   {    
     var div = document.getElementById("divSliderContainer");
@@ -309,18 +258,17 @@ class App extends React.Component {
       }
     }
 
-    var Worth = 0;
-    for(var i=0; i < this.state.contents.length; i++)
+    var InsuranceNeed = 0;
+    for(var i=1; i < this.state.contents.length; i++)
     {
-      if(this.state.contents[i].Asset)
-        Worth += parseInt(this.state.contents[i].Value);
-      else
-        Worth -= parseInt(this.state.contents[i].Value);
+      var val = parseInt(this.state.contents[i].Value);
+      if(i==2) val *= 10;
+      InsuranceNeed += val;
     }
     
     this.setState(
       {
-        Worth: Worth,
+        InsuranceNeed: InsuranceNeed,
       }
     )
   }
@@ -331,7 +279,7 @@ class App extends React.Component {
       <ToolContainer>
         <PageContainer >
           <Content>
-            <Title>Find out your Net Worth</Title>&nbsp;
+            <Title>How much my Insurance cost?</Title>&nbsp;
             <SubTitle></SubTitle>&nbsp;
             <SliderContainer ref={ (divSliderContainer) => this.divSliderContainer = divSliderContainer}  id="divSliderContainer">
               <MovingContainer id="divMoving">
@@ -342,12 +290,12 @@ class App extends React.Component {
                     Next={(index<(this.state.contents.length-1))?"true":"false"} Back={(index>0)?"true":"false"} 
                     Width={this.state.Width}
                     onMovePanels={(e) => this.onMovePanels(e, true)}
-                    Worth={this.state.Worth}
+                    Worth={this.state.InsuranceNeed}
                   />
                 )}
               </MovingContainer>
-            </SliderContainer>            
-            <QuotedText BackgroundImage={`url(` + imgQuote + `)`} FontSize='1.5rem' Color='#ffffff' QuoteColor='#e79702' QuoteBy="Chinese Proverb" >Be not afraid of growing slowly; Be afraid only of standing still.</QuotedText>
+            </SliderContainer>
+            <QuotedText BackgroundImage={`url(` + insurance + `)`} FontSize='1.5rem' Color='#ffffff' QuoteColor='#e79702' QuoteBy="Dave Ramsey" >Term life insurance is part of a good defensive game plan.</QuotedText>
             {/*<div style={{textAlign: 'center', padding: '10px', backgroundColor: '#ccc6ba', margin: '0px 5px'}}>
               <BookContent>
                 <img src={bobook}/>
@@ -356,12 +304,13 @@ class App extends React.Component {
                   <ForewordBy>- Bro. Bo Sanchez</ForewordBy>
                 </div>
               </BookContent>
-              <Final2>Start your journey now. &nbsp;Get the first 2 chapters of <b>"The Secret to Saving and Building Your Future"</b>.</Final2>
-              <iframe allowtransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
+              <Final2>Start your journey now. &nbsp;Get the first 2 chapters of <br/><b>"The Secret to Saving and Building Your Future"</b>.</Final2>
+              <iframe allowTransparency="true" scrolling='no' style={{marginLeft: '0px', border: 'none', width: '100%', overflow: 'hidden', height: '180px'}} src="https://4374kf.imgcorp.com/getbook1/"></iframe>
               </div>*/}
           </Content>
         </PageContainer>
-      </ToolContainer>);
+      </ToolContainer>
+      );
   }
 }
 
@@ -376,7 +325,7 @@ export default ({ data, scales, margins, svgDimensions }) => (
 );
 
 export const query = graphql`
-  query NetWorthCalculator {
+  query InsuranceCostCalculator {
     site {
       siteMetadata {
         title

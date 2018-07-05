@@ -118,7 +118,8 @@ class App extends React.Component {
       contents : [
         {Number: '',
         Color: '#2d3939',
-        Text1: 'D.I.M.E method is the simplest way to determine how much insurance you need.' ,
+        //Text1: 'D.I.M.E method is the simplest way to determine how much insurance you need.' ,
+        Text1: 'Here is a simple guide.',
         Text2: "Let's step through each item, click NEXT to begin",
         Value: 0,
         InfoOnly: true,
@@ -165,7 +166,7 @@ class App extends React.Component {
         Color: '#0695a4',
         Asset: true,
         Text1: 'Do you have kids who are still studying?' ,
-        Text2: 'Total the tuition fee cost for the remaining years up to college.',
+        Text2: 'Estimate the total tuition fee cost for the remaining years up to college.',
         Amount: 0,
         Max: 4000000,
         Step: 10000,
@@ -174,7 +175,7 @@ class App extends React.Component {
         {Number: '',
         Color: '#0695a4',
         Text1: 'Your need : ' ,
-        Positive1: 'Congratulations in planning to take care of your family.',
+        Positive1: 'Congratulations on planning to take care of your family.',
         Positive2: '',
         Negative1: '',
         Negative2: '',
@@ -279,7 +280,7 @@ class App extends React.Component {
       <ToolContainer>
         <PageContainer >
           <Content>
-            <Title>How much Insurance do you Need?</Title>&nbsp;
+            <Title>How much insurance do you need?</Title>&nbsp;
             <SubTitle></SubTitle>&nbsp;
             <SliderContainer ref={ (divSliderContainer) => this.divSliderContainer = divSliderContainer}  id="divSliderContainer">
               <MovingContainer id="divMoving">
