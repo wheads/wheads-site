@@ -165,7 +165,7 @@ class App extends React.Component {
         Value: 0,
         Last: true,
         NextStep: 'You can leave us a message.',
-        NextStepLink: '../contact',
+        NextStepLink: '/../contact',
         },
       ]
       }
