@@ -59,7 +59,7 @@ const AmountDiv = styled.h3`
   }
   
   &::before {
-    content: '${props => props.ShowCurrency ? 'Php' : ''}';
+    content: 'Php';
     position: relative;
     left: -0.5rem;
     top: -0.5rem;
@@ -219,7 +219,7 @@ class SlidingDiv extends Component {
 
     this.state = {
       left: 0,
-      Amount: this.props.Content.Value,
+      Amount: this.props.Content.Amount,
     }
   }
   
@@ -273,9 +273,9 @@ class SlidingDiv extends Component {
                 <TextDisplay1 Color={this.props.Content.Color} Number={this.props.Content.Number}>{this.props.Content.Text1}</TextDisplay1>
                 <TextDisplay2>{this.props.Content.Text2}</TextDisplay2>
               </TextDiv>
-              <AmountDiv ShowCurrency={this.props.Content.ShowCurrency} Color={this.props.Content.Color}>{Math.round(this.state.Amount,2).toLocaleString()}</AmountDiv>
+              <AmountDiv Color={this.props.Content.Color}>{Math.round(this.state.Amount,2).toLocaleString()}</AmountDiv>
             </ContentHolder>
-            <Slider type="range" defaultValue={Content.Value} min={Content.Min} max={Content.Max} step={Content.Step} 
+            <Slider type="range" defaultValue={0} max={Content.Max} step={Content.Step} 
               onChange={(e) => this.onSliderChange(e)} />
             </div>
             <div style={{display: (Content.InfoOnly && !Content.Last) ? 'block' : 'none' }}>
