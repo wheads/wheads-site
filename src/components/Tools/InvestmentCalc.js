@@ -399,7 +399,7 @@ class InvestmentCalc extends Component {
           <InfoContainer>
             <HeroBannerParag>How much have you saved for retirement.</HeroBannerParag>
             <CurrencyInput controlName='Saved' value={this.state.Saved} onChange = {(name, value) => this.onValueChange(name, value)} />
-            <CustomHeroBannerParag>This should be the total of all you retirement accounts.</CustomHeroBannerParag>
+            <CustomHeroBannerParag>This should be the total of all your retirement accounts.</CustomHeroBannerParag>
           </InfoContainer>
           <InfoContainer>
             <HeroBannerParag>How much will you contribute monthly.</HeroBannerParag>

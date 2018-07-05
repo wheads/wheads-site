@@ -76,9 +76,9 @@ class FooterSection extends Component {
       <Footer>
         <FooterLeft>
           <FooterSiteTitle>© {footerSiteTitle}</FooterSiteTitle>
-          <a href="#" target="_blank"><SocialIcon src={facebook} /></a>
+          {/*<a href="#" target="_blank"><SocialIcon src={facebook} /></a>
           <a href="#" target="_blank"><SocialIcon src={twitter} /></a>
-          <a href="#" target="_blank"><SocialIcon src={instagram} /></a>
+          <a href="#" target="_blank"><SocialIcon src={instagram} /></a>*/}
         </FooterLeft>      
         <FooterNav>
           <FooterNavLink to="/">Home</FooterNavLink>
