@@ -183,7 +183,7 @@ class App extends React.Component {
         Value: 0,
         Last: true,
         NextStep: 'Having enough coverage is not that expensive.',
-        NextStepLink: '',
+        NextStepLink: 'insurance-cost-calculator',
         },
       ]
       }

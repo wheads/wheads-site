@@ -82,7 +82,7 @@ const Content = styled.div`
   grid-template-columns: 60% 40%;
   font-size: 14px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1280px) {
     display: block;
     width: 100%;
   }
@@ -149,14 +149,14 @@ class App extends React.Component {
         Asset: true,
         Text1: 'How long are you planning to pay?' ,
         Text2: '',
-        Amount: 0,
-        Max: 10000000,
-        Step: 20000,
-        Value: 0,
+        Min: 1,
+        Max: 18,
+        Step: 1,
+        Value: 18,
         },
         {Number: '',
         Color: '#0695a4',
-        Text1: 'Your need : ' ,
+        Text1: 'Your premium (Annually): ' ,
         Positive1: 'Congratulations in planning to take care of your family.',
         Positive2: '',
         Negative1: '',
@@ -164,8 +164,8 @@ class App extends React.Component {
         Text2: '',
         Value: 0,
         Last: true,
-        NextStep: 'Having enough coverage is not that expensive.',
-        NextStepLink: '',
+        NextStep: 'You can leave us a message.',
+        NextStepLink: '/../contact',
         },
       ]
       }
@@ -214,25 +214,354 @@ class App extends React.Component {
     }
   }
 
-  calculateInsurancePremium()
+  calculateInsurancePremium(InputAge, InsuranceNeed)
   {
-    var table1 = [
-      {
-        Age: 18,
-        Table:
-        [
-          {
-            T1 : 20000,
-            T2 : 30000,
-            T3 : 40000,
-          }
-        ]
-      }
+    var rates = [
+      {Age: 18,
+      Rates:
+      [
+        {
+          T1 : 6.14, T2 : 5.18, T3 : 4.41, T4 : 4.22,
+        }
+      ]},
+      {Age: 19,
+      Rates:
+      [
+        {
+          T1 : 6.24, T2 : 5.28, T3 : 4.51, T4 : 4.32,
+        }
+      ]},
+      {Age: 20,
+      Rates:
+      [
+        {
+          T1 : 6.34, T2 : 5.38, T3 : 4.61, T4 : 4.42,
+        }
+      ]},
+      {Age: 21,
+      Rates:
+      [
+        {
+          T1 : 6.44, T2 : 5.48, T3 : 4.71, T4 : 4.52,
+        }
+      ]},
+      {Age: 22,
+      Rates:
+      [
+        {
+          T1 : 6.45, T2 : 5.49, T3 : 4.72, T4 : 4.52,
+        }
+      ]},
+      {Age: 23,
+      Rates:
+      [
+        {
+          T1 : 6.55, T2 : 5.59, T3 : 4.82, T4 : 4.62,
+        }
+      ]},
+      {Age: 24,
+      Rates:
+      [
+        {
+          T1 : 6.56, T2 : 5.59, T3 : 4.82, T4 : 4.63,
+        }
+      ]},
+      {Age: 25,
+      Rates:
+      [
+        {
+          T1 : 6.56, T2 : 5.59, T3 : 4.82, T4 : 4.63,
+        }
+      ]},
+      {Age: 26,
+      Rates:
+      [
+        {
+          T1 : 6.56, T2 : 5.60, T3 : 4.83, T4 : 4.63,
+        }
+      ]},
+      {Age: 27,
+      Rates:
+      [
+        {
+          T1 : 6.57, T2 : 5.60, T3 : 4.83, T4 : 4.64,
+        }
+      ]},
+      {Age: 28,
+      Rates:
+      [
+        {
+          T1 : 6.57, T2 : 5.61, T3 : 4.83, T4 : 4.64,
+        }
+      ]},
+      {Age: 29,
+      Rates:
+      [
+        {
+          T1 : 6.68, T2 : 5.71, T3 : 4.93, T4 : 4.64,
+        }
+      ]},
+      {Age: 30,
+      Rates:
+      [
+        {
+          T1 : 6.68, T2 : 5.71, T3 : 4.94, T4 : 4.74,
+        }
+      ]},
+      {Age: 31,
+      Rates:
+      [
+        {
+          T1 : 6.78, T2 : 5.81, T3 : 5.04, T4 : 4.84,
+        }
+      ]},
+      {Age: 32,
+      Rates:
+      [
+        {
+          T1 : 6.98, T2 : 6.01, T3 : 5.24, T4 : 5.04,
+        }
+      ]},
+      {Age: 33,
+      Rates:
+      [
+        {
+          T1 : 7.18, T2 : 6.21, T3 : 5.43, T4 : 5.24,
+        }
+      ]},
+      {Age: 34,
+      Rates:
+      [
+        {
+          T1 : 7.48, T2 : 6.51, T3 : 5.73, T4 : 5.54,
+        }
+      ]},
+      {Age: 35,
+      Rates:
+      [
+        {
+          T1 : 7.78, T2 : 6.80, T3 : 6.03, T4 : 5.83,
+        }
+      ]},
+      {Age: 36,
+      Rates:
+      [
+        {
+          T1 : 8.17, T2 : 7.2, T3 : 6.42, T4 : 6.22,
+        }
+      ]},
+      {Age: 37,
+      Rates:
+      [
+        {
+          T1 : 8.56, T2 : 7.59, T3 : 6.81, T4 : 6.62,
+        }
+      ]},
+      {Age: 38,
+      Rates:
+      [
+        {
+          T1 : 8.96, T2 : 7.99, T3 : 7.21, T4 : 7.01,
+        }
+      ]},
+      {Age: 39,
+      Rates:
+      [
+        {
+          T1 : 9.46, T2 : 8.48, T3 : 7.70, T4 : 7.51,
+        }
+      ]},
+      {Age: 40,
+      Rates:
+      [
+        {
+          T1 : 10.05, T2 : 9.07, T3 : 8.29, T4 : 8.1,
+        }
+      ]},
+      {Age: 41,
+      Rates:
+      [
+        {
+          T1 : 10.64, T2 : 9.66, T3 : 8.88, T4 : 8.69,
+        }
+      ]},
+      {Age: 42,
+      Rates:
+      [
+        {
+          T1 : 11.33, T2 : 10.5, T3 : 9.57, T4 : 9.38,
+        }
+      ]},
+      {Age: 43,
+      Rates:
+      [
+        {
+          T1 : 12.02, T2 : 11.05, T3 : 10.26, T4 : 10.07,
+        }
+      ]},
+      {Age: 44,
+      Rates:
+      [
+        {
+          T1 : 12.72, T2 : 11.74, T3 : 10.96, T4 : 10.76,
+        }
+      ]},
+      {Age: 45,
+      Rates:
+      [
+        {
+          T1 : 13.51, T2 : 12.53, T3 : 11.75, T4 : 11.55,
+        }
+      ]},
+      {Age: 46,
+      Rates:
+      [
+        {
+          T1 : 14.41, T2 : 13.43, T3 : 12.64, T4 : 12.45,
+        }
+      ]},
+      {Age: 47,
+      Rates:
+      [
+        {
+          T1 : 15.39, T2 : 14.41, T3 : 13.63, T4 : 13.43,
+        }
+      ]},
+      {Age: 48,
+      Rates:
+      [
+        {
+          T1 : 16.48, T2 : 15.50, T3 : 14.72, T4 : 14.52,
+        }
+      ]},
+      {Age: 49,
+      Rates:
+      [
+        {
+          T1 : 17.77, T2 : 16.79, T3 : 16.01, T4 : 15.81,
+        }
+      ]},
+      {Age: 50,
+      Rates:
+      [
+        {
+          T1 : 19.16, T2 : 18.18, T3 : 17.40, T4 : 17.20,
+        }
+      ]},
+      {Age: 51,
+      Rates:
+      [
+        {
+          T1 : 20.66, T2 : 19.67, T3 : 18.89, T4 : 18.69,
+        }
+      ]},
+      {Age: 52,
+      Rates:
+      [
+        {
+          T1 : 22.24, T2 : 21.25, T3 : 20.47, T4 : 20.27,
+        }
+      ]},
+      {Age: 53,
+      Rates:
+      [
+        {
+          T1 : 23.93, T2 : 22.95, T3 : 22.16, T4 : 21.96,
+        }
+      ]},
+      {Age: 54,
+      Rates:
+      [
+        {
+          T1 : 25.72, T2 : 24.74, T3 : 23.95, T4 : 23.75,
+        }
+      ]},
+      {Age: 55,
+      Rates:
+      [
+        {
+          T1 : 27.82, T2 : 26.83, T3 : 26.04, T4 : 25.84,
+        }
+      ]},
+      {Age: 56,
+      Rates:
+      [
+        {
+          T1 : 30.21, T2 : 29.22, T3 : 28.43, T4 : 28.23,
+        }
+      ]},
+      {Age: 57,
+      Rates:
+      [
+        {
+          T1 : 32.70, T2 : 31.71, T3 : 30.92, T4 : 30.73,
+        }
+      ]},
+      {Age: 58,
+      Rates:
+      [
+        {
+          T1 : 35.38, T2 : 34.40, T3 : 33.61, T4 : 33.41,
+        }
+      ]},
+      {Age: 59,
+      Rates:
+      [
+        {
+          T1 : 38.18, T2 : 37.19, T3 : 36.40, T4 : 36.20,
+        }
+      ]},
+      {Age: 60,
+      Rates:
+      [
+        {
+          T1 : 41.09, T2 : 40.10, T3 : 39.30, T4 : 31.11,
+        }
+      ]}
     ]
+    var cost = 0;
+
+    console.clear();
+    console.log(InputAge);
+    var rate = rates.filter((rate) => 
+      rate.Age === parseInt(InputAge)
+    );
+
+    InsuranceNeed = parseInt(InsuranceNeed) / 1000;
+
+    console.log(InsuranceNeed);
+    if(InsuranceNeed >= 5000)
+    {
+      cost = rate[0].Rates[0].T4;
+    }
+    else if(InsuranceNeed >= 2500)
+    {
+      cost = rate[0].Rates[0].T3;
+    }
+    else if(InsuranceNeed >= 1000)
+    {
+      cost = rate[0].Rates[0].T2;
+    }
+    else
+    {
+      cost = rate[0].Rates[0].T1;
+    }
+    
+    cost = ((cost * InsuranceNeed) + 300) * 18;
+
+    this.setState(
+      {TotalInsuranceCost: cost}
+    )
   }
 
   onMovePanels(index, animate)
   {    
+    if(index === 3)
+    {
+      console.log("Get Insurance")
+      this.calculateInsurancePremium(this.state.contents[index-2].Value, this.state.contents[index-1].Value);
+    }
+
     var div = document.getElementById("divSliderContainer");
     if(div !== null)
     {
@@ -258,13 +587,8 @@ class App extends React.Component {
       }
     }
 
-    var InsuranceNeed = 0;
-    for(var i=1; i < this.state.contents.length; i++)
-    {
-      var val = parseInt(this.state.contents[i].Value);
-      if(i==2) val *= 10;
-      InsuranceNeed += val;
-    }
+    console.log(this.state.contents)
+    var InsuranceNeed = this.state.TotalInsuranceCost / this.state.contents[3].Value;
     
     this.setState(
       {
@@ -279,7 +603,7 @@ class App extends React.Component {
       <ToolContainer>
         <PageContainer >
           <Content>
-            <Title>How much my Insurance cost?</Title>&nbsp;
+            <Title>How much will my Insurance cost?</Title>&nbsp;
             <SubTitle></SubTitle>&nbsp;
             <SliderContainer ref={ (divSliderContainer) => this.divSliderContainer = divSliderContainer}  id="divSliderContainer">
               <MovingContainer id="divMoving">
