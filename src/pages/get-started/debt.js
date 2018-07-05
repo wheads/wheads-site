@@ -51,7 +51,7 @@ const SectionContainerWithBg = styled.div`
 
 const SectionContent = styled.div`
   text-align: center;
-  padding: 50px;
+  padding: 50px 25px;
 
   @media (max-width: 768px) {
     padding: 20px;

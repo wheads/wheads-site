@@ -3,14 +3,7 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
-import heroBannerBg from "../components/img-tools.jpg"
-
-import { Wrapper, SectionH2, SectionParag, Section1ColGray } from "../styles/style.js";
-
-const BannerContainer = styled.div`
-  background-size: cover;
-  background-position: center;
-`;
+import heroBannerBg from "../../components/img-tools.jpg"
 
 const ContentContainer = styled.div`
   display: grid;
@@ -47,35 +40,6 @@ const HeroBannerTitle = styled.h2`
   @media (max-width: 768px) {
     font-size: 40px;
     margin-bottom: 4px;
-  }
-`;
-
-const HeroBannerSub = styled.h1`
-  font-size: 30px;
-  color: #fff;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 20px;
-  }
-`;
-
-const BigButton = styled(Link)`
-  display: block;
-  background-color: orange;
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 1px;
-  padding: 15px 20px;
-  border-radius: 3px;
-  margin-top: 15px;
-  max-width: 230px;
-
-  @media (max-width: 768px) {
-    margin: 15px auto;
   }
 `;
 
