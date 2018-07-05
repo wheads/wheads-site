@@ -293,7 +293,7 @@ class SlidingDiv extends Component {
               </ContentHolder>
               <Final>{(this.props.Worth >=0) ? Content.Positive1 : Content.Negative1 }</Final>
               <Final>{(this.props.Worth >=0) ? Content.Positive2 : Content.Negative2 }</Final>
-              {/*<NextStep>{Content.NextStep} Click <NextStepLink href={Content.NextStepLink}>here</NextStepLink> to learn more.</NextStep>*/}
+              <NextStep>{Content.NextStep} <b><i><NextStepLink href={Content.NextStepLink}>Click here</NextStepLink>.</i></b></NextStep>
             </div>
             <ButtonHolder>
               <LeftButtonHolder>
