@@ -78,7 +78,7 @@ const Header2 = styled.h2`
   font-size: 3em;
   font-weight: normal;
   font-family: sans-serif;
-  color: #00B9FFAA;
+  color: #00B9FF;
   letter-spacing: 8px;
   margin-bottom: 5px;
 
@@ -120,12 +120,12 @@ const TableNeeds = styled.table`
 `;
 
 const TrAlt = styled.tr`
-  background-color: #FFFBCE0F;
+  background-color: #FFFBCE;
   cursor: pointer;
 `;
 
 const TrMain = styled.tr`
-  background-color: #00B9FF0F;
+  background-color: #00B9FF;
   cursor: pointer;
 `;
 
@@ -225,7 +225,7 @@ const TipSection = styled.div`
 `;
 
 const TipContainer = styled.div`
-    width: 100%%;
+    width: 100%;
     max-width: 300px;
     margin-bottom: 25px;
 
