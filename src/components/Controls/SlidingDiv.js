@@ -289,7 +289,7 @@ class SlidingDiv extends Component {
                 <TextDiv>                          
                   <TextInfo Color={Content.Color} >{Content.Text1}</TextInfo>
                 </TextDiv>
-                <AmountDiv Color={(this.props.Worth >= 0) ? 'green': 'red'}>{Math.round(this.props.Worth,2).toLocaleString()}</AmountDiv>
+                <AmountDiv Color={(this.props.Worth >= 0) ? 'green': '#b24073'}>{Math.round(this.props.Worth,2).toLocaleString()}</AmountDiv>
               </ContentHolder>
               <Final>{(this.props.Worth >=0) ? Content.Positive1 : Content.Negative1 }</Final>
               <Final>{(this.props.Worth >=0) ? Content.Positive2 : Content.Negative2 }</Final>
