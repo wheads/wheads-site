@@ -56,7 +56,7 @@ class App extends React.Component {
         <title>Get Started - Investment Quiz</title>
         <meta property="og:title" content="Basic Investment Quiz"/>
         <meta property="og:description" content="Test your knowledge about investment.  Take this short quiz."/>
-        <meta property="og:image" content="/static/quiz2.7a02efe8.jpg" />
+        <meta property="og:image" content="https://dev.everypeso.com/static/quiz2.7a02efe8.jpg" />
       </Helmet>
       <PageContainer>
         <InvestmentQuiz onClick={e => this.onClick(e)}  />
