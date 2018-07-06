@@ -6,6 +6,7 @@ import Img from "gatsby-image";
 import BarChart from '../../components/BarChart';
 import InvestmentQuiz from '../../components/Tools/InvestmentQuiz';
 import {ToolContainer} from "../../components/ToolContainer";
+import thumbImg from "./quiz.jpg"
 
 const PageContainer = styled.div`
   display: grid;
@@ -51,10 +52,17 @@ class App extends React.Component {
     
     return(
     <ToolContainer >
+      <Helmet>
+        <title>Get Started - Investment Quiz</title>
+        <meta property="og:title" content="Basic Investment Quiz"/>
+        <meta property="og:description" content="Test your knowledge about investment.  Take this short quiz."/>
+        <meta property="og:image" content="/static/quiz.e9fff524.jpg" />
+      </Helmet>
       <PageContainer>
-        <InvestmentQuiz onClick={e => this.onClick(e)} />
+        <InvestmentQuiz onClick={e => this.onClick(e)}  />
         {/*<IFrameContainer src="https://4374kf.imgcorp.com/register/" />*/}
       </PageContainer>
+      <img src={thumbImg} style={{display: 'none'}}/>
     </ToolContainer>);
   }
 }
