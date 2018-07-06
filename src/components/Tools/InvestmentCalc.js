@@ -15,6 +15,97 @@ import MyInput from '../MyInput.js';
 //Orange - #e79702
 //Dark Green - #2d3939
 
+class MyNumberInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    console.log('value');
+    this.state = 
+      {
+        validatedInput: '',
+      };
+
+    //this.onChange = this.onChange.bind(this);
+  }
+
+  componentDidMount() {
+  }
+
+  handleChange(e)
+  {
+    var orig = this.state.validatedInput;
+    var val = parseInt(e.target.value);
+    console.clear();
+    console.log(val);
+    console.log(e.target.validity.badInput)
+    if(isNaN(val) || e.target.validity.badInput)
+      val = orig;
+    
+    console.log(val);
+
+    this.setState({validatedInput: val})
+    //this.props.onChange(this.props.controlName, e);
+  }
+
+  render()
+  {
+    const { controlName, value, onChange,
+    } = this.props;
+    
+    return (
+      
+      <InputContainer style={{height: '40px', verticalAlign: 'middle'}}>
+            <input type='number' onChange={this.handleChange.bind(this)} value={this.state.validatedInput} />
+            {/*<NumericInput 
+              onChange={this.onChange}
+              defaultValue={this.props.value}
+              precision={0}
+              size={12}
+              step={1}
+              mobile={false}
+              strict={true}
+              style={{
+                wrap: {
+                    background: '#FFFFFF',
+                    padding: '2px 2.26ex 2px 2px',
+                    fontSize: 18
+                },
+                input: {
+                    borderRadius: '1px 1px 1px 1px',
+                    borderStyle: 'none',
+                    color: '#988869',
+                    padding: '0.1ex 1ex',
+                    border: '1px none #ccc',
+                    marginRight: 4,
+                    display: 'block',
+                    fontWeight: 100,
+                    height: '100%',
+                    textShadow: '1px 1px 1px rgba(0, 0, 0, 0.1)'
+                },
+                'wrap:focus' : {
+                    outline: 'solid',
+                    outlineColr: 'red'
+                },
+                'input:focus' : {
+                    borderWidth: '2px',
+                    borderColor: '#FFFFFF',
+                    borderStyle: 'transparent',
+                    outline: 'none'
+                },
+                arrowUp: {
+                    borderBottomColor: 'rgba(66, 54, 0, 0.63)'
+                },
+                arrowDown: {
+                    borderTopColor: 'rgba(66, 54, 0, 0.63)'
+                }
+            }}
+          />*/}
+      </InputContainer>
+    );
+  }
+
+}
+
 class CurrencyInput extends React.Component {  
   constructor(props) {
     super(props);
@@ -390,6 +481,7 @@ class InvestmentCalc extends Component {
           <InfoContainer>
             <HeroBannerParag>Enter your current age.</HeroBannerParag>
             <NumberInput controlName='CurrAge' value={this.state.CurrAge} onChange={(name, value) => this.onValueChange(name, value)} />
+            {/*<MyNumberInput onChange={(name, value) => this.onValueChange(name, value)} />*/}
           </InfoContainer>
           <InfoContainer>
             <HeroBannerParag>Enter the age you plan to retire.</HeroBannerParag>        

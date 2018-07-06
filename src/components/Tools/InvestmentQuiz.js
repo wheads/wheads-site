@@ -54,8 +54,13 @@ const HeroBannerSub = styled.h1`
   padding: 0px 0px 50px 0px;
 
   @media (max-width: 768px) {
+    font-size: 1.25rem;
+    padding: 0px 0px 20px 0px;
+  }
+
+  @media (max-width: 400px) {
     //font-size: calc(1.5vw + 1.5vh + .5vmin);
-    font-size: 1.35rem;
+    font-size: 1rem;
     //margin-left: 5px;
     //margin-right: 5px;
     //margin-bottom: calc(1vw + 1vh + .5vmin);
@@ -179,7 +184,7 @@ class InvestmentQuiz extends Component {
         answer: '',
         detailAnswer2: 'Diversification is an investment strategy that involves buying a variety of different investments that are not highly associated with each other, in order to reduce risk.',
         detailAnswer3: ' Diversification ratio will be different as you age.',
-        link: "http://www.google.com",
+        link: "/../contact",
         linkText: 'To know more about diversification strategies...',
         options: [{
             selected: '',
@@ -227,7 +232,7 @@ class InvestmentQuiz extends Component {
         expected: 'a',
         answer: '',
         detailAnswer3: 'It is suggested to invested in not less than 5 years.  Less than that is simply saving.',
-        link: "http://www.google.com",
+        link: "/../contact",
         linkText: 'To know WHY',
         options: [{
             selected: '',
@@ -277,7 +282,7 @@ class InvestmentQuiz extends Component {
         answer: '',
         detailAnswer2: "False! Just because it looks and sounds sophisticated doesn't mean it is smart and it is good for you.",
         detailAnswer3: "Never put money in anything you don't understand.",
-        link: 'http://www.google.com',
+        link: '/../contact',
         linkText: "Attend our free workshops.",
         options: [{
             selected: '',
@@ -335,10 +340,10 @@ class InvestmentQuiz extends Component {
         name: 'rdQuestion',
         expected: 'a',
         answer: '',
-        link: 'http://www.google.com',
+        link: '/../contact',
         linkText: "Know more.",
         detailAnswer: 'When you get old you are more sickly.  Putting your money in a mutual fund can be a challenge especially if you need money for hospitalization.',
-        detailAnswer2: 'While inflation might eat up your fund if you just put it in the bank.',
+        detailAnswer2: 'Inflation will be your enemy, if you just put it in the bank. Inflation will eat up your fund',
         detailAnswer3: 'Long-term care fund have both the strength of Savings Account liquidity and the inflation-beating returns of a mutual fund.',
         options: [{
             selected: '',

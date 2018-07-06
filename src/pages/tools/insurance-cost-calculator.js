@@ -14,6 +14,7 @@ import {ToolContainer} from "../../components/ToolContainer";
 // Brown - #ccc6ba
 // Orange - #e79702
 // Dark Green - #2d3939
+// Rd - #b24073
 
 const Title = styled.h2`
   font-size: 3rem;
@@ -125,7 +126,6 @@ class App extends React.Component {
         },
         {Number: '',
         Color: '#0695a4',
-        Asset: true,
         Text1: 'How old are you?' ,
         Text2: '',
         Min: 18,
@@ -135,7 +135,6 @@ class App extends React.Component {
         },
         {Number: '',
         Color: '#0695a4',
-        Asset: true,
         Text1: 'How much insurance do you need?' ,
         Text2: '',
         Min: 250000,
@@ -146,7 +145,6 @@ class App extends React.Component {
         },
         {Number: '',
         Color: '#0695a4',
-        Asset: true,
         Text1: 'How long are you planning to pay?' ,
         Text2: '',
         Min: 1,

@@ -4,6 +4,11 @@ import { select } from 'd3-selection'
 import checkImg from './check.png';
 import crossImg from './cross.png';
 
+const Link = styled.a`
+  font-weight: bold;
+  color: #e79702;
+`
+
 const Container = styled.div`
   margin: 0px;
   position: relative;
@@ -193,7 +198,7 @@ class SlidingQuestion extends Component {
                     <DetailedAnswerSub>{question.detailAnswer}</DetailedAnswerSub>
                     <DetailedAnswerSub>{question.detailAnswer2}</DetailedAnswerSub>
                     <DetailedAnswerSub style={{display:'inline'}}>{question.detailAnswer3}</DetailedAnswerSub>
-                    <strong><a style={{paddingLeft: '10px'}} href={question.link}>{question.linkText}</a></strong>
+                    <strong><Link style={{paddingLeft: '10px'}} href={question.link}>{question.linkText}</Link></strong>
                 </DetailedAnswer>
               </div>
             </ContainerSub>
