@@ -75,6 +75,7 @@ const Form = styled.form`
   textarea {
     padding: 0.1ex 1ex 0.1ex 4px;
     font-size: 18px;
+    min-height: 100px;
   }
 `;
 
@@ -119,7 +120,7 @@ export default ({ data }) => (
             <FormButton type="submit" name="Send" value="Send">Send</FormButton>
           </Form>
       </HeroBanner>
-      <Img sizes={data.imageBannerBg.childImageSharp.sizes} />
+      <Img style={{height: '100%'}} sizes={data.imageBannerBg.childImageSharp.sizes} />
     </BannerContainer>
   </div>
   

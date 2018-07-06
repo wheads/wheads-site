@@ -53,7 +53,7 @@ class App extends React.Component {
     <ToolContainer >
       <PageContainer>
         <InvestmentQuiz onClick={e => this.onClick(e)} />
-        <IFrameContainer src="https://4374kf.imgcorp.com/register/" />
+        {/*<IFrameContainer src="https://4374kf.imgcorp.com/register/" />*/}
       </PageContainer>
     </ToolContainer>);
   }

@@ -426,6 +426,7 @@ class App extends React.Component {
     return(
     <ToolContainer onClick={(e) => this.hideInfo(e)}>
     <Helmet>
+      <title>Budget by numbers</title>
       <meta property="og:title" content="Budget by numbers"/>
       <meta property="og:description" content="Set-up a budget that works."/>
       <meta property="og:image" content="https://dev.everypeso.com/static/Bucket%20Savings.e4eaf276.png" />
