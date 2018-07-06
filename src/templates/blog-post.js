@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Img from "gatsby-image"
 import styled from "styled-components"
+import Helmet from "react-helmet";
 
 const BlogPostContainer = styled.div`
   max-width: 800px;
@@ -24,6 +25,12 @@ class BlogPostTemplate extends Component {
         const { title, createdAt, featuredImage, content } = this.props.data.contentfulBlogPost
         return (
             <BlogPostContainer>
+              <Helmet>
+                <title>{title} - EveryPeso.com</title>
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content={featuredImage} />
+              </Helmet>
+
                 <BlogTitle>{title}</BlogTitle>
                 <p>{createdAt}</p>
                 <div>

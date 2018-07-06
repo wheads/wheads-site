@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import styled from "styled-components"
+import Helmet from "react-helmet";
+import img from "./img-homepage.jpg"
 
 const BlogPostItemContainer = styled.div`
   display: grid;
@@ -62,7 +64,17 @@ const BlogPage = (props) => {
     console.log(props)
     return (
         <div>
-            {props.data.allContentfulBlogPost.edges.map((edge) => <BlogPosts key={edge.node.id} node={edge.node} />)}
+          <Helmet>
+            <title>EveryPeso Blog - EveryPeso.com</title>
+            <meta name="description" content="We never run out of things to say about personal finance! We post about budgeting tips, inspiration and success stories to keep you motivated!" />
+            <meta property="og:title" content="EveryPeso Blog" />
+            <meta property="og:description" content="We never run out of things to say about personal finance! We post about budgeting tips, inspiration and success stories to keep you motivated!" />
+            <meta property="og:url" content="https://www.everypeso.com/blog" />
+            <meta property="og:site_name" content="EveryPeso Blog" />
+            <meta property="og:image" content={img} />
+          </Helmet>
+
+          {props.data.allContentfulBlogPost.edges.map((edge) => <BlogPosts key={edge.node.id} node={edge.node} />)}
         </div>
     )
 }
