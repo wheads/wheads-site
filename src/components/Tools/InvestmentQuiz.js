@@ -54,13 +54,13 @@ const HeroBannerSub = styled.h1`
   padding: 0px 0px 50px 0px;
 
   @media (max-width: 768px) {
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: 0px 0px 20px 0px;
   }
 
   @media (max-width: 400px) {
     //font-size: calc(1.5vw + 1.5vh + .5vmin);
-    font-size: 1rem;
+    font-size: 0.95rem;
     //margin-left: 5px;
     //margin-right: 5px;
     //margin-bottom: calc(1vw + 1vh + .5vmin);
@@ -203,13 +203,13 @@ class InvestmentQuiz extends Component {
             value: 'c'}]
         },
         {number: '4',
-        text: 'What type of mutual should you invest, if you want to participate in the stock market?' ,
+        text: 'What type of mutual fund should you invest, if you want to participate in the stock market?' ,
         name: 'rdQuestion',
         expected: 'c',
         answer: '',
         detailAnswer: 'Money Market Funds invest in short-term fixed income securities such as government bonds, treasury bills, bankers’ acceptances, commercial paper and certificates of deposit.',
         detailAnswer2: 'Fixed Income Funds buy investments that pay a fixed rate of return like government bonds, investment-grade corporate bonds and high-yield corporate bonds.',
-        detailAnswer3: 'These funds invest in stocks. These funds aim to grow faster than money market or fixed income funds, so there is usually a higher risk that you could lose money.',
+        detailAnswer3: 'These funds invest in stocks, it aim to grow faster than money market or fixed income funds, so there is usually a higher risk that you could lose money.',
         options: [{
             selected: '',
             img: checkImg,
@@ -231,7 +231,7 @@ class InvestmentQuiz extends Component {
         name: 'rdQuestion',
         expected: 'a',
         answer: '',
-        detailAnswer3: 'It is suggested to invested in not less than 5 years.  Less than that is simply saving.',
+        detailAnswer3: 'It is suggested to be invested in not less than 5 years.  Less than that is simply saving.',
         link: "/../contact",
         linkText: 'To know WHY',
         options: [{
@@ -257,7 +257,7 @@ class InvestmentQuiz extends Component {
         answer: '',
         detailAnswer2: "A load is a type of commission. Depending on the type of load a mutual fund exhibits, charges may be incurred at time of purchase, time of sale, or a mix of both. A sales load can range from 1.5% to 3.5%.",
         detailAnswer3: "If you invest 5,000.00 each month for 20 years in a MF with 3% sales load, it can give you additional 113,000.00.",
-        link: "www.google.com",
+        link: "/../contact",
         linkText: "To know more how you can save on sales load...",
         options: [{
             selected: '',
