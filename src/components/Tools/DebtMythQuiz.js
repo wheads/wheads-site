@@ -224,6 +224,60 @@ class DebtMythQuiz extends Component {
             text: 'Truth',
             value: 'Truth'}]
         },
+        {number: '6',
+        text: 'Getting a new car on a low-downpayments is a good deal.' ,
+        name: 'rdQuestion',
+        expected: 'Myth',
+        answer: '',
+        detailAnswer2: `Banks adjust the rate on low-downpayment purchases because their risk is higher.`,
+        detailAnswer3: `And if you can't get the car at the usual 20% downpayment, it might mean you really can't afford it yet.`,
+        options: [{
+            selected: '',
+            img: checkImg,
+            text: 'Myth',
+            value: 'Myth'},
+          {
+            selected: '',
+            img: checkImg,
+            text: 'Truth',
+            value: 'Truth'}]
+        },
+        {number: '7',
+        text: 'You need a credit card to purchase online or check into a hotel.' ,
+        name: 'rdQuestion',
+        expected: 'Myth',
+        answer: '',
+        detailAnswer2: `A debit card will just do fine.  Good thing is you are limited to what you have.`,
+        detailAnswer3: `If you can't buy it with cash, then you can't afford it yet.`,
+        options: [{
+            selected: '',
+            img: checkImg,
+            text: 'Myth',
+            value: 'Myth'},
+          {
+            selected: '',
+            img: checkImg,
+            text: 'Truth',
+            value: 'Truth'}]
+        },
+        {number: '8',
+        text: 'Debt consolidation saves interest.' ,
+        name: 'rdQuestion',
+        expected: 'Myth',
+        answer: '',
+        detailAnswer2: `When one is trying to consolidate debt, it means are having problems paying it.`,
+        detailAnswer3: `You are only trying to fix the symptom.`,
+        options: [{
+            selected: '',
+            img: checkImg,
+            text: 'Myth',
+            value: 'Myth'},
+          {
+            selected: '',
+            img: checkImg,
+            text: 'Truth',
+            value: 'Truth'}]
+        },
         ],
     }
   }
@@ -553,25 +607,25 @@ class DebtMythQuiz extends Component {
             <div style={{display: 'block', width: '100%', height: '80%', backgroundColor: 'white', overflowY: 'auto', overflowX: 'hidden'}}>
               <div id="divContainer" ref={ (divContainer) => this.divContainer = divContainer} style={{position: 'relative', display: 'block'}} onKeyDown={(e) => this.onKeyDown(e)}>
                 {this.state.questions.map((question, index) =>
-                  <SlidingQuestion ref={ (divSliding) => this.divSliding = divSliding} question={question} style={{display: 'block'}} index={index} onOptionChange={(e) => this.onOptionChange(e)}
+                  <SlidingQuestion key={index} ref={ (divSliding) => this.divSliding = divSliding} question={question} style={{display: 'block'}} index={index} onOptionChange={(e) => this.onOptionChange(e)}
                     Width={this.state.width} Next={(index<(this.state.questions.length-1))?"true":"false"} Back={(index>0)?"true":"false"} Location={this.state.containerX} />
                   )}
                 
                 <div id="divStartInfo" style={{display: 'table-cell', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
                   <HeroBannerSub>Can you identify the debt myths?  Take the short quiz below to find out.<br/><br/>Explanations will be provided after completing the quiz.</HeroBannerSub>
-                  <BigButton id="btnStart" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.StartQuiz(e)}>Start</BigButton>
+                  <BigButton to="#" id="btnStart" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.StartQuiz(e)}>Start</BigButton>
                 </div>
                 <div id="divReviewQuiz" style={{display: 'none', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
                   <HeroBannerSub style={{borderBottom: '1px solid', padding: 'calc(1.75vw + 1.75vh + .5vmin) 25px', textAlign: 'center'}}>Congratulations!!!<br/><br/>You have scored {this.state.yourScore} out of the {this.state.questions.length} questions</HeroBannerSub>
-                  <BigButton id="btnReview" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ReviewQuiz(e)}>Review Answers</BigButton>
+                  <BigButton to="#" id="btnReview" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ReviewQuiz(e)}>Review Answers</BigButton>
                 </div>
               </div>
             </div> 
             <div style={{display: 'table', width: '100%', height: '20%', textAlign: 'center'}}>
               <div style={{display: 'table-cell', height: '75%', verticalAlign: 'middle'}}>
-                <Button id="btnShow" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ShowAnswers(e)}>Show Answers</Button>
-                <Button id="btnBack" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none', position: 'absolute', left: '10px' }} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'back')}>Back</Button>
-                <Button id="btnNext" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none', position: 'absolute', right: '10px', backgroundColor: '#cccccc', pointerEvents: 'none'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'next')}>Next</Button>
+                <Button to="#" id="btnShow" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.ShowAnswers(e)}>Show Answers</Button>
+                <Button to="#" id="btnBack" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none', position: 'absolute', left: '10px' }} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'back')}>Back</Button>
+                <Button to="#" id="btnNext" style={{display: 'inline-block', opacity: '0', pointerEvents: 'none', position: 'absolute', right: '10px', backgroundColor: '#cccccc', pointerEvents: 'none'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.MoveQuestions(e, 'next')}>Next</Button>
               </div>
             </div> 
             </div>
