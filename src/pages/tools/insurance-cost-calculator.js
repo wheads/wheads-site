@@ -545,7 +545,7 @@ class App extends React.Component {
       cost = rate[0].Rates[0].T1;
     }
     
-    cost = ((cost * InsuranceNeed) + 300) * 18;
+    cost = (cost * InsuranceNeed) * 18;
 
     this.setState(
       {TotalInsuranceCost: cost}
