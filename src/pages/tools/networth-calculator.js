@@ -15,6 +15,7 @@ import imgQuote from "../get-started/img-hero-banner-retirement.jpg"
 // Brown - #ccc6ba
 // Orange - #e79702
 // Dark Green - #2d3939
+// Red - #b24073
 
 const Title = styled.h2`
   font-size: 3rem;
