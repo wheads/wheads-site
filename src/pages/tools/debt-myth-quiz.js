@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 import BarChart from '../../components/BarChart';
 import DebtMythQuiz from '../../components/Tools/DebtMythQuiz';
 import {ToolContainer} from "../../components/ToolContainer";
-import thumbImg from "./quiz2.jpg"
+import thumbImg from "./MythFact.png"
 
 const PageContainer = styled.div`
   display: grid;
@@ -56,7 +56,7 @@ class App extends React.Component {
         <title>EveryPeso.com - Debt Myth</title>
         <meta property="og:title" content="EveryPeso - Debt Myth"/>
         <meta property="og:description" content="Can you identify which are Myth or Fact?"/>
-        <meta property="og:image" content="https://www.everypeso.com/static/quiz2.7a02efe8.jpg" />
+        <meta property="og:image" content="https://www.everypeso.com/static/MythFact.11c512c1.png" />
       </Helmet>
       <PageContainer>
         <DebtMythQuiz onClick={e => this.onClick(e)}  />

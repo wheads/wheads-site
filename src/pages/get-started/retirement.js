@@ -115,6 +115,9 @@ export default ({ data }) => (
   <div>
     <Helmet>
       <title>Get Started - {data.site.siteMetadata.title}</title>
+      <meta property="og:title" content="Get Started - Retirement"/>
+      <meta property="og:description" content="Retirement is not about age."/>
+      <meta property="og:image" content="https://www.everypeso.com/static/img-hero-banner-retirement.5921b8bd.jpg" />
     </Helmet>
 
     <BannerContainer style={{backgroundImage:`url(` + bannerBg + `)`}}>
