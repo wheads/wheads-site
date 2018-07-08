@@ -177,7 +177,7 @@ class SlidingQuestion extends Component {
                 </QuestionDiv>
                 <AnswerChoice>
                 {question.options.map((options, index) =>
-                  <label>              
+                  <label key={index} >
                     <AnswersIcon id={'rdimg' + question.number + options.value} src={options.img} />
                     <Radio
                       type="radio"

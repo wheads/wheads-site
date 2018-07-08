@@ -54,7 +54,7 @@ class App extends React.Component {
     <ToolContainer >
       <Helmet>
         <title>EveryPeso.com - Investment Quiz</title>
-        <meta property="og:title" content="Basic Investment Quiz"/>
+        <meta property="og:title" content="EveryPeso - Basic Investment Quiz"/>
         <meta property="og:description" content="Test your knowledge about investment.  Take this short quiz."/>
         <meta property="og:image" content="https://www.everypeso.com/static/quiz2.7a02efe8.jpg" />
       </Helmet>
