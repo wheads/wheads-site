@@ -229,23 +229,23 @@ class DebtMythQuiz extends Component {
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: `Banks adjust the rate on low-downpayment purchases because their risk is higher.`,
+        detailAnswer2: `Banks charge higher interests on low-downpayment purchases because their risk is higher.`,
         detailAnswer3: `And if you can't get the car at the usual 20% downpayment, it might mean you really can't afford it yet.`,
         options: [{
             selected: '',
             img: checkImg,
-            text: 'Myth',
-            value: 'Myth'},
+            text: 'Truth',
+            value: 'Truth'},
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Myth',
+            value: 'Myth'}]
         },
         {number: '7',
-        text: 'You need a credit card to purchase online or check into a hotel.' ,
+        text: `You don't need a credit card to purchase online or check into a hotel.` ,
         name: 'rdQuestion',
-        expected: 'Myth',
+        expected: 'Fact',
         answer: '',
         detailAnswer2: `A debit card will just do fine.  Good thing is you are limited to what you have.`,
         detailAnswer3: `If you can't buy it with cash, then you can't afford it yet.`,
@@ -288,13 +288,13 @@ class DebtMythQuiz extends Component {
         options: [{
             selected: '',
             img: checkImg,
-            text: 'Myth',
-            value: 'Myth'},
+            text: 'Truth',
+            value: 'Truth'},
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Myth',
+            value: 'Myth'}]
         },
         {number: '10',
         text: `A 25 house mortgage is better than a 15 year mortgage.` ,
