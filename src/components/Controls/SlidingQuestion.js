@@ -28,13 +28,14 @@ const ContainerSub = styled.div`
   }
 `;
 
-const QuestionDiv = styled.div`
+const QuestionDiv = styled.h3`
   margin: 1em 0.01em 0.5em 0.01em;
   //font-size: calc(0.75vw + 0.75vh + .5vmin);
   font-size: 1.25rem;
   color: #3a3e4b;
   text-align: left;
   font-weight: bold;
+  padding-left: 20px;
 
   @media (max-width: 768px) {
     //font-size: calc(1vw + 1vh + .5vmin);
@@ -44,6 +45,15 @@ const QuestionDiv = styled.div`
 
   @media (max-width: 400px) {
     //font-size: 12px;
+    font-size: 1rem;
+  }
+  
+  &::before {
+    content: '${props => props.Number}';
+    position: absolute;
+    left: 0.75rem;
+    padding-right: 2px;
+    border-right: 2px solid #e79702;
     font-size: 1rem;
   }
 `;
@@ -173,7 +183,7 @@ class SlidingQuestion extends Component {
 
             <ContainerSub style={{width: this.props.Width, height: this.props.Height}}>
               <div style={this.props.style}>
-                <QuestionDiv>{question.number}.&nbsp;{question.text}
+                <QuestionDiv Number={question.number}>{question.text}
                 </QuestionDiv>
                 <AnswerChoice>
                 {question.options.map((options, index) =>
