@@ -49,12 +49,12 @@ const HeroBannerSub = styled.h1`
   padding: 0px 0px 50px 0px;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 0px 0px 20px 0px;
   }
 
   @media (max-width: 400px) {
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 0px 0px 20px 0px;
   }
 `;
@@ -346,7 +346,11 @@ class DebtMythQuiz extends Component {
     var mainContainer = this.divMainContainer;
     if(mainContainer !== null && mainContainer !== undefined)
     {
-      this.divMainContainer.style.height = (window.innerHeight / 2) + "px";
+      console.log(window.innerHeight);
+      if(window.innerHeight < 400)
+        this.divMainContainer.style.height = 280 + "px";
+      else
+        this.divMainContainer.style.height = (window.innerHeight / 2) + "px";
     }
     if(container !== null && container !== undefined)
     {
@@ -648,7 +652,7 @@ class DebtMythQuiz extends Component {
                   )}
                 
                 <div id="divStartInfo" style={{display: 'table-cell', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
-                  <HeroBannerSub>Can you identify the debt myths?  Take the short quiz below to find out.<br/><br/>Explanations will be provided after completing the quiz.</HeroBannerSub>
+                  <HeroBannerSub>Can you identify the debt myths?<br/>Take the short quiz below to find out.<br/><br/>Explanations will be provided after completing the quiz.</HeroBannerSub>
                   <BigButton to="#" id="btnStart" style={{display: 'inline-block'}} ref={ (btnResults) => this.btnResults = btnResults} onClick={(e) => this.StartQuiz(e)}>Start</BigButton>
                 </div>
                 <div id="divReviewQuiz" style={{display: 'none', textAlign: 'center', position: 'absolute', left: '0px', top: '0px', height: '100%', width: '100%', backgroundColor: 'white'}}>
