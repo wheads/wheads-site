@@ -147,8 +147,8 @@ class DebtMythQuiz extends Component {
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Fact',
+            value: 'Fact'}]
         },
         {number: '2',
         text: 'I am helping a friend or relative, if I let him borrow money.' ,
@@ -165,8 +165,8 @@ class DebtMythQuiz extends Component {
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Fact',
+            value: 'Fact'}]
         },
         {number: '3',
         text: 'Cash Advance, Personal Loans, Title Pawning, SSS/GSIS and other short-term loans are needed to help lower-income people get ahead.' ,
@@ -183,8 +183,8 @@ class DebtMythQuiz extends Component {
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Fact',
+            value: 'Fact'}]
         },
         {number: '4',
         text: 'Zero percent monthly installment is the same as paying cash.' ,
@@ -201,8 +201,8 @@ class DebtMythQuiz extends Component {
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Fact',
+            value: 'Fact'}]
         },
         {number: '5',
         text: 'Car payments is a way of life; you`ll always have one.' ,
@@ -221,8 +221,8 @@ class DebtMythQuiz extends Component {
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Fact',
+            value: 'Fact'}]
         },
         {number: '6',
         text: 'Getting a new car on a low-downpayments is a good deal.' ,
@@ -234,8 +234,8 @@ class DebtMythQuiz extends Component {
         options: [{
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'},
+            text: 'Fact',
+            value: 'Fact'},
           {
             selected: '',
             img: checkImg,
@@ -257,8 +257,8 @@ class DebtMythQuiz extends Component {
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Fact',
+            value: 'Fact'}]
         },
         {number: '8',
         text: 'Debt consolidation saves interest.' ,
@@ -275,8 +275,8 @@ class DebtMythQuiz extends Component {
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Fact',
+            value: 'Fact'}]
         },
         {number: '9',
         text: `If you don't take out a SSS/GSIS loan, somebody else will use your account.` ,
@@ -288,8 +288,8 @@ class DebtMythQuiz extends Component {
         options: [{
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'},
+            text: 'Fact',
+            value: 'Fact'},
           {
             selected: '',
             img: checkImg,
@@ -311,8 +311,8 @@ class DebtMythQuiz extends Component {
           {
             selected: '',
             img: checkImg,
-            text: 'Truth',
-            value: 'Truth'}]
+            text: 'Fact',
+            value: 'Fact'}]
         },
         ],
     }
