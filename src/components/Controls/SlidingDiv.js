@@ -297,10 +297,10 @@ class SlidingDiv extends Component {
             </div>
             <ButtonHolder>
               <LeftButtonHolder>
-                <BigButton id="back" style={{float: 'right', display: this.props.Back !== 'true' ? 'none' : 'block' }} onClick={(e) => this.onClick(e, "back")} to="#">Back</BigButton>
+                <BigButton id="back" style={{float: 'left', display: this.props.Back !== 'true' ? 'none' : 'block' }} onClick={(e) => this.onClick(e, "back")} to="#">Back</BigButton>
               </LeftButtonHolder>
               <RightButtonHolder>
-                <BigButton id="next" style={{float: 'left', display: this.props.Next !== 'true' ? 'none' : 'block'}} onClick={(e) => this.onClick(e, "forward")} to="#">Next</BigButton>
+                <BigButton id="next" style={{float: 'right', display: this.props.Next !== 'true' ? 'none' : 'block'}} onClick={(e) => this.onClick(e, "forward")} to="#">Next</BigButton>
               </RightButtonHolder>
             </ButtonHolder>
             {/*<div style={{display: Content.Last ? 'block' : 'none', textAlign: 'center' }}>*/}
