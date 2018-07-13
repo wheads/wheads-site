@@ -9,6 +9,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: "GTM-PJVX6RP"
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
