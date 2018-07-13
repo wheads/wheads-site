@@ -121,7 +121,7 @@ const Button = styled(Link)`
   }
 `;
 
-class DebtMythQuiz extends Component {   
+class MoneyMythQuiz extends Component {   
   
   constructor(props) {
     super(props);
@@ -133,12 +133,12 @@ class DebtMythQuiz extends Component {
       yourScore: 0,
       questions : [
         {number: '1',
-        text: 'Debt is a tool and should be used to create wealth.' ,
+        text: 'Insurance with investment will help me retire wealthy.' ,
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: 'Debt adds considerable risks and stress.',
-        detailAnswer3: 'It can offset any advantage of leveraging through debt.',
+        detailAnswer2: `If you don't understand how it works, you may end up blaming your agent.`,
+        detailAnswer3: 'If you have one, take time to learn more about it.',
         options: [{
             selected: '',
             img: checkImg,
@@ -151,12 +151,12 @@ class DebtMythQuiz extends Component {
             value: 'Fact'}]
         },
         {number: '2',
-        text: 'I am helping a friend or relative, if I let him borrow money.' ,
+        text: 'Playing the lottery will make me rich.' ,
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: 'If you borrow to someone who is close to you, you are putting the relationship at risks.',
-        detailAnswer3: "If the other party can't pay, are you willing to let go of the relationship?",
+        detailAnswer2: `This may seem harsh, but lottery is for people who can't do math.`,
+        detailAnswer3: `If you learn how to save your the cost of your lottery ticket, it is a guarantee that you will be a millionaire when you retire.`,
         options: [{
             selected: '',
             img: checkImg,
@@ -169,12 +169,12 @@ class DebtMythQuiz extends Component {
             value: 'Fact'}]
         },
         {number: '3',
-        text: 'Cash Advance, Personal Loans, Title Pawning, SSS/GSIS and other short-term loans are needed to help lower-income people get ahead.' ,
+        text: `Funeral plans and educational plans are not that cost-effective` ,
         name: 'rdQuestion',
-        expected: 'Myth',
+        expected: 'Fact',
         answer: '',
-        detailAnswer2: 'The only person who will get ahead is the lender.',
-        detailAnswer3: 'If one has to get ahead, one should examine his/her behavior and deal with it first.',
+        detailAnswer2: 'If you take time to learn more, there are better choices.',
+        detailAnswer3: 'With these plans you also lost the flexibility.',
         options: [{
             selected: '',
             img: checkImg,
@@ -187,12 +187,12 @@ class DebtMythQuiz extends Component {
             value: 'Fact'}]
         },
         {number: '4',
-        text: 'Zero percent monthly installment is the same as paying cash.' ,
+        text: `I don't have time to work on a budget or retirement planning.` ,
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: `Are you familiar with "We buy things we don't need with money we don't have"`,
-        detailAnswer3: 'If you pay cash, you can get discounts.',
+        detailAnswer2: `If you don't have time to watch your favorite TV series or watch movies, then I will believe you.`,
+        detailAnswer3: 'It is just about prioritizing things, it is easy really.',
         options: [{
             selected: '',
             img: checkImg,
@@ -205,14 +205,14 @@ class DebtMythQuiz extends Component {
             value: 'Fact'}]
         },
         {number: '5',
-        text: 'Car payments is a way of life; you`ll always have one.' ,
+        text: `I can't afford Life Insurace.` ,
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: `You may need a car, but you don't need a NEW one.  Did you know that most people who becomes a millionaire drives a reliable used cars?`,
-        detailAnswer3: 'If you pay cash, you can get discounts.',
+        detailAnswer2: `Maybe you have this sentiment because you were sold a very expensive kind of life insurance. Term insurance is very affordable.`,
+        detailAnswer3: 'If you are 30 y.o you can be insured for 1Million for only 6k annually.',
         link: "/../contact",
-        linkText: 'If you want to learn a strategy to drive a brand new car without a mortgage attach...',
+        linkText: 'You heard it right! 6,000 Annual.  Send us a message to know more',
         options: [{
             selected: '',
             img: checkImg,
@@ -225,12 +225,14 @@ class DebtMythQuiz extends Component {
             value: 'Fact'}]
         },
         {number: '6',
-        text: 'Getting a new car on a low-downpayments is a good deal.' ,
+        text: 'When I save money in the bank, I am losing money.' ,
         name: 'rdQuestion',
-        expected: 'Myth',
+        expected: 'Fact',
         answer: '',
-        detailAnswer2: `Banks charge higher interests on low-downpayment purchases because their risk is higher.`,
-        detailAnswer3: `And if you can't get the car at the usual 20% downpayment, it might mean you really can't afford it yet.`,
+        detailAnswer2: `Money saved in the bank will be eaten by inflation, you also need to invest to fight inflation.`,
+        detailAnswer3: ``,
+        link: "/../contact",
+        linkText: `Send us a message to know our free-seminar schedules.`,
         options: [{
             selected: '',
             img: checkImg,
@@ -243,12 +245,12 @@ class DebtMythQuiz extends Component {
             value: 'Myth'}]
         },
         {number: '7',
-        text: `You don't need a credit card to purchase online or check into a hotel.` ,
+        text: `I can rely with SSS/GSIS for my retirement years.` ,
         name: 'rdQuestion',
-        expected: 'Fact',
+        expected: 'Myth',
         answer: '',
-        detailAnswer2: `A debit card will just do fine.  Good thing is you are limited to what you have.`,
-        detailAnswer3: `If you can't buy it with cash, then you can't afford it yet.`,
+        detailAnswer2: `Try computing your SSS/GSIS pension you will be receiving today and ask yourself "If I retire today, will this be enough?"`,
+        detailAnswer3: `You need to supplement those government pensions.`,
         options: [{
             selected: '',
             img: checkImg,
@@ -261,12 +263,14 @@ class DebtMythQuiz extends Component {
             value: 'Fact'}]
         },
         {number: '8',
-        text: 'Debt consolidation saves interest.' ,
+        text: 'I can rely with PhilHealth for my retirement healthcare needs.' ,
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: `When one is trying to consolidate debt, it means he/she may have problems paying it.`,
-        detailAnswer3: `You are only trying to fix the symptom.`,
+        detailAnswer2: `PhilHealth does not cover the entire hospitalization cost and it will also not cover your maintenance medicines.`,
+        detailAnswer3: `There are financial solutions out there that can help you.`,
+        link: "/../contact",
+        linkText: `Send us a message to know our free-seminar schedules.`,
         options: [{
             selected: '',
             img: checkImg,
@@ -279,12 +283,12 @@ class DebtMythQuiz extends Component {
             value: 'Fact'}]
         },
         {number: '9',
-        text: `If you don't take out a SSS/GSIS loan, somebody else will use your account.` ,
+        text: `If I save up for emergency, emergency will come to my life` ,
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: `This is the craziest myth I've heard, but I did believe it before.`,
-        detailAnswer3: `The person who is spreading this myth, is just spreading problems.`,
+        detailAnswer2: `Emergencies will come to our life no matter what.  But it is better to be prepared than to be sorry.`,
+        detailAnswer3: `Which scenarios do you like?  You spend your emergency fund or be buried in debt?`,
         options: [{
             selected: '',
             img: checkImg,
@@ -297,12 +301,14 @@ class DebtMythQuiz extends Component {
             value: 'Myth'}]
         },
         {number: '10',
-        text: `A 25 house mortgage is better than a 15 year mortgage.` ,
+        text: `I will just plan for my retirement when I'm about to retire.` ,
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: `When it comes to debt, the shorter the better.`,
-        detailAnswer3: `Make the magic of compounding work for you, not against you.`,
+        detailAnswer2: `This will be the biggest mistake if you believe in this myth.`,
+        detailAnswer3: `Make the magic of compounding work for you.`,
+        link: "/../contact",
+        linkText: `Send us a message to know our free-seminar schedules.`,
         options: [{
             selected: '',
             img: checkImg,
@@ -675,4 +681,4 @@ class DebtMythQuiz extends Component {
   }
 }
 
-export default DebtMythQuiz;
+export default MoneyMythQuiz;
