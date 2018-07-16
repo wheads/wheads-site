@@ -161,6 +161,7 @@ class App extends React.Component {
         Negative2: '',
         Text2: '',
         Value: 0,
+        ShowCurrency: true,
         Last: true,
         NextStep: 'You can leave us a message.',
         NextStepLink: '/../contact',
@@ -519,15 +520,12 @@ class App extends React.Component {
     ]
     var cost = 0;
 
-    console.clear();
-    console.log(InputAge);
     var rate = rates.filter((rate) => 
       rate.Age === parseInt(InputAge)
     );
 
     InsuranceNeed = parseInt(InsuranceNeed) / 1000;
 
-    console.log(InsuranceNeed);
     if(InsuranceNeed >= 5000)
     {
       cost = rate[0].Rates[0].T4;
@@ -556,7 +554,6 @@ class App extends React.Component {
   {    
     if(index === 3)
     {
-      console.log("Get Insurance")
       this.calculateInsurancePremium(this.state.contents[index-2].Value, this.state.contents[index-1].Value);
     }
 
@@ -585,7 +582,6 @@ class App extends React.Component {
       }
     }
 
-    console.log(this.state.contents)
     var InsuranceNeed = this.state.TotalInsuranceCost / this.state.contents[3].Value;
     
     this.setState(

@@ -8,6 +8,19 @@ import sectionBannerBg from "./img-footer-insurance.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
+const VidFrame = styled.iframe`
+  width: 100%;
+  margin: auto;
+  border: none;
+  padding: 50px 0px;
+  min-height: 410px;
+
+  @media (max-width: 768px) {
+    min-height: 320px;
+    padding: 20px 0px;
+  }
+`;
+
 const BannerContainer = styled.div`
   background-size: cover;
   background-position: center;
@@ -140,6 +153,7 @@ export default ({ data }) => (
         <SectionParag>
          It's how fast you can save enough for the retirement you want.<br/>
          At 70, you will still have to find a job just to survive if you don't have enough saved.
+         <VidFrame src="https://www.youtube.com/embed/UEG3uwmwP6I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></VidFrame>
         </SectionParag>
       </SectionContent>
       <SectionContentInfoGraphic>
