@@ -10,7 +10,7 @@ import {SectionContainer, SectionContentInfoGraphic} from "../../components/Comm
 
 const VidWrapper = styled.div`
   position: relative;
-  padding-bottom: 52%; /*56.25%;  16:9 */
+  padding-bottom: 56.25%; /*56.25%;  16:9 */
   padding-top: 25px;
   height: 0;
 `;
@@ -165,13 +165,10 @@ export default ({ data }) => (
         <SectionParag>
          It's how fast you can save enough for the retirement you want.<br/>
          At 70, you will still have to find a job just to survive if you don't have enough saved.
-          <VidWrapper>
-            <VidFrame src="https://www.youtube.com/embed/UEG3uwmwP6I?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></VidFrame>
-          </VidWrapper>
-          <VidWrapper>
-            <VidFrame src="https://www.youtube.com/embed/zHTh1DcZsRY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></VidFrame>
-          </VidWrapper>
         </SectionParag>
+        <VidWrapper>
+            <VidFrame src="https://www.youtube.com/embed/UEG3uwmwP6I?rel=0&amp;controls=1&amp;modestbranding=1&amp;showinfo=0&amp;theme=dark" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></VidFrame>
+          </VidWrapper>
       </SectionContent>
       <SectionContentInfoGraphic>
         <img src={sectionBannerInfo}/>
