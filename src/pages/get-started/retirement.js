@@ -8,17 +8,29 @@ import sectionBannerBg from "./img-footer-insurance.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
 
-const VidFrame = styled.iframe`
-  width: 100%;
-  margin: auto;
-  border: none;
-  padding: 50px 0px;
-  min-height: 410px;
+const VidWrapper = styled.div`
+  position: relative;
+  padding-bottom: 52%; /*56.25%;  16:9 */
+  padding-top: 25px;
+  height: 0;
+`;
 
-  @media (max-width: 768px) {
-    min-height: 320px;
-    padding: 20px 0px;
-  }
+const VidFrame = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  //margin: auto;
+  //border: none;
+  //padding: 50px 0px;
+  //min-height: 410px;
+
+  //@media (max-width: 768px) {
+  //  min-height: 320px;
+  //  padding: 20px 0px;
+  //}
 `;
 
 const BannerContainer = styled.div`
@@ -153,7 +165,12 @@ export default ({ data }) => (
         <SectionParag>
          It's how fast you can save enough for the retirement you want.<br/>
          At 70, you will still have to find a job just to survive if you don't have enough saved.
-         <VidFrame src="https://www.youtube.com/embed/UEG3uwmwP6I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></VidFrame>
+          <VidWrapper>
+            <VidFrame src="https://www.youtube.com/embed/UEG3uwmwP6I?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></VidFrame>
+          </VidWrapper>
+          <VidWrapper>
+            <VidFrame src="https://www.youtube.com/embed/zHTh1DcZsRY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></VidFrame>
+          </VidWrapper>
         </SectionParag>
       </SectionContent>
       <SectionContentInfoGraphic>
