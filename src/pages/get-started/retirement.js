@@ -167,7 +167,7 @@ export default ({ data }) => (
          At 70, you will still have to find a job just to survive if you don't have enough saved.
         </SectionParag>
         <VidWrapper>
-            <VidFrame src="https://www.youtube.com/embed/UEG3uwmwP6I?rel=0&amp;controls=1&amp;modestbranding=1&amp;showinfo=0&amp;theme=dark" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></VidFrame>
+            <VidFrame src="https://www.youtube.com/embed/UEG3uwmwP6I?rel=0&amp;controls=1&amp;modestbranding=1&amp;showinfo=0&amp;theme=dark" frameborder="0" allow="autoplay; encrypted-media" allowFullScreen="allowfullscreen"></VidFrame>
           </VidWrapper>
       </SectionContent>
       <SectionContentInfoGraphic>

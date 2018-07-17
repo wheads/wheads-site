@@ -119,7 +119,7 @@ class App extends React.Component {
       contents : [
         {Number: '',
         Color: '#2d3939',
-        Text1: `You don't need much to be covered.` ,
+        Text1: `You don't need to spend so much to be covered.` ,
         Text2: "Let's step through each item, click NEXT to begin",
         Value: 0,
         InfoOnly: true,
