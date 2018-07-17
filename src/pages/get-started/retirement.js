@@ -7,30 +7,21 @@ import sectionBannerInfo from "./retirementInfog.jpg"
 import sectionBannerBg from "./img-footer-insurance.jpg"
 import SubMenuSection from "../../components/SubMenuSection"
 import {SectionContainer, SectionContentInfoGraphic} from "../../components/CommonContainers"
+import YoutubEmbed from "youtube-embed-video"
 
 const VidWrapper = styled.div`
   position: relative;
   padding-bottom: 56.25%; /*56.25%;  16:9 */
-  padding-top: 25px;
   height: 0;
-`;
 
-const VidFrame = styled.iframe`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  //margin: auto;
-  //border: none;
-  //padding: 50px 0px;
-  //min-height: 410px;
-
-  //@media (max-width: 768px) {
-  //  min-height: 320px;
-  //  padding: 20px 0px;
-  //}
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 `;
 
 const BannerContainer = styled.div`
@@ -166,8 +157,8 @@ export default ({ data }) => (
          It's how fast you can save enough for the retirement you want.<br/>
          At 70, you will still have to find a job just to survive if you don't have enough saved.
         </SectionParag>
-        <VidWrapper>
-            <VidFrame src="https://www.youtube.com/embed/UEG3uwmwP6I?rel=0&amp;controls=1&amp;modestbranding=1&amp;showinfo=0&amp;theme=dark" frameborder="0" allow="autoplay; encrypted-media" allowFullScreen="allowfullscreen"></VidFrame>
+          <VidWrapper>
+            <YoutubEmbed videoId="UEG3uwmwP6I" size="large" suggestions={false} showInfo={false} controls={true} />
           </VidWrapper>
       </SectionContent>
       <SectionContentInfoGraphic>
