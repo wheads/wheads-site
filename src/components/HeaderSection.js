@@ -33,7 +33,7 @@ const Logo = styled.img`
 
 const MainNav = styled.div`
   display: flex;
-  padding: 16px 0;
+  padding: 5px 0;
 
   @media (max-width: 767px) {
     padding: 10px 0 0;
