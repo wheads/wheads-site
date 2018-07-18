@@ -19,7 +19,6 @@
     "gatsby": "^1.9.261",
     "gatsby-image": "^1.0.47",
     "gatsby-link": "^1.6.40",
-    "gatsby-plugin-google-tagmanager": "^1.0.19",
     "gatsby-plugin-netlify": "^1.0.21",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-sharp": "^1.6.43",
@@ -32,8 +31,7 @@
     "rc-slider": "^8.6.1",
     "react-helmet": "^5.2.0",
     "react-numeric-input": "^2.2.3",
-    "styled-components": "^3.2.6",
-    "youtube-embed-video": "^1.1.0"
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
     "dotenv": "^6.0.0"

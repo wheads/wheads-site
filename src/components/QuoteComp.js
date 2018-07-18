@@ -3,6 +3,11 @@ import styled from "styled-components";
 import Link from 'gatsby-link';
 import { HideOnMobile } from '../styles/style.js';
 
+const QuoteContainer = styled.div`
+  display: block;
+  margin: auto;
+  vertical-align: middle;
+`;
 const Quoted = styled.q`
   quotes: "“" "”" "‘" "’";
   padding: 0px 10px;
@@ -36,11 +41,20 @@ const Container = styled.div`
   padding: 20px 5px;
   display: block;
   position: relative;
+  min-height: 400px;
   font-size: ${props => props.FontSize};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     margin: 5px;
-    min-height: 300px;
+    min-height: 400px;
+    max-width: 50%;
+    margin: auto;
+  }
+
+  @media (max-width: 768px) {
+    margin: auto;
+    max-width: 95%;
+    width: 100%;
   }
 `
 
@@ -59,7 +73,7 @@ const ContainerBg = styled.div`
 `
 
 const QuoteBy = styled.p`
-  margin-top: 2rem;
+  margin-top: 4rem;
   font-size: 1.25rem;
   text-shadow: 1px 1px 5px #0C0C0C, -1px -1px 5px #0C0C0C;
   color: ${props => props.QuoteColor};
@@ -78,10 +92,12 @@ class ClassQuotedText extends Component {
       <Container FontSize={this.props.FontSize} >
         <ContainerBg BackgroundImage={this.props.BackgroundImage}>
         </ContainerBg>
+        <QuoteContainer>
         <Quoted style={this.props.style} Color={this.props.Color} QuoteColor={this.props.QuoteColor} >
           {this.props.children}
         </Quoted>
         <QuoteBy QuoteColor={this.props.QuoteColor}>{this.props.QuoteBy}</QuoteBy>
+        </QuoteContainer>
       </Container>
     );
   }

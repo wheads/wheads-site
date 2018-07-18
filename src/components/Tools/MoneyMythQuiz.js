@@ -267,7 +267,7 @@ class MoneyMythQuiz extends Component {
         name: 'rdQuestion',
         expected: 'Myth',
         answer: '',
-        detailAnswer2: `PhilHealth does not cover the entire hospitalization cost and it will also not cover your maintenance medicines.`,
+        detailAnswer2: `PhilHealth does not cover the entire hospitalization cost and it will not cover your maintenance medicines.`,
         detailAnswer3: `There are financial solutions out there that can help you.`,
         link: "/../contact",
         linkText: `Send us a message to know our free-seminar schedules.`,

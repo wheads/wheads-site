@@ -83,7 +83,7 @@ const TextInfo = styled.h3`
   margin: 0px;
   display: block;
   text-align: left;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   font-size: 1.65rem;
   color: ${props => props.Color};
   font-weight: bold;
@@ -289,7 +289,9 @@ class SlidingDiv extends Component {
                 <TextDiv>                          
                   <TextInfo Color={Content.Color} >{Content.Text1}</TextInfo>
                 </TextDiv>
-                <AmountDiv Color={(this.props.Worth >= 0) ? 'green': '#b24073'}>{Math.round(this.props.Worth,2).toLocaleString()}</AmountDiv>
+                <AmountDiv ShowCurrency={this.props.Content.ShowCurrency} Color={(this.props.Worth >= 0) ? 'green': '#b24073'}>
+                  {(this.props.CustomResult)? this.props.Worth : Math.round(this.props.Worth,2).toLocaleString()}
+                </AmountDiv>
               </ContentHolder>
               <Final>{(this.props.Worth >=0) ? Content.Positive1 : Content.Negative1 }</Final>
               <Final>{(this.props.Worth >=0) ? Content.Positive2 : Content.Negative2 }</Final>
