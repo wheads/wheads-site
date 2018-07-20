@@ -28,6 +28,7 @@ class BlogPostTemplate extends Component {
               <Helmet>
                 <title>{title} - EveryPeso.com</title>
                 <meta property="og:title" content={title} />
+                <meta property="og:description" content={content.childMarkdownRemark.excerpt} />
                 <meta property="og:image" content={featuredImage} />
               </Helmet>
 
@@ -61,6 +62,7 @@ export const blogPostTemplateQuery = graphql`
             }
             content {
                 childMarkdownRemark {
+                    excerpt
                     html
                 }
             }
