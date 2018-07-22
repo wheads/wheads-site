@@ -10,6 +10,7 @@ import { transition } from 'd3-transition'
 import {ToolContainer} from "../../components/ToolContainer";
 import {QuotedText} from '../../components/QuoteComp'
 import imgQuote from "../get-started/img-hero-banner-retirement.jpg"
+import img from "./net-calc.png"
 
 // Blue - #0695a4
 // Brown - #ccc6ba
@@ -74,7 +75,7 @@ const PageContainer = styled.div`
 const Content = styled.div`
   display: grid;
   width: 85%;
-  margin: auto;
+  margin: hidden;
   grid-template-columns: 60% 40%;
   font-size: 14px;
 
@@ -95,12 +96,14 @@ const SliderContainer = styled.div`
   margin: 5px auto;  
   max-width: 600px;
   overflow: hidden;
+  width: 100%;
 `;
 
 const MovingContainer = styled.div`
   display: flex;
   position: relative;
   margin: 0px;
+  padding: 0px;
 `;
 
 class App extends React.Component {
@@ -136,6 +139,7 @@ class App extends React.Component {
         Max: 6000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '2',
         Color: '#146414',
@@ -146,6 +150,7 @@ class App extends React.Component {
         Max: 6000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '3',
         Color: '#146414',
@@ -156,6 +161,7 @@ class App extends React.Component {
         Max: 3000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '4',
         Color: '#146414',
@@ -166,6 +172,7 @@ class App extends React.Component {
         Max: 10000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '',
         Color: 'RED',
@@ -184,6 +191,7 @@ class App extends React.Component {
         Max: 8000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '2',
         Color: 'red',
@@ -194,6 +202,7 @@ class App extends React.Component {
         Max: 4000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '3',
         Color: 'red',
@@ -204,6 +213,7 @@ class App extends React.Component {
         Max: 2000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '4',
         Color: 'red',
@@ -214,6 +224,7 @@ class App extends React.Component {
         Max: 2000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '5',
         Color: 'red',
@@ -224,6 +235,7 @@ class App extends React.Component {
         Max: 10000000,
         Step: 10000,
         Value: 0,
+        ShowCurrency: true,
         },
         {Number: '',
         Color: '#2d3939',
@@ -234,6 +246,7 @@ class App extends React.Component {
         //Negative2: 'Need help? Click here.',
         Text2: 'Total all other loans/debts/liabilities you owe.',
         Value: 0,
+        ShowCurrency: true,
         Last: true,
         NextStep: 'Want to improve your net worth?',
         NextStepLink: '/../contact',
@@ -274,9 +287,12 @@ class App extends React.Component {
       var div = select("#divSliderContainer").node()
       if(div !== null)
       {
+        
+        //alert('page : ' + document.body.offsetWidth);
+        var width = div.getBoundingClientRect().width;
         this.setState(
           {
-            Width: div.offsetWidth
+            Width: width
           }
         );
       }
@@ -290,12 +306,13 @@ class App extends React.Component {
     var div = document.getElementById("divSliderContainer");
     if(div !== null)
     {
-      var x = (index) * div.offsetWidth * -1;
+      var x = (index) * div.getBoundingClientRect().width * -1;
       
       this.setState(
         {currentIndex: index}
       );
       
+      //alert('loc : ' + x);
       if(animate)
       {
       transition(
@@ -372,9 +389,14 @@ export default ({ data, scales, margins, svgDimensions }) => (
   <div>
     <Helmet>
       <title>Tools - {data.site.siteMetadata.title}</title>
+      <meta name="description" content="Know your Net Worth" />
+      <meta property="og:title" content="EveryPeso - Net Worth Calculator" />
+      <meta property="og:description" content="Your Net Worth will determine your financial health." />
+      <meta property="og:url" content="https://www.everypeso.com/tools/networth-calculator/" />
+      <meta property="og:site_name" content="EveryPeso - Net Worth Calculator" />
+      <meta property="og:image" content={img} />
     </Helmet>
     <App/>
-    
   </div>  
 );
 

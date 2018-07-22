@@ -12,7 +12,7 @@ const ButtonHolder = styled.div`
 
   @media (max-width: 400px) {
     margin: 15px auto;
-    padding: 10px 0px;
+    padding: 10px 10px;
   }
 `;
 
@@ -20,15 +20,15 @@ const LeftButtonHolder = styled.div`
   margin-right: 50px;
 
   @media (max-width: 400px) {
-    margin-right: 10px;
+    margin-right: 0px;
   }
 `;
 
 const RightButtonHolder = styled.div`
-  margin-left: 50px;
+  padding-left: 50px;
 
   @media (max-width: 400px) {
-    margin-left: 10px;
+    padding-left: 0px;
   }
 `;
 
@@ -37,7 +37,7 @@ const ContentHolder = styled.div`
   grid-template-columns: auto auto;
   margin-top: 15px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 750px) {
     display: block;
     margin-top: 0px;
   }
@@ -53,9 +53,11 @@ const AmountDiv = styled.h3`
   font-size: 2rem;
   font-weight: bold;
   color: ${props => props.Color};
+  padding-right: 10px;
 
   @media (max-width: 400px) {
     margin-bottom: 20px;
+    padding-right: 20px;
   }
   
   &::before {
@@ -68,27 +70,19 @@ const AmountDiv = styled.h3`
 `
 
 const Container = styled.div`
-  padding: 5px 20px;
+  //padding: 5px 20px;
+  padding: 0px;
+  margin: 0px;
   position: relative;
   width: 100%;
   max-width: 600px;
   min-width: ${props => props.width}px;
 
   @media (max-width: 400px) {
+    //padding: 5px 5px;
+    padding: 0px;
     min-width: ${props => props.width}px;
   }
-`;
-
-const TextInfo = styled.h3`
-  margin: 0px;
-  display: block;
-  text-align: left;
-  margin-bottom: 25px;
-  font-size: 1.65rem;
-  color: ${props => props.Color};
-  font-weight: bold;
-  padding-left: 5px;
-  margin-left: 15px;
 `;
 
 const Final = styled.h3`
@@ -99,6 +93,7 @@ const Final = styled.h3`
   font-size: 1rem;
   color: #2d3939;
   font-weight: normal;
+  padding: 0px 10px;
 `;
 
 const NextStep = styled.h3`
@@ -110,6 +105,7 @@ const NextStep = styled.h3`
   color: #2d3939;
   font-weight: normal;
   margin-top: 10px;
+  padding: 0px 10px;
 `
 
 const NextStepLink = styled.a`
@@ -127,6 +123,25 @@ const Final2 = styled.h3`
   font-weight: normal;
 `;
 
+const TextInfo = styled.h3`
+  margin: 0px;  
+  display: block;
+  text-align: left;
+  margin-bottom: 25px;
+  font-size: 1.65rem;
+  color: ${props => props.Color};
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+
+  @media (max-width: 400px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+  }
+`;
+
 const TextSubInfo = styled.h3`
   margin: 0px;
   display: block;
@@ -137,10 +152,14 @@ const TextSubInfo = styled.h3`
   font-weight: normal;
   padding-left: 5px;
   padding-top: 25px;
-  margin-left: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
   
   @media (max-width: 400px) {
     padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `;
 
@@ -152,19 +171,29 @@ const TextDisplay1 = styled.h3`
   font-size: 1.65rem;
   color: #505050;
   font-weight: bold;
-  padding-left: 5px;
-  margin-left: 15px;
   border-left: 3px solid ${props => props.Color};
+  margin-left: 35px;
+  padding-left: 5px;
+  padding-right: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     display: block;
+    padding-right: 10px;
   }
 
   &::before {
     content: '${props => props.Number}';
-    position: relative;
-    left: -1.5rem;
+    position: absolute;
+    left: 10px;
+    top: 20px;
     font-size: 1rem;
+
+    @media (max-width: 750px) {
+      display: block;
+      padding-right: 10px;
+      left: 10px;
+      top: 5px;
+    }
   }
 `;
 
@@ -176,11 +205,13 @@ const TextDisplay2 = styled.div`
   font-size: 1rem;
   color: #606060;
   font-weight: bold;
-  padding-left: 5px;
-  margin-left: 15px;
+  padding: 10px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px;
   }
 `;
 
@@ -188,6 +219,11 @@ const Slider = styled.input`
   margin: 0px;
   position: relative;
   margin-bottom: 30px;
+  padding: 0px 15px;
+
+  @media (max-width: 750px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const BigButton = styled(Link)`
@@ -266,7 +302,7 @@ class SlidingDiv extends Component {
     const {Content, Back, Next, Width} = this.props
 
     return (
-        <Container width={this.props.Width} >
+        <Container width={this.props.Width}>
             <div style={{display: (Content.InfoOnly || Content.Last) ? 'none' : 'block' }}>
             <ContentHolder>
               <TextDiv>                          
