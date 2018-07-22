@@ -46,6 +46,7 @@ const ContentHolder = styled.div`
 
 const TextDiv = styled.div`
   display: block;  
+  background-color: blue;
 `;
 
 const AmountDiv = styled.h3`
@@ -76,7 +77,7 @@ const Container = styled.div`
   min-width: ${props => props.width}px;
 
   @media (max-width: 400px) {
-    padding: 5px 5px;
+    padding: 0px 0px;
     min-width: ${props => props.width}px;
   }
 `;
