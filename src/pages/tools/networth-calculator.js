@@ -349,6 +349,14 @@ class App extends React.Component {
     
     return(
       <ToolContainer>
+        <Helmet>
+          <meta name="description" content="Know your Net Worth" />
+          <meta property="og:title" content="EveryPeso - Net Worth Calculator" />
+          <meta property="og:description" content="Your Net Worth will determine your financial health." />
+          <meta property="og:url" content="https://www.everypeso.com/tools/networth-calculator" />
+          <meta property="og:site_name" content="EveryPeso - Net Worth Calculator" />
+          <meta property="og:image" content={img} />
+        </Helmet>
         <PageContainer >
           <Content>
             <Title>Find out your Net Worth</Title>&nbsp;
@@ -389,12 +397,6 @@ export default ({ data, scales, margins, svgDimensions }) => (
   <div>
     <Helmet>
       <title>Tools - {data.site.siteMetadata.title}</title>
-      <meta name="description" content="Know your Net Worth" />
-      <meta property="og:title" content="EveryPeso - Net Worth Calculator" />
-      <meta property="og:description" content="Your Net Worth will determine your financial health." />
-      <meta property="og:url" content="https://www.everypeso.com/tools/networth-calculator/" />
-      <meta property="og:site_name" content="EveryPeso - Net Worth Calculator" />
-      <meta property="og:image" content={img} />
     </Helmet>
     <App/>
   </div>  
