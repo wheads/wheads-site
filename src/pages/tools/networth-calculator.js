@@ -103,6 +103,8 @@ const MovingContainer = styled.div`
   display: flex;
   position: relative;
   margin: 0px;
+  padding: 0px;
+  background-color: pink;
 `;
 
 class App extends React.Component {

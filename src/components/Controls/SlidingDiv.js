@@ -70,14 +70,17 @@ const AmountDiv = styled.h3`
 `
 
 const Container = styled.div`
-  padding: 5px 20px;
+  //padding: 5px 20px;
+  padding: 0px;
+  margin: 0px;
   position: relative;
   width: 100%;
   max-width: 600px;
   min-width: ${props => props.width}px;
 
   @media (max-width: 400px) {
-    padding: 0px 0px;
+    //padding: 5px 5px;
+    padding: 0px;
     min-width: ${props => props.width}px;
   }
 `;
