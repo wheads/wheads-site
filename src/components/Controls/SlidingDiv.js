@@ -80,23 +80,6 @@ const Container = styled.div`
   }
 `;
 
-const TextInfo = styled.h3`
-  margin: 0px;
-  display: block;
-  text-align: left;
-  margin-bottom: 25px;
-  font-size: 1.65rem;
-  color: ${props => props.Color};
-  font-weight: bold;
-  padding-left: 0px;
-  padding-right: 0px;
-
-  @media (max-width: 400px) {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-`;
-
 const Final = styled.h3`
   text-align: center;
   margin: 0px;
@@ -131,6 +114,23 @@ const Final2 = styled.h3`
   font-size: 1rem;
   color: #2d3939;
   font-weight: normal;
+`;
+
+const TextInfo = styled.h3`
+  margin: 0px;
+  display: block;
+  text-align: left;
+  margin-bottom: 25px;
+  font-size: 1.65rem;
+  color: ${props => props.Color};
+  font-weight: bold;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  @media (max-width: 400px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 `;
 
 const TextSubInfo = styled.h3`

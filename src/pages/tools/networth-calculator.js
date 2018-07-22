@@ -95,6 +95,8 @@ const SliderContainer = styled.div`
   margin: 5px auto;  
   max-width: 600px;
   overflow: hidden;
+  background-color: red;
+  width: 95%;
 `;
 
 const MovingContainer = styled.div`
