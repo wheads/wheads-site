@@ -350,7 +350,6 @@ class App extends React.Component {
     return(
       <ToolContainer>
         <Helmet>
-          <title>Tools - {data.site.siteMetadata.title}</title>
           <meta name="description" content="Know your Net Worth" />
           <meta property="og:title" content="EveryPeso - Net Worth Calculator" />
           <meta property="og:description" content="Your Net Worth will determine your financial health." />
@@ -396,6 +395,9 @@ class App extends React.Component {
 
 export default ({ data, scales, margins, svgDimensions }) => (
   <div>
+    <Helmet>
+      <title>Tools - {data.site.siteMetadata.title}</title>
+    </Helmet>
     <App/>
   </div>  
 );
