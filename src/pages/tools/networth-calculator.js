@@ -274,6 +274,8 @@ class App extends React.Component {
       var div = select("#divSliderContainer").node()
       if(div !== null)
       {
+        
+        alert(div.offsetWidth);
         this.setState(
           {
             Width: div.offsetWidth
