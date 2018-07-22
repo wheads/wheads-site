@@ -277,7 +277,7 @@ class App extends React.Component {
       if(div !== null)
       {
         
-        //alert(div.getBoundingClientRect().width());
+        alert(div.getBoundingClientRect().width);
         var width = div.getBoundingClientRect().width;
         this.setState(
           {
