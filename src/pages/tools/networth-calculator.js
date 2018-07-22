@@ -277,7 +277,6 @@ class App extends React.Component {
       if(div !== null)
       {
         
-        alert('container : ' + div.getBoundingClientRect().width);
         alert('page : ' + document.body.offsetWidth);
         var width = div.getBoundingClientRect().width;
         this.setState(
@@ -302,6 +301,7 @@ class App extends React.Component {
         {currentIndex: index}
       );
       
+      alert('loc : ' + x);
       if(animate)
       {
       transition(
