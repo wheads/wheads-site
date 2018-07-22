@@ -95,6 +95,7 @@ const SliderContainer = styled.div`
   margin: 5px auto;  
   max-width: 600px;
   overflow: hidden;
+  background-color: red;
 `;
 
 const MovingContainer = styled.div`
@@ -275,6 +276,7 @@ class App extends React.Component {
       if(div !== null)
       {
         
+        //alert(div.getBoundingClientRect().width());
         var width = div.getBoundingClientRect().width;
         this.setState(
           {
@@ -292,7 +294,7 @@ class App extends React.Component {
     var div = document.getElementById("divSliderContainer");
     if(div !== null)
     {
-      var x = (index) * div.offsetWidth * -1;
+      var x = (index) * div.getBoundingClientRect().width * -1;
       
       this.setState(
         {currentIndex: index}

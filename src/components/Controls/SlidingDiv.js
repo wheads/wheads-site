@@ -72,6 +72,7 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: 600px;
+  background-color: green;
   min-width: ${props => props.width}px;
 
   @media (max-width: 400px) {
