@@ -9,6 +9,7 @@ import '../../styles/SliderStyle.css';
 const ButtonHolder = styled.div`
   display: grid;  
   grid-template-columns: 50% 50%;
+  background-color: yellow;
 
   @media (max-width: 400px) {
     margin: 15px auto;
@@ -117,7 +118,7 @@ const Final2 = styled.h3`
 `;
 
 const TextInfo = styled.h3`
-  margin: 0px;
+  margin: 0px;  
   display: block;
   text-align: left;
   margin-bottom: 25px;
@@ -126,6 +127,7 @@ const TextInfo = styled.h3`
   font-weight: bold;
   padding-left: 0px;
   padding-right: 0px;
+  background-color: yellow;
 
   @media (max-width: 400px) {
     padding-left: 0px;
@@ -145,6 +147,7 @@ const TextSubInfo = styled.h3`
   padding-top: 25px;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: yellow;
   
   @media (max-width: 400px) {
     padding-top: 15px;
