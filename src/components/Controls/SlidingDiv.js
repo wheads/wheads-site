@@ -21,7 +21,7 @@ const LeftButtonHolder = styled.div`
   margin-right: 50px;
 
   @media (max-width: 400px) {
-    margin-right: 10px;
+    margin-right: 0px;
   }
 `;
 
@@ -29,7 +29,7 @@ const RightButtonHolder = styled.div`
   padding-left: 50px;
 
   @media (max-width: 400px) {
-    padding-left: 10px;
+    padding-left: 0px;
   }
 `;
 
@@ -151,8 +151,8 @@ const TextSubInfo = styled.h3`
   
   @media (max-width: 400px) {
     padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 `;
 
@@ -167,7 +167,7 @@ const TextDisplay1 = styled.h3`
   border-left: 3px solid ${props => props.Color};
   margin-left: 25px;
   padding-left: 0px;
-  padding-right: 5px;
+  padding-right: 0px;
 
   @media (max-width: 600px) {
     display: block;
