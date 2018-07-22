@@ -394,10 +394,9 @@ export default ({ data, scales, margins, svgDimensions }) => (
       <meta property="og:description" content="Your Net Worth will determine your financial health." />
       <meta property="og:url" content="https://www.everypeso.com/tools/networth-calculator/" />
       <meta property="og:site_name" content="EveryPeso - Net Worth Calculator" />
-      <meta property="og:image" content={img} />
     </Helmet>
     <App/>
-    
+    <img src={img} />
   </div>  
 );
 
