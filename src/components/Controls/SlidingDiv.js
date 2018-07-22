@@ -278,7 +278,7 @@ class SlidingDiv extends Component {
     const {Content, Back, Next, Width} = this.props
 
     return (
-        <Container width={this.props.Width} >
+        <Container width={this.props.Width} style={{backgroundColor: ((this.props.Index % 2)===0) ? 'red' : 'green'}} >
             <div style={{display: (Content.InfoOnly || Content.Last) ? 'none' : 'block' }}>
             <ContentHolder>
               <TextDiv>                          
