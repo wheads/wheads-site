@@ -9,11 +9,10 @@ import '../../styles/SliderStyle.css';
 const ButtonHolder = styled.div`
   display: grid;  
   grid-template-columns: 50% 50%;
-  background-color: yellow;
 
   @media (max-width: 400px) {
     margin: 15px auto;
-    padding: 10px 0px;
+    padding: 10px 10px;
   }
 `;
 
@@ -46,7 +45,6 @@ const ContentHolder = styled.div`
 
 const TextDiv = styled.div`
   display: block;  
-  background-color: blue;
 `;
 
 const AmountDiv = styled.h3`
@@ -55,9 +53,11 @@ const AmountDiv = styled.h3`
   font-size: 2rem;
   font-weight: bold;
   color: ${props => props.Color};
+  padding-right: 10px;
 
   @media (max-width: 400px) {
     margin-bottom: 20px;
+    padding-right: 20px;
   }
   
   &::before {
@@ -93,6 +93,7 @@ const Final = styled.h3`
   font-size: 1rem;
   color: #2d3939;
   font-weight: normal;
+  padding: 0px 10px;
 `;
 
 const NextStep = styled.h3`
@@ -104,6 +105,7 @@ const NextStep = styled.h3`
   color: #2d3939;
   font-weight: normal;
   margin-top: 10px;
+  padding: 0px 10px;
 `
 
 const NextStepLink = styled.a`
@@ -129,13 +131,14 @@ const TextInfo = styled.h3`
   font-size: 1.65rem;
   color: ${props => props.Color};
   font-weight: bold;
-  padding-left: 0px;
-  padding-right: 0px;
-  background-color: yellow;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
 
   @media (max-width: 400px) {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
   }
 `;
 
@@ -151,12 +154,12 @@ const TextSubInfo = styled.h3`
   padding-top: 25px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: yellow;
+  text-align: left;
   
   @media (max-width: 400px) {
     padding-top: 15px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `;
 
@@ -169,18 +172,21 @@ const TextDisplay1 = styled.h3`
   color: #505050;
   font-weight: bold;
   border-left: 3px solid ${props => props.Color};
-  margin-left: 25px;
-  padding-left: 0px;
-  padding-right: 0px;
+  margin-left: 35px;
+  padding-left: 5px;
+  padding-right: 20px;
 
   @media (max-width: 600px) {
     display: block;
+    padding-right: 10px;
   }
 
   &::before {
     content: '${props => props.Number}';
-    position: relative;
-    left: -1.5rem;
+    position: absolute;
+    //left: -1.5rem;
+    left: 10px;
+    top: 5px;
     font-size: 1rem;
   }
 `;
@@ -198,8 +204,8 @@ const TextDisplay2 = styled.div`
 
   @media (max-width: 600px) {
     display: block;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `;
 
@@ -207,6 +213,7 @@ const Slider = styled.input`
   margin: 0px;
   position: relative;
   margin-bottom: 30px;
+  padding: 0px 15px;
 `;
 
 const BigButton = styled(Link)`
@@ -285,7 +292,7 @@ class SlidingDiv extends Component {
     const {Content, Back, Next, Width} = this.props
 
     return (
-        <Container width={this.props.Width} style={{backgroundColor: ((this.props.Index % 2)===0) ? 'red' : 'green'}} >
+        <Container width={this.props.Width}>
             <div style={{display: (Content.InfoOnly || Content.Last) ? 'none' : 'block' }}>
             <ContentHolder>
               <TextDiv>                          

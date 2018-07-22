@@ -74,7 +74,7 @@ const PageContainer = styled.div`
 const Content = styled.div`
   display: grid;
   width: 85%;
-  margin: auto;
+  margin: hidden;
   grid-template-columns: 60% 40%;
   font-size: 14px;
 
@@ -95,7 +95,6 @@ const SliderContainer = styled.div`
   margin: 5px auto;  
   max-width: 600px;
   overflow: auto;
-  background-color: red;
   width: 100%;
 `;
 
@@ -104,7 +103,6 @@ const MovingContainer = styled.div`
   position: relative;
   margin: 0px;
   padding: 0px;
-  background-color: pink;
 `;
 
 class App extends React.Component {
