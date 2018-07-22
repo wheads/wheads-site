@@ -37,7 +37,7 @@ const ContentHolder = styled.div`
   grid-template-columns: auto auto;
   margin-top: 15px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 750px) {
     display: block;
     margin-top: 0px;
   }
