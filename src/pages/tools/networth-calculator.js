@@ -275,10 +275,10 @@ class App extends React.Component {
       if(div !== null)
       {
         
-        alert(div.offsetWidth);
+        var width = div.getBoundingClientRect().width;
         this.setState(
           {
-            Width: div.offsetWidth
+            Width: width
           }
         );
       }
