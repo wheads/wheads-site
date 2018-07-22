@@ -25,10 +25,10 @@ const LeftButtonHolder = styled.div`
 `;
 
 const RightButtonHolder = styled.div`
-  margin-left: 50px;
+  padding-left: 50px;
 
   @media (max-width: 400px) {
-    margin-left: 10px;
+    padding-left: 10px;
   }
 `;
 
@@ -72,7 +72,6 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: 600px;
-  background-color: green;
   min-width: ${props => props.width}px;
 
   @media (max-width: 400px) {
@@ -162,12 +161,14 @@ const TextDisplay1 = styled.h3`
   font-size: 1.65rem;
   color: #505050;
   font-weight: bold;
-  padding-left: 5px;
-  margin-left: 15px;
   border-left: 3px solid ${props => props.Color};
+  padding-left: 20px;
+  padding-right: 20px;
 
   @media (max-width: 600px) {
     display: block;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   &::before {
@@ -186,11 +187,13 @@ const TextDisplay2 = styled.div`
   font-size: 1rem;
   color: #606060;
   font-weight: bold;
-  padding-left: 5px;
-  margin-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   @media (max-width: 600px) {
     display: block;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 `;
 
