@@ -176,7 +176,7 @@ const TextDisplay1 = styled.h3`
   padding-left: 5px;
   padding-right: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     display: block;
     padding-right: 10px;
   }
@@ -184,10 +184,16 @@ const TextDisplay1 = styled.h3`
   &::before {
     content: '${props => props.Number}';
     position: absolute;
-    //left: -1.5rem;
     left: 10px;
-    top: 5px;
+    top: 20px;
     font-size: 1rem;
+
+    @media (max-width: 750px) {
+      display: block;
+      padding-right: 10px;
+      left: 10px;
+      top: 5px;
+    }
   }
 `;
 
@@ -199,13 +205,13 @@ const TextDisplay2 = styled.div`
   font-size: 1rem;
   color: #606060;
   font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     display: block;
     padding-left: 10px;
     padding-right: 10px;
+    margin: 0px;
   }
 `;
 
@@ -214,6 +220,10 @@ const Slider = styled.input`
   position: relative;
   margin-bottom: 30px;
   padding: 0px 15px;
+
+  @media (max-width: 750px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const BigButton = styled(Link)`
