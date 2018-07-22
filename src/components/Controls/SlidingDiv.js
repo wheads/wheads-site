@@ -76,6 +76,7 @@ const Container = styled.div`
   min-width: ${props => props.width}px;
 
   @media (max-width: 400px) {
+    padding: 0px 20px;
     min-width: ${props => props.width}px;
   }
 `;
