@@ -88,12 +88,12 @@ const TextInfo = styled.h3`
   font-size: 1.65rem;
   color: ${props => props.Color};
   font-weight: bold;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 
   @media (max-width: 400px) {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 `;
 
@@ -162,13 +162,12 @@ const TextDisplay1 = styled.h3`
   color: #505050;
   font-weight: bold;
   border-left: 3px solid ${props => props.Color};
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-left: 25px;
+  padding-left: 0px;
+  padding-right: 5px;
 
   @media (max-width: 600px) {
     display: block;
-    padding-left: 5px;
-    padding-right: 5px;
   }
 
   &::before {
