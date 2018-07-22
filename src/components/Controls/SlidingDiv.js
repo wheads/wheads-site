@@ -76,7 +76,7 @@ const Container = styled.div`
   min-width: ${props => props.width}px;
 
   @media (max-width: 400px) {
-    padding: 0px 20px;
+    padding: 5px 5px;
     min-width: ${props => props.width}px;
   }
 `;
@@ -89,8 +89,13 @@ const TextInfo = styled.h3`
   font-size: 1.65rem;
   color: ${props => props.Color};
   font-weight: bold;
-  padding-left: 5px;
-  margin-left: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (max-width: 400px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 const Final = styled.h3`
@@ -139,10 +144,13 @@ const TextSubInfo = styled.h3`
   font-weight: normal;
   padding-left: 5px;
   padding-top: 25px;
-  margin-left: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   
   @media (max-width: 400px) {
     padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `;
 
