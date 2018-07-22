@@ -96,7 +96,7 @@ const SliderContainer = styled.div`
   max-width: 600px;
   overflow: hidden;
   background-color: red;
-  width: 95%;
+  width: 100%;
 `;
 
 const MovingContainer = styled.div`
@@ -277,7 +277,8 @@ class App extends React.Component {
       if(div !== null)
       {
         
-        alert(div.getBoundingClientRect().width);
+        alert('container : ' + div.getBoundingClientRect().width);
+        alert('page : ' + document.body.offsetWidth);
         var width = div.getBoundingClientRect().width;
         this.setState(
           {
