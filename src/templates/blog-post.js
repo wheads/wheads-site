@@ -29,7 +29,7 @@ class BlogPostTemplate extends Component {
                 <title>{title} - EveryPeso.com</title>
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={content.childMarkdownRemark.excerpt} />
-                <meta property="og:image" content={featuredImage} />
+                <meta property="og:image" content={featuredImage.file.url} />
               </Helmet>
 
                 <BlogTitle>{title}</BlogTitle>
@@ -56,6 +56,9 @@ export const blogPostTemplateQuery = graphql`
             title
             createdAt(formatString: "MMMM DD, YYYY")
             featuredImage {
+                file {
+                    url
+                }
                 sizes(maxWidth: 800) {
                     ...GatsbyContentfulSizes
                 }
