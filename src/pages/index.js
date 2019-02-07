@@ -77,10 +77,9 @@ export default ({ data }) => (
   <div>
     <BannerContainer style={{backgroundImage:`url(` + sectionBannerBg + `)`,backgroundSize:`cover`,backgroundPosition:`center`}}>
       <HeroBanner>
-          <HeroBannerTitle>Saving money is simple!</HeroBannerTitle>
-          <HeroBannerParag> All you need is a proper plan</HeroBannerParag>
-          <HeroBannerParag>Know your options, big or small your income won't matter much.
-          </HeroBannerParag>
+          <HeroBannerTitle>Everyone can be wealthy!</HeroBannerTitle>
+          <HeroBannerParag>We will show you how, it's quite simple</HeroBannerParag>
+          <HeroBannerParag>Just follow simple steps to get started</HeroBannerParag>
           <HeroBannerParag>Every peso counts.</HeroBannerParag>
           <BigButton to="/get-started/savings">Learn More</BigButton>
       </HeroBanner>
